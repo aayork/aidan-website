@@ -90,24 +90,24 @@ span.ds-department{ color: #373737; font-weight: 500; font-size: 18px; padding-b
 .ds-experience-list ul li{font-size: 16px; line-height: 24px; font-weight: 300; padding-left: 28px; position:relative; margin-bottom: 20px;}
 .ds-experience-list ul li:before{ content: ""; position: absolute; left: 0; top: 10px; border-radius: 100%; width: 8px; height: 8px; background-color: #373737; }
 /*-----------------------------------------------------------------
-  6. >>> Work Style
+  6. >>> Blog Style
 ----------------------------------------------------------------*/
-.ds-work-section{ padding-bottom: 80px; }
-.ds-work-list{ padding-left: 70px; padding-top:40px; padding-right: 70px; background-color:#F6F8FA; margin-bottom: 40px; }
-.ds-work-list section{ padding-top: 20px; padding-right: 120px; }
+.ds-blog-section{ padding-bottom: 80px; }
+.ds-blog-list{ padding-left: 70px; padding-top:40px; padding-right: 70px; background-color:#F6F8FA; margin-bottom: 40px; }
+.ds-blog-list section{ padding-top: 20px; padding-right: 120px; }
 .ds-work-tilte{ color: #000; font-size: 30px; line-height: 36px; font-weight: 600; margin-bottom: 30px; }
-.ds-work-list p{ font-weight: 300; font-size: 18px; line-height: 30px; }
-.ds-work-list .ds-button{ margin-top: 20px; }
+.ds-blog-list p{ font-weight: 300; font-size: 18px; line-height: 30px; }
+.ds-blog-list .ds-button{ margin-top: 20px; }
 
-.ds-work-det-hed{ padding-top: 42px; padding-bottom: 80px; }
-.ds-work-det-title{ font-weight: 600; color:#000; font-size: 48px; margin-bottom: 20px; }
-.ds-work-det-dep{ display:block;font-weight: 600; color: #000; font-size: 18px; }
-.ds-work-content-sec{ padding: 100px 0; }
-.ds-work-content-sec p{ font-size: 18px; line-height: 36px; margin-bottom: 30px; }
-.ds-work-content-sec h2{ font-size: 30px; font-weight: 700; margin-bottom: 30px; }
-.ds-work-content-sec ul{ list-style: none; padding: 0; margin: 0; }
-.ds-work-content-sec li{font-size: 18px; line-height: 36px;  padding-left: 28px; position:relative; margin-bottom: 20px;}
-.ds-work-content-sec li:before{ content: ""; position: absolute; left: 0; top: 13px; border-radius: 100%; width: 8px; height: 8px; background-color: #373737; }
+.ds-blog-det-hed{ padding-top: 42px; padding-bottom: 80px; }
+.ds-blog-det-title{ font-weight: 600; color:#000; font-size: 48px; margin-bottom: 20px; }
+.ds-blog-det-dep{ display:block;font-weight: 600; color: #000; font-size: 18px; }
+.ds-blog-content-sec{ padding: 100px 0; }
+.ds-blog-content-sec p{ font-size: 18px; line-height: 36px; margin-bottom: 30px; }
+.ds-blog-content-sec h2{ font-size: 30px; font-weight: 700; margin-bottom: 30px; }
+.ds-blog-content-sec ul{ list-style: none; padding: 0; margin: 0; }
+.ds-blog-content-sec li{font-size: 18px; line-height: 36px;  padding-left: 28px; position:relative; margin-bottom: 20px;}
+.ds-blog-content-sec li:before{ content: ""; position: absolute; left: 0; top: 13px; border-radius: 100%; width: 8px; height: 8px; background-color: #373737; }
 /*-----------------------------------------------------------------
   7. >>> Footer Style
 ----------------------------------------------------------------*/
