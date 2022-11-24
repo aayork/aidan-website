@@ -97,7 +97,7 @@ span.ds-department{ color: #373737; font-weight: 500; font-size: 18px; padding-b
 .ds-blog-list section{ padding-top: 20px; padding-right: 120px; }
 .ds-work-tilte{ color: #000; font-size: 30px; line-height: 36px; font-weight: 600; margin-bottom: 30px; }
 .ds-blog-list p{ font-weight: 300; font-size: 18px; line-height: 30px; }
-.ds-blog-list .ds-button{ margin-top: 20px; }
+.ds-blog-list .ds-button{ margin-top: 20px; margin-bottom: 20px; }
 
 .ds-blog-det-hed{ padding-top: 42px; padding-bottom: 80px; }
 .ds-blog-det-title{ font-weight: 600; color:#000; font-size: 48px; margin-bottom: 20px; }
