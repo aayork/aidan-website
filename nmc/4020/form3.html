@@ -37,25 +37,17 @@
         });
         </script>
         
-        <label for="color">pick a color!</label>
-        <input 
-        type="color" 
-        name="color" 
-        id="color" 
-        value="#000000"/>
-        <output class="color-output" for="color"></output>
+        
+        <input type="color" name="color" id="color"/>
 
         <script>
-        const color = document.querySelector("#color");
-        const output = document.querySelector(".color-output");
-    
-        output.textContent = color.value;
-    
-        color.addEventListener("input", () => {
-        output.textContent = color.value;
-        });
-        </script>
+            color.addEventListener("input", () => {
+                output.textContent = color.value;
+            })
+        </script> 
+
             <input type="submit">
         </form>
+        
     </main>
 </html>
