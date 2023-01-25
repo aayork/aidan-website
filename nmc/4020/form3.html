@@ -6,6 +6,7 @@
             color: orange;
         }
     </style>
+
     <body>
 
     </body>
@@ -13,8 +14,47 @@
         Form Practice
     </header>
     <main>
-        <form method="get" action="https://apweb.quest/demos/receiver.html">
-            
+        <form method="get" action="https://apweb.quest/demos/receiver.html" autocomplete="on">
+        <label for="price">Choose a maximum house price: </label>
+        <input
+          type="range"
+          name="price"
+          id="price"
+          min="50000"
+          max="500000"
+          step="100"
+          value="250000" />
+        <output class="price-output" for="price"></output>
+        
+        <script>
+        const price = document.querySelector("#price");
+        const output = document.querySelector(".price-output");
+
+        output.textContent = price.value;
+
+        price.addEventListener("input", () => {
+        output.textContent = price.value;
+        });
+        </script>
+        
+        <label for="color">pick a color!</label>
+        <input 
+        type="color" 
+        name="color" 
+        id="color" 
+        value="#000000"/>
+        <output class="color-output" for="color"></output>
+
+        <script>
+        const color = document.querySelector("#color");
+        const output = document.querySelector(".color-output");
+    
+        output.textContent = color.value;
+    
+        color.addEventListener("input", () => {
+        output.textContent = color.value;
+        });
+        </script>
             <input type="submit">
         </form>
     </main>
