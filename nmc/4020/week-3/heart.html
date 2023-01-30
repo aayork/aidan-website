@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<style>
+  
+  body{
+  background-color: bisque;
+  margin: 0px;
+  padding: 0px;
+}
+
+.heart{
+  background-color: red;
+  height: 70px;
+  width: 70px;
+  position: absolute;
+  top: 43%;
+  left: 45%;
+  transform: rotate(45deg);
+  animation: beat 2s infinite;
+}
+
+.heart-1, .heart-2{
+background-color: red;
+height: 40px;
+width: 70px;
+position: relative;
+bottom: 38px;
+border-radius: 70px 70px 0px 0px;
+}
+
+.heart-1{
+  bottom: 38px;
+}
+
+.heart-2{
+  bottom: 25px;
+  right: 52px;
+  transform: rotate(-90deg);
+}
+
+@keyframes beat{
+50%{
+  transform: rotate(45deg) scale(1.5);
+}
+}
+
+</style>
+<head>
+
+</head>
+<body>
+    <div class="heart">
+        <div class="heart-1"></div>
+        <div class="heart-2"></div>
+    </div>
+</body>
+</html>
