@@ -1,8 +1,35 @@
 @font-face {
-    font-family: "";
-    src: url();
+    font-family: "Titillium_Web";
+    src: url(Titillium_Web/TitilliumWeb-Light.ttf);
+}
+
+html * {
+    font-size: 10px;
+    
+    font-family: "Titillium_Web", "TitilliumWeb-Light", serif;
 }
 
 p {
-    font-family: "Aboreto", "Aboreto", serif;
+    font-size: 0.625rem;
+    line-height: 1.5px;
+    white-space: pre-wrap;
+}
+
+h1 {
+    font-size: 1.875rem;
+    text-transform: uppercase;
+    text-shadow: 3px 3px gray;
+}
+    
+h2 {
+    font-size: 1.125rem;
+}
+
+h3 {
+    font-size: 0.875rem;
+}
+
+h1, h2, h3 {
+    text-align: center;
+
 }
