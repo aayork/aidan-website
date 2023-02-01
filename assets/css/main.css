@@ -44,7 +44,7 @@ svg,img { max-width: 100%; height: auto; }
 .ds-social{ list-style: none; display: flex; align-items: center; flex-wrap: wrap; }
 .ds-social li{ margin-left: 12px; }
 .ds-social li:first-child{ margin-left: 0; }
-.ds-social li a{ border-radius: 100%; color: #FFF; width: 24px; height: 24px; background-color: #ade7f4; display:flex; justify-content: center; align-items: center; text-align: center; font-size: 16px; }
+.ds-social li a{ border-radius: 100%; color: #FFF; width: 24px; height: 24px; background-color: #5fb4c7; display:flex; justify-content: center; align-items: center; text-align: center; font-size: 16px; }
 .ds-social li a:hover{ background-color: #000; color: #FFF; }
 /*-----------------------------------------------------------------
   2. >>> Banner Style
@@ -61,11 +61,11 @@ svg,img { max-width: 100%; height: auto; }
   3. >>> About Style
 ----------------------------------------------------------------*/
 .ds-about-section{ padding-top: 60px; padding-bottom: 120px; }
-.ds-heading{ display: inline-block; font-weight: 700; color: #000; text-transform: uppercase; letter-spacing: 1px; font-size: 16px; border-bottom: 3px solid #ade7f4; padding-bottom: 7px; margin-bottom: 23px; }
+.ds-heading{ display: inline-block; font-weight: 700; color: #000; text-transform: uppercase; letter-spacing: 1px; font-size: 16px; border-bottom: 3px solid #5fb4c7; padding-bottom: 7px; margin-bottom: 23px; }
 .ds-about-section p{ color: #373737; font-size: 24px; line-height: 40px; font-weight: 300; margin-bottom: 60px; }
 
-.ds-button{ display: inline-block; text-transform: uppercase;font-size: 12px;line-height: 13px;font-weight: 600;letter-spacing: 3px; color:#ade7f4; padding:17px 30px;  border: 2px solid #ade7f4;border-radius: 60px; }
-.ds-button:hover{ background-color:#ade7f4 ; color: #FFF; }
+.ds-button{ display: inline-block; text-transform: uppercase;font-size: 12px;line-height: 13px;font-weight: 600;letter-spacing: 3px; color:#5fb4c7; padding:17px 30px;  border: 2px solid #5fb4c7;border-radius: 60px; }
+.ds-button:hover{ background-color:#105b6b ; color: #FFF; }
 .ds-arrow-button i{ display: inline-block; vertical-align: middle; }
 /*-----------------------------------------------------------------
   4. >>> Skills Style
