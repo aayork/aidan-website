@@ -4,5 +4,5 @@ let output=document.querySelector('#alsoRan');
 // output.innerHTML = candidateNames[0] + "<img src = pix/" + candidatePix[0] + ">";
 
 for (var i = 0; i < candidateNames.length; i++) {
-    output.innerHTML += "<div>" + candidateNames[i] + "<br> <li> <img src = pix/" + candidatePix[i] + "></li></br></div>";
+    output.innerHTML += "<div class='smalldiv'>" + candidateNames[i] + "<br>  <img src = pix/" + candidatePix[i] + "></div>";
 }
