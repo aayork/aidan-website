@@ -58,6 +58,14 @@ let arrayThreePix = [
   "webb.jpg",
 ];
 
+let output = document.querySelector("#alsoRan");
+let slideshowOnePlus = document.querySelector("#slideshowOnePlus");
+let slideshowOneMinus = document.querySelector("#slideshowOneMinus");
+let slideshowTwoPlus = document.querySelector("#slideshowTwoPlus");
+let slideshowTwoMinus = document.querySelector("#slideshowTwoMinus");
+let slideshowThreePlus = document.querySelector("#slideshowThreePlus");
+let slideshowThreeMinus = document.querySelector("#slideshowThreeMinus");
+
 let i = 0;
 function canShowOne(plusMinus) {
   output.innerHTML =
