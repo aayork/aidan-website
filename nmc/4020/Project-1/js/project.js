@@ -57,3 +57,20 @@ let arrayThreePix = [
   "walker.jpg",
   "webb.jpg",
 ];
+
+let i = 0;
+function canShow(plusMinus) {
+  output.innerHTML =
+    "<div class='cand'>" +
+    candidateNames[i] +
+    "<br>  <img src = pix/" +
+    candidatePix[i] +
+    "></div>";
+  i += plusMinus;
+  if (i == candidateNames.length) {
+    i = 0;
+  }
+  if (i < 0) {
+    i = candidateNames.length - 1;
+  }
+}
