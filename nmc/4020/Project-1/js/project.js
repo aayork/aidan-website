@@ -78,32 +78,32 @@ function canShowOne(plusMinus) {
 function canShowTwo(plusMinus) {
   output.innerHTML =
     "<div class='cand'>" +
-    arrayOne[i] +
+    arrayTwo[i] +
     "<br>  <img src = pix/" +
-    arrayOnePix[i] +
+    arrayTwoPix[i] +
     "></div>";
   i += plusMinus;
-  if (i == arrayOne.length) {
+  if (i == arrayTwo.length) {
     i = 0;
   }
   if (i < 0) {
-    i = arrayOne.length - 1;
+    i = arrayTwo.length - 1;
   }
 }
 
 function canShowThree(plusMinus) {
   output.innerHTML =
     "<div class='cand'>" +
-    arrayOne[i] +
+    arrayThree[i] +
     "<br>  <img src = pix/" +
-    arrayOnePix[i] +
+    arrayThreePix[i] +
     "></div>";
   i += plusMinus;
-  if (i == arrayOne.length) {
+  if (i == arrayThree.length) {
     i = 0;
   }
   if (i < 0) {
-    i = arrayOne.length - 1;
+    i = arrayThree.length - 1;
   }
 }
 
