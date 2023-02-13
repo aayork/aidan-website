@@ -57,7 +57,7 @@ for (var i = 0; i < candidateNames.length; i++) {
     candidatePix[i] +
     "></div>";
 }
-let i = 0;
+i = 0;
 function canShow(plusMinus) {
   output.innerHTML =
     "<div class='cand'>" +
