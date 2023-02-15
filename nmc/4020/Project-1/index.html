@@ -5,15 +5,47 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-start;
+      align-items: center;
+      justify-content: space-around;
+    }
+    .alsoRan {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+    }
+    .plusbuttons {
+      display: flex;
+      flex-wrap: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+    .minusbuttons {
+      display: flex;
+      flex-wrap: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+    .names {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: center;
+      justify-content: space-around;
     }
   </style>
   <body>
-    <button id="slideshowOnePlus">Slideshow One +</button>
-    <button id="slideshowOneMinus">Slideshow One -</button>
-    <button id="slideshowTwoPlus">Slideshow Two +</button>
-    <button id="slideshowTwoMinus">Slideshow Two -</button>
-    <button id="slideshowThreePlus">Slideshow Three +</button>
-    <button id="slideshowThreeMinus">Slideshow Three -</button>
+    <div class="plusbuttons">
+      <button id="slideshowOnePlus">Slideshow One +</button>
+      <button id="slideshowTwoPlus">Slideshow Two +</button>
+      <button id="slideshowThreePlus">Slideshow Three +</button>
+    </div>
+    <div class="minusbuttons">
+      <button id="slideshowOneMinus">Slideshow One -</button>
+      <button id="slideshowTwoMinus">Slideshow Two -</button>
+      <button id="slideshowThreeMinus">Slideshow Three -</button>
+    </div>
     <div id="alsoRan"></div>
   </body>
 </html>

@@ -67,19 +67,18 @@ let slideshowThreePlus = document.querySelector("#slideshowThreePlus");
 let slideshowThreeMinus = document.querySelector("#slideshowThreeMinus");
 
 output.innerHTML +=
-  "<div class='cand'>" +
-  arrayOne[0] +
-  "<br>  <img src = pix/" +
+  "<div class='cand'><br>  <img src = pix/" +
   arrayOnePix[0] +
-  ">" +
-  arrayTwo[0] +
-  "<img src = pix/" +
+  "><img src = pix/" +
   arrayTwoPix[0] +
-  ">" +
-  arrayThree[0] +
-  "<img src = pix/" +
+  "><img src = pix/" +
   arrayThreePix[0] +
-  "></div>";
+  "></div>" +
+  "<div class='names'>" +
+  arrayOne[0] +
+  arrayTwo[0] +
+  arrayThree[0] +
+  "</div>";
 
 var i = 0;
 var j = 0;
@@ -89,33 +88,32 @@ function canShow(plusMinusOne, plusMinusTwo, plusMinusThree) {
   i += plusMinusOne;
   j += plusMinusTwo;
   k += plusMinusThree;
-  output.innerHTML +=
-    "<div class='cand'>" +
-    arrayOne[i] +
-    "<br>  <img src = pix/" +
+  output.innerHTML =
+    "<div class='cand'><br>  <img src = pix/" +
     arrayOnePix[i] +
-    ">" +
-    arrayTwo[j] +
-    "<img src = pix/" +
+    "><img src = pix/" +
     arrayTwoPix[j] +
-    ">" +
-    arrayThree[k] +
-    "<img src = pix/" +
+    "><img src = pix/" +
     arrayThreePix[k] +
-    "></div>";
-  if (i == arrayOne.length) {
+    "></div>" +
+    "<div class='names'>" +
+    arrayOne[i] +
+    arrayTwo[j] +
+    arrayThree[k] +
+    "</div>";
+  if (i == arrayOne.length - 1) {
     i = 0;
   }
   if (i < 0) {
     i = arrayOne.length - 1;
   }
-  if (j == arrayTwo.length) {
+  if (j == arrayTwo.length - 1) {
     j = 0;
   }
   if (j < 0) {
     j = arrayTwo.length - 1;
   }
-  if (k == arrayThree.length) {
+  if (k == arrayThree.length - 1) {
     k = 0;
   }
   if (k < 0) {
