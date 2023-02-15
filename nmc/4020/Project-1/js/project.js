@@ -68,32 +68,26 @@ let slideshowTwoMinus = document.querySelector("#slideshowTwoMinus");
 let slideshowThreePlus = document.querySelector("#slideshowThreePlus");
 let slideshowThreeMinus = document.querySelector("#slideshowThreeMinus");
 
-for (var i = 0; i < arrayOne.length; i++) {
-  output1.innerHTML +=
-    "<div class='smalldiv'>" +
-    arrayOne[i] +
-    "<br>  <img src = pix/" +
-    arrayOnePix[i] +
-    "></div>";
-}
+output1.innerHTML +=
+  "<div class='smalldiv'>" +
+  arrayOne[0] +
+  "<br>  <img src = pix/" +
+  arrayOnePix[0] +
+  "></div>";
 
-for (var i = 0; i < arrayTwo.length; i++) {
-  output1.innerHTML +=
-    "<div class='smalldiv'>" +
-    arrayTwo[i] +
-    "<br>  <img src = pix/" +
-    arrayTwoPix[i] +
-    "></div>";
-}
+output2.innerHTML +=
+  "<div class='smalldiv'>" +
+  arrayTwo[0] +
+  "<br>  <img src = pix/" +
+  arrayTwoPix[0] +
+  "></div>";
 
-for (var i = 0; i < arrayThree.length; i++) {
-  output1.innerHTML +=
-    "<div class='smalldiv'>" +
-    arrayThree[i] +
-    "<br>  <img src = pix/" +
-    arrayThreePix[i] +
-    "></div>";
-}
+output3.innerHTML +=
+  "<div class='smalldiv'>" +
+  arrayThree[0] +
+  "<br>  <img src = pix/" +
+  arrayThreePix[0] +
+  "></div>";
 
 i = 0;
 function canShowOne(plusMinus) {
