@@ -58,7 +58,9 @@ let arrayThreePix = [
   "webb.jpg",
 ];
 
-let output = document.querySelector("#alsoRan");
+let output1 = document.querySelector("#alsoRan1");
+let output2 = document.querySelector("#alsoRan2");
+let output3 = document.querySelector("#alsoRan3");
 let slideshowOnePlus = document.querySelector("#slideshowOnePlus");
 let slideshowOneMinus = document.querySelector("#slideshowOneMinus");
 let slideshowTwoPlus = document.querySelector("#slideshowTwoPlus");
@@ -66,9 +68,36 @@ let slideshowTwoMinus = document.querySelector("#slideshowTwoMinus");
 let slideshowThreePlus = document.querySelector("#slideshowThreePlus");
 let slideshowThreeMinus = document.querySelector("#slideshowThreeMinus");
 
-let i = 0;
+for (var i = 0; i < arrayOne.length; i++) {
+  output1.innerHTML +=
+    "<div class='smalldiv'>" +
+    arrayOne[i] +
+    "<br>  <img src = pix/" +
+    arrayOnePix[i] +
+    "></div>";
+}
+
+for (var i = 0; i < arrayTwo.length; i++) {
+  output1.innerHTML +=
+    "<div class='smalldiv'>" +
+    arrayTwo[i] +
+    "<br>  <img src = pix/" +
+    arrayTwoPix[i] +
+    "></div>";
+}
+
+for (var i = 0; i < arrayThree.length; i++) {
+  output1.innerHTML +=
+    "<div class='smalldiv'>" +
+    arrayThree[i] +
+    "<br>  <img src = pix/" +
+    arrayThreePix[i] +
+    "></div>";
+}
+
+i = 0;
 function canShowOne(plusMinus) {
-  output.innerHTML =
+  output1.innerHTML =
     "<div class='cand'>" +
     arrayOne[i] +
     "<br>  <img src = pix/" +
@@ -84,7 +113,7 @@ function canShowOne(plusMinus) {
 }
 
 function canShowTwo(plusMinus) {
-  output.innerHTML =
+  output2.innerHTML =
     "<div class='cand'>" +
     arrayTwo[i] +
     "<br>  <img src = pix/" +
@@ -100,7 +129,7 @@ function canShowTwo(plusMinus) {
 }
 
 function canShowThree(plusMinus) {
-  output.innerHTML =
+  output3.innerHTML =
     "<div class='cand'>" +
     arrayThree[i] +
     "<br>  <img src = pix/" +
