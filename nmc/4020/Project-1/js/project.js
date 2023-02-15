@@ -59,8 +59,6 @@ let arrayThreePix = [
 ];
 
 let output = document.querySelector("#alsoRan");
-let output2 = document.querySelector("#alsoRan2");
-let output3 = document.querySelector("#alsoRan3");
 let slideshowOnePlus = document.querySelector("#slideshowOnePlus");
 let slideshowOneMinus = document.querySelector("#slideshowOneMinus");
 let slideshowTwoPlus = document.querySelector("#slideshowTwoPlus");
@@ -83,11 +81,14 @@ output.innerHTML +=
   arrayThreePix[0] +
   "></div>";
 
-i = 0;
-j = 0;
-k = 0;
+var i = 0;
+var j = 0;
+var k = 0;
 
 function canShow(plusMinusOne, plusMinusTwo, plusMinusThree) {
+  i += plusMinusOne;
+  j += plusMinusTwo;
+  k += plusMinusThree;
   output.innerHTML +=
     "<div class='cand'>" +
     arrayOne[i] +
@@ -102,9 +103,6 @@ function canShow(plusMinusOne, plusMinusTwo, plusMinusThree) {
     "<img src = pix/" +
     arrayThreePix[k] +
     "></div>";
-  i += plusMinusOne;
-  j += plusMinusTwo;
-  k += plusMinusThree;
   if (i == arrayOne.length) {
     i = 0;
   }
