@@ -94,6 +94,31 @@ function canShow(plusMinusOne, plusMinusTwo, plusMinusThree) {
   i += plusMinusOne;
   j += plusMinusTwo;
   k += plusMinusThree;
+
+  if (i == arrayOne.length - 1) {
+    i = 0;
+  }
+
+  if (i < 0) {
+    i = arrayOne.length - 1;
+  }
+
+  if (j == arrayTwo.length - 1) {
+    j = 0;
+  }
+
+  if (j < 0) {
+    j = arrayTwo.length - 1;
+  }
+
+  if (k == arrayThree.length - 1) {
+    k = 0;
+  }
+
+  if (k < 0) {
+    k = arrayThree.length - 1;
+  }
+
   output.innerHTML =
     "<div class='cand'><br>  <img class='pic' src = pix/" +
     arrayOnePix[i] +
@@ -113,24 +138,6 @@ function canShow(plusMinusOne, plusMinusTwo, plusMinusThree) {
     arrayThree[k] +
     "</div>" +
     "</div>";
-  if (i == arrayOne.length - 1) {
-    i = 0;
-  }
-  if (i < 0) {
-    i = arrayOne.length - 1;
-  }
-  if (j == arrayTwo.length - 1) {
-    j = 0;
-  }
-  if (j < 0) {
-    j = arrayTwo.length - 1;
-  }
-  if (k == arrayThree.length - 1) {
-    k = 0;
-  }
-  if (k < 0) {
-    k = arrayThree.length - 1;
-  }
 }
 
 slideshowOnePlus.onclick = function () {
