@@ -87,7 +87,7 @@ i = 0;
 j = 0;
 k = 0;
 
-function canShowOne(plusMinusOne, plusMinusTwo, plusMinusThree) {
+function canShow(plusMinusOne, plusMinusTwo, plusMinusThree) {
   output.innerHTML +=
     "<div class='cand'>" +
     arrayOne[i] +
@@ -111,23 +111,35 @@ function canShowOne(plusMinusOne, plusMinusTwo, plusMinusThree) {
   if (i < 0) {
     i = arrayOne.length - 1;
   }
+  if (j == arrayTwo.length) {
+    j = 0;
+  }
+  if (j < 0) {
+    j = arrayTwo.length - 1;
+  }
+  if (k == arrayThree.length) {
+    k = 0;
+  }
+  if (k < 0) {
+    k = arrayThree.length - 1;
+  }
 }
 
 slideshowOnePlus.onclick = function () {
-  canShowOne(1, 0, 0);
+  canShow(1, 0, 0);
 };
 slideshowOneMinus.onclick = function () {
-  canShowOne(-1, 0, 0);
+  canShow(-1, 0, 0);
 };
 slideshowTwoPlus.onclick = function () {
-  canShowTwo(0, 1, 0);
+  canShow(0, 1, 0);
 };
 slideshowTwoMinus.onclick = function () {
-  canShowTwo(0, -1, 0);
+  canShow(0, -1, 0);
 };
 slideshowThreePlus.onclick = function () {
-  canShowThree(0, 0, 1);
+  canShow(0, 0, 1);
 };
 slideshowThreeMinus.onclick = function () {
-  canShowThree(0, 0, -1);
+  canShow(0, 0, -1);
 };
