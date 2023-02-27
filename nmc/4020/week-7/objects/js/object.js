@@ -46,6 +46,6 @@ let nameArray = [
 ];
 
 function quote() {
-  var sName;
-  sName = document.querySelector("#aname").innerHTML;
+  let sName = document.querySelector("#aname").value;
+  document.querySelector("#aboutme").innerHTML = classObject[sName];
 }
