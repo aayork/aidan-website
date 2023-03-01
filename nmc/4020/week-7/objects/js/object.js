@@ -57,7 +57,7 @@ function quote() {
   if (classObject.hasOwnProperty(sName) == true) {
     document.querySelector("#aboutme").innerHTML = classObject[sName];
     document.querySelector("#image").innerHTML =
-      "<img src='pix/" + classObject[sName] + ".jpg'>";
+      "<img src='pix/" + sName + ".jpg'>";
   } else {
     document.querySelector("#aboutme").innerHTML = "Not a valid name";
   }
