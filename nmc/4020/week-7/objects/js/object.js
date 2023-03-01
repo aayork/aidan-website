@@ -45,7 +45,20 @@ let nameArray = [
   "Tyler",
 ];
 
+let nameList = document.querySelector("#aname");
+
+for (i = 0; i < nameArray.length; i++) {
+  nameList.innerHTML +=
+    "<option value=" + nameArray[i] + ">" + nameArray[i] + "</option>";
+}
+
 function quote() {
   let sName = document.querySelector("#aname").value;
-  document.querySelector("#aboutme").innerHTML = classObject[sName];
+  if (classObject.hasOwnProperty(sName) == true) {
+    document.querySelector("#aboutme").innerHTML = classObject[sName];
+    document.querySelector("#image").innerHTML =
+      "<img src='pix/" + classObject[sName] + ".jpg'>";
+  } else {
+    document.querySelector("#aboutme").innerHTML = "Not a valid name";
+  }
 }
