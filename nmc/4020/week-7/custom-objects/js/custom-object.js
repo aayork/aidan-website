@@ -16,6 +16,6 @@ let carArray = [
 
 function quote(car) {
   document.querySelector("#aboutme").innerHTML = classObject[car];
-  document.querySelector("#image").innerHTML =
-    "<img src='pix/" + car + ".jpg'>";
+  // document.querySelector("#image").innerHTML =
+  //  "<img src='pix/" + car + ".jpg'>";
 }
