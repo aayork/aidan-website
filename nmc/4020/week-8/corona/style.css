@@ -1,0 +1,21 @@
+#articles {
+  display: flex;
+  flex-direction: column;
+}
+
+.image {
+  width: 300px;
+  margin: 10px 10px 10px 10px;
+}
+
+.one {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 10px 10px 10px;
+}
+
+.two {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 10px 10px 10px;
+}
