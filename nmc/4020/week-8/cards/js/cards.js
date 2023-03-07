@@ -118,8 +118,8 @@ function shuffle() {
     if (cards.length > 0) {
       let outcome = Math.floor(Math.random() * cards.length);
       deck.innerHTML += "<img src=cards/" + cards[outcome] + ">";
-      cards.splice(outcome, 1);
       discards.splice(0, 0, cards[outcome]);
+      cards.splice(outcome, 1);
       console.log(discards[0]);
     }
   }
