@@ -53,6 +53,61 @@ var cards = [
   "QS.jpg",
 ];
 
+var cards2 = [
+  "10C.jpg",
+  "10D.jpg",
+  "10H.jpg",
+  "10S.jpg",
+  "2C.jpg",
+  "2D.jpg",
+  "2H.jpg",
+  "2S.jpg",
+  "3C.jpg",
+  "3D.jpg",
+  "3H.jpg",
+  "3S.jpg",
+  "4C.jpg",
+  "4D.jpg",
+  "4H.jpg",
+  "4S.jpg",
+  "5C.jpg",
+  "5D.jpg",
+  "5H.jpg",
+  "5S.jpg",
+  "6C.jpg",
+  "6D.jpg",
+  "6H.jpg",
+  "6S.jpg",
+  "7C.jpg",
+  "7D.jpg",
+  "7H.jpg",
+  "7S.jpg",
+  "8C.jpg",
+  "8D.jpg",
+  "8H.jpg",
+  "8S.jpg",
+  "9C.jpg",
+  "9D.jpg",
+  "9H.jpg",
+  "9S.jpg",
+  "AC.jpg",
+  "AD.jpg",
+  "AH.jpg",
+  "AS.jpg",
+  "JC.jpg",
+  "JD.jpg",
+  "JH.jpg",
+  "JS.jpg",
+  "KC.jpg",
+  "KD.jpg",
+  "KH.jpg",
+  "KS.jpg",
+  "QC.jpg",
+  "QD.jpg",
+  "QH.jpg",
+  "QS.jpg",
+];
+
 var cardsBack = [
   "10C.jpg",
   "10D.jpg",
@@ -109,6 +164,7 @@ var cardsBack = [
 ];
 
 var discards = [];
+var discards2 = [];
 
 var deck = document.querySelector("#deck");
 var deck2 = document.querySelector("#deck2");
@@ -135,11 +191,11 @@ function addBack() {
 function shuffleTwo() {
   deck2.innerHTML = "";
   for (i = 0; i < 5; i++) {
-    if (cards.length > 0) {
-      let outcome = Math.floor(Math.random() * cards.length);
-      deck2.innerHTML += "<img src=cards/" + cards[outcome] + ">";
-      discards.splice(0, 0, cards[outcome]);
-      cards.splice(outcome, 1);
+    if (cards2.length > 0) {
+      let outcome = Math.floor(Math.random() * cards2.length);
+      deck2.innerHTML += "<img src=cards/" + cards2[outcome] + ">";
+      discards2.splice(0, 0, cards[outcome]);
+      cards2.splice(outcome, 1);
       console.log(discards[0]);
     }
   }
@@ -147,12 +203,16 @@ function shuffleTwo() {
 
 function addBackTwo() {
   if (discards.length > 0) {
-    cards.splice(1, 0, discards[0]);
+    cards2.splice(1, 0, discards[0]);
   }
 }
 
 function reset() {
   cards = cardsBack;
+}
+
+function resetTwo() {
+  cards2 = cardsBack;
 }
 
 $(function () {
