@@ -111,8 +111,9 @@ var cardsBack = [
 var discards = [];
 
 var deck = document.querySelector("#deck");
+var deck2 = document.querySelector("#deck2");
 
-function shuffle(deck) {
+function shuffle() {
   deck.innerHTML = "";
   for (i = 0; i < 5; i++) {
     if (cards.length > 0) {
@@ -126,6 +127,25 @@ function shuffle(deck) {
 }
 
 function addBack() {
+  if (discards.length > 0) {
+    cards.splice(1, 0, discards[0]);
+  }
+}
+
+function shuffleTwo() {
+  deck2.innerHTML = "";
+  for (i = 0; i < 5; i++) {
+    if (cards.length > 0) {
+      let outcome = Math.floor(Math.random() * cards.length);
+      deck2.innerHTML += "<img src=cards/" + cards[outcome] + ">";
+      discards.splice(0, 0, cards[outcome]);
+      cards.splice(outcome, 1);
+      console.log(discards[0]);
+    }
+  }
+}
+
+function addBackTwo() {
   if (discards.length > 0) {
     cards.splice(1, 0, discards[0]);
   }
