@@ -81,4 +81,14 @@ var asteroid = {
 };
 
 document.querySelector("#asteroid").innerHTML =
-  asteroid.is_potentially_hazardous_asteroid;
+  "<p>The asteroid named <a href=" +
+  asteroid.links.self +
+  ">" +
+  asteroid.name +
+  "</a> is between " +
+  asteroid.estimated_diameter.miles.estimated_diameter_min +
+  " and " +
+  asteroid.estimated_diameter.miles.estimated_diameter_max +
+  " miles wide, and will miss striking Earth by approximately " +
+  asteroid.close_approach_data[0].miss_distance.miles +
+  " miles.</p>";
