@@ -58,8 +58,9 @@ var deck = document.querySelector("#deck");
 function shuffle() {
   deck.innerHTML = "";
   for (i = 0; i < 5; i++) {
-    let outcome = Math.floor(Math.random() * 52);
+    let outcome = Math.floor(Math.random() * cards.length);
     deck.innerHTML += "<img src=cards/" + cards[outcome] + ">";
+    cards.splice(outcome, 1);
   }
 }
 
