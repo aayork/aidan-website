@@ -112,7 +112,7 @@ var discards = [];
 
 var deck = document.querySelector("#deck");
 
-function shuffle() {
+function shuffle(deck) {
   deck.innerHTML = "";
   for (i = 0; i < 5; i++) {
     if (cards.length > 0) {
