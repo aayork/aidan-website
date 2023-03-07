@@ -115,15 +115,21 @@ var deck = document.querySelector("#deck");
 function shuffle() {
   deck.innerHTML = "";
   for (i = 0; i < 5; i++) {
-    let outcome = Math.floor(Math.random() * cards.length);
-    deck.innerHTML += "<img src=cards/" + cards[outcome] + ">";
-    cards.splice(outcome, 1);
-    discards.splice(1, 0, outcome);
-    console.log(discards[0]);
+    if (cards.length > 0) {
+      let outcome = Math.floor(Math.random() * cards.length);
+      deck.innerHTML += "<img src=cards/" + cards[outcome] + ">";
+      cards.splice(outcome, 1);
+      discards.splice(0, 0, cards[outcome]);
+      console.log(discards[0]);
+    }
   }
 }
 
-function addBack() {}
+function addBack() {
+  if (discards.length > 0) {
+    cards.splice(1, 0, discards[0]);
+  }
+}
 
 function reset() {
   cards = cardsBack;
