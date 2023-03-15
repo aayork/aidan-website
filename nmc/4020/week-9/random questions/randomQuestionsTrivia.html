@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>trivia</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+      div {
+        display: flex;
+        width: fit-content;
+        margin: auto;
+      }
+
+      button {
+        display: flex;
+        width: fit-content;
+        margin: auto;
+        color: white;
+        border-radius: 5%;
+        border-color: white;
+        border-style: ridge;
+        background-color: blue;
+        padding: 1%;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="qa()">New Question</button>
+    <br />
+    <div id="category"></div>
+    <br />
+    <div id="question"></div>
+    <br />
+    <button onclick="showAnswer()">Show Answer</button><br />
+    <div id="answer"></div>
+  </body>
+</html>
+<script src="js/triviaQuestions.js"></script>
