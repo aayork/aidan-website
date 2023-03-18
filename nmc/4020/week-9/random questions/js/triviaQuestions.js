@@ -1,16 +1,22 @@
-var question = document.querySelector("#question");
-var answer = document.querySelector("#answer");
-var category = document.querySelector("#category");
-var theAnswer = "";
+var divLoad = document.querySelector("#maindiv");
+var theAnswer = [];
 
 function qa() {
-  $.getJSON("https://jservice.io/api/random", function (data) {
-    question.innerHTML = data[0].question;
-    category.innerHTML = "Category: " + data[0].category.title;
-    theAnswer = data[0].answer;
+  divLoad.innerHTML = "";
+  $.getJSON("https://jservice.io/api/random?count=10", function (data) {
+    for (i = 0; i < 10; i++) {
+      theAnswer.push(data[i].answer);
+      divLoad.innerHTML += "<h3>Category: " + data[i].category.title + "</h3>";
+      divLoad.innerHTML += " Question: " + data[i].question;
+      divLoad.innerHTML += "<div id='answer" + i + "'></div>";
+      divLoad.innerHTML +=
+        "<button onclick='showAnswer(" + i + ")'>Show Answer</button>";
+    }
   });
 }
 
-function showAnswer() {
-  answer.innerHTML = theAnswer;
+function showAnswer(b) {
+  let answer = "#answer" + b;
+  answer = document.querySelector(answer);
+  answer.innerHTML = "<b>The answer is " + theAnswer[b] + "</b>";
 }

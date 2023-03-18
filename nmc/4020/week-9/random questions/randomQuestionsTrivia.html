@@ -3,11 +3,22 @@
   <head>
     <title>trivia</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Nanum Gothic Coding"
+      rel="stylesheet"
+    />
     <style>
       div {
         display: flex;
         width: fit-content;
         margin: auto;
+        padding: 50px;
+        flex-direction: column;
+      }
+
+      body {
+        font-family: "Nanum Gothic Coding";
+        font-size: 22px;
       }
 
       button {
@@ -15,23 +26,22 @@
         width: fit-content;
         margin: auto;
         color: white;
-        border-radius: 5%;
+        border-radius: 6px;
         border-color: white;
-        border-style: ridge;
-        background-color: blue;
-        padding: 1%;
+        border-style: none;
+        background: linear-gradient(
+          90deg,
+          rgba(2, 0, 36, 1) 0%,
+          rgba(9, 9, 121, 1) 35%,
+          rgba(0, 212, 255, 1) 100%
+        );
+        padding: 8px;
       }
     </style>
   </head>
   <body>
-    <button onclick="qa()">New Question</button>
-    <br />
-    <div id="category"></div>
-    <br />
-    <div id="question"></div>
-    <br />
-    <button onclick="showAnswer()">Show Answer</button><br />
-    <div id="answer"></div>
+    <button onclick="qa()">Load New Question Set</button>
+    <div id="maindiv"></div>
   </body>
 </html>
 <script src="js/triviaQuestions.js"></script>
