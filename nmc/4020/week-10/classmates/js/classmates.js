@@ -11,7 +11,9 @@ $.getJSON(
         data[i].last_name +
         "</h3><img src='https://" +
         data[i].domain +
-        "/images/me.jpg'></div>";
+        "/images/me.jpg'>" +
+        data[i].fact +
+        "</div>";
     }
   }
 );
