@@ -6,22 +6,112 @@
     <style>
       body {
         background-image: url("noise.png");
-        background-color: rgb(235, 235, 215);
+        background-color: rgb(246, 246, 233);
       }
 
       @font-face {
-        font-family: "pixeloid-font";
-        src: url(pixeloid-font/PixeloidMono-VGj6x.ttf);
+        font-family: "perfect_dos_vga_437";
+        src: url("perfect_dos_vga_437/Perfect DOS VGA 437 Win.ttf");
       }
 
       h1 {
         text-align: center;
         font-size: 30px;
-        font-family: "pixeloid-font", "PixeloidMono-VGj6x.ttf", serif;
+        font-family: "perfect_dos_vga_437", "Perfect DOS VGA 437 Win.ttf", serif;
+      }
+
+      #buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        border: 1px solid black;
+        border-radius: 5px;
+        height: 50%;
+        width: 10%;
+        margin: auto;
+      }
+
+      button {
+        margin: 0px;
+        padding: 10px;
+        background: none;
+        border: none;
+      }
+
+      .rotate {
+        animation: rotation 2s infinite linear;
+      }
+
+      @keyframes rotation {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(359deg);
+        }
+      }
+
+      #cd {
+        width: fit-content;
+        margin: auto;
+      }
+
+      #disc-cover {
+        width: 450px;
+        border-radius: 100%;
+        z-index: 2;
+        position: relative;
+        left: 200px;
+        top: 200px;
+      }
+
+      #player {
+        background-image: url(images/cd-player.png);
+        background-size: cover; /* or contain, depending on your preference */
+        background-repeat: no-repeat;
+        background-position: 50%;
+        background-size: 25%;
+        background-position-x: 630px;
+        height: 500px; /* adjust this value as needed */
+      }
+
+      #disc-cover {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 92%;
+        border-radius: 100%;
+        z-index: 2;
       }
     </style>
   </head>
   <body>
     <h1>Welcome</h1>
+    <div id="player">
+      <div id="cd" class="rotate">
+        <img src="images/cd.png" />
+        <img id="disc-cover" src="images/graduation.jpg" />
+      </div>
+    </div>
+    <br />
+    <div id="buttons">
+      <button style="border-right: 0.5px solid" id="previous-button">
+        <img style="width: 15px" src="images/previous-track.png" />
+      </button>
+      <button
+        style="border-right: 0.5px solid; border-left: 0.5px solid"
+        id="play-button"
+        onclick="player('bb.m4a')"
+      >
+        <img
+          style="padding-left: 5px; padding-right: 5px; width: 20px"
+          src="images/play-pause.png"
+        />
+      </button>
+      <button style="border-left: 0.5px solid" id="next-button">
+        <img style="width: 17px" src="images/next-track.png" />
+      </button>
+    </div>
   </body>
 </html>
