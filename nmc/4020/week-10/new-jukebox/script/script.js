@@ -1,33 +1,60 @@
 const songs = [
   {
-    name: "Song 1",
-    coverArt: "images/cover1.png",
-    audioSrc: "audio/song1.mp3",
+    name: "Grouplove - Tongue Tied",
+    coverArt: "images/Grouplove - Tongue Tied.jpg",
+    audioSrc: "songs/Grouplove - Tongue Tied.mp3",
   },
   {
-    name: "Song 2",
-    coverArt: "images/cover2.png",
-    audioSrc: "audio/song2.mp3",
+    name: "Train - Hey, Soul Sister",
+    coverArt: "images/Train - Hey, Soul Sister.jpg",
+    audioSrc: "songs/Train - Hey, Soul Sister.mp3",
   },
   {
-    name: "Song 3",
-    coverArt: "images/cover3.png",
-    audioSrc: "audio/song3.mp3",
+    name: "Vance Joy - Riptide",
+    coverArt: "images/Vance Joy - Riptide.jpg",
+    audioSrc: "songs/Vance Joy - Riptide.mp3",
   },
 ];
-const audio = new Audio();
+let audio = new Audio();
 let currentSongIndex = 0;
+
+// Shuffle the songs array
+for (let i = 0; i < songs.length; i++) {
+  let randomIndex = Math.floor(Math.random() * songs.length);
+  let temp = songs[i];
+  songs[i] = songs[randomIndex];
+  songs[randomIndex] = temp;
+}
+
+// Play the first song in the shuffled list
+updateSong();
+
+// Add event listener to the audio element to shuffle and play the next song
+audio.addEventListener("ended", () => {
+  currentSongIndex++;
+  if (currentSongIndex >= songs.length) {
+    // If all songs have been played, shuffle the list again
+    for (let i = 0; i < songs.length; i++) {
+      let randomIndex = Math.floor(Math.random() * songs.length);
+      let temp = songs[i];
+      songs[i] = songs[randomIndex];
+      songs[randomIndex] = temp;
+    }
+    currentSongIndex = 0;
+  }
+  updateSong();
+});
 
 // Play button
 document.getElementById("togglePlay").addEventListener("click", () => {
   if (audio.paused) {
     audio.play();
     document.getElementById("togglePlay").innerHTML =
-      '<img src="images/pause.png">';
+      "<img style='padding-left: 5px; padding-right: 5px; width: 20px' src='images/play-pause.png'/>";
   } else {
     audio.pause();
     document.getElementById("togglePlay").innerHTML =
-      '<img src="images/play.png">';
+      "<img style='padding-left: 5px; padding-right: 5px; width: 20px' src='images/play-pause.png'/>";
   }
 });
 
@@ -52,10 +79,13 @@ document.getElementById("next-button").addEventListener("click", () => {
 // Update the audio source and cover art
 function updateSong() {
   audio.src = songs[currentSongIndex].audioSrc;
-  document.getElementById("disk-image").src = songs[currentSongIndex].coverArt;
+  document.getElementById("disk-image").innerHTML =
+    "<img id='disc-cover' src='" +
+    songs[currentSongIndex].coverArt +
+    "'></div>";
   audio.play();
   document.getElementById("togglePlay").innerHTML =
-    '<img src="images/pause.png">';
-  document.getElementById("displayName").innerHTML =
+    "<img style='padding-left: 5px; padding-right: 5px; width: 20px' src='images/play-pause.png'/>";
+  document.getElementById("displaySong").innerHTML =
     songs[currentSongIndex].name;
 }

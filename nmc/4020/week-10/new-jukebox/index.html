@@ -3,165 +3,151 @@
   <head>
     <meta charset="utf-8" />
     <title>Aidan's Jukebox</title>
-    <script src="src/script.js" type="module"></script>
+    <script src="script/script.js" type="module"></script>
     <style>
       html {
-  background-image: url("noise.png");
-  background-color: rgb(246, 246, 233);
-  font-family: "perfect_dos_vga_437", "Perfect DOS VGA 437 Win.ttf", serif;
-}
+        background-image: url("noise.png");
+        background-color: rgb(246, 246, 233);
+        font-family: "perfect_dos_vga_437", "Perfect DOS VGA 437 Win.ttf", serif;
+      }
 
-body {
-  margin: 0;
-}
+      body {
+        margin: 0;
+      }
 
-@font-face {
-  font-family: "perfect_dos_vga_437";
-  src: url("perfect_dos_vga_437/Perfect DOS VGA 437 Win.ttf");
-}
+      @keyframes cursor {
+        0% {
+          background-color: white;
+        }
+        25% {
+          background-color: white;
+        }
+        50% {
+          background-color: rgb(0, 0, 0);
+        }
+        100% {
+          background-color: rgb(0, 0, 0);
+        }
+      }
 
-h1 {
-  text-align: center;
-  font-size: 30px;
-  font-family: "perfect_dos_vga_437", "Perfect DOS VGA 437 Win.ttf", serif;
-  color: white;
-}
+      .blinking-cursor {
+        width: 2px;
+        height: 25px;
+        background-color: white;
+        animation-name: cursor;
+        animation-duration: 1s;
+        margin-left: 4px;
+        margin-top: 10px;
+        animation-iteration-count: infinite;
+      }
 
-#buttons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  border: 1px solid black;
-  border-radius: 5px;
-  height: 50px;
-  width: 150px;
-  margin: auto;
-}
+      @font-face {
+        font-family: "perfect_dos_vga_437";
+        src: url("perfect_dos_vga_437/Perfect DOS VGA 437 Win.ttf");
+      }
 
-button {
-  margin: 0px;
-  padding: 10px;
-  background: none;
-  border: none;
-}
+      h1 {
+        text-align: center;
+        font-size: 30px;
+        font-family: "perfect_dos_vga_437", "Perfect DOS VGA 437 Win.ttf", serif;
+        color: white;
+      }
 
-.rotate {
-  animation: rotation 2s infinite linear;
-}
+      #buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        border: 1px solid black;
+        border-radius: 5px;
+        height: 50px;
+        width: 150px;
+        margin: auto;
+      }
 
-@keyframes rotation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(359deg);
-  }
-}
+      button {
+        margin: 0px;
+        padding: 10px;
+        background: none;
+        border: none;
+      }
 
-#cd {
-  width: fit-content;
-  margin: auto;
-  position: relative;
-  z-index: 2;
-}
+      .rotate {
+        animation: rotation 2s infinite linear;
+      }
 
-#disc-cover {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 92%;
-  border-radius: 100%;
-  z-index: 2;
-}
+      @keyframes rotation {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(359deg);
+        }
+      }
 
-#welcome {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: right;
-  align-items: center;
-}
+      #cd {
+        width: fit-content;
+        margin: auto;
+        position: relative;
+        z-index: 3;
+      }
 
-#search-input {
-  display: block;
-  margin: auto;
-}
+      #disc-cover {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 92%;
+        border-radius: 100%;
+        z-index: 2;
+      }
 
-#search-button {
-  display: block;
-  margin: 10px auto;
-}
+      #welcome {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: right;
+        align-items: center;
+      }
 
-#search-results {
-  text-align: center;
-  height: 300px;
-  width: 700px;
-  margin: auto;
-  overflow: scroll;
-  background-color: rgba(133, 133, 133, 0.5); /* Set opacity of the background color */
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+      #search-input {
+        display: block;
+        margin: auto;
+      }
 
-#oval {
-  background-color: #1DB954;
-  width: fit-content;
-  height: 30px;
-  padding: 5px;
-  padding-left: 25px;
-  margin: 2px;
-  margin-top: 10px;
-  border-radius: 50px;
-  text-align: center;
-  
-}
+      header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: black;
+        padding: 5px;
+        padding-left: 15px;
+      }
 
-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  background-color: black;
-  padding: 5px;
-}
-
-.play-button {
-  border: 1px solid black;
-  border-radius: 5px;
-}
-
+      #displaySong {
+        text-align: center;
+      }
     </style>
   </head>
-  
+
   <body>
     <header>
-      <div id="oval"><div id="displayName"></div></div>
       <div id="welcome">
         <h1>Aidan's Jukebox</h1>
-        <img id="imgUrl"></img>
+        <p class="blinking-cursor"></p>
       </div>
     </header>
 
-    <input type="text" id="search-input" placeholder="Search for a song">
-    <button style="border: 1px solid black;
-    border-radius: 17px;" id="search-button">Search</button>
-
-      <span id="avatar"></span>
-
-
     <div id="player">
-      <div id="search-results"></div>
       <div id="cd" class="rotate">
-        <img src="images/cd.png" />
+        <img style="z-index: 0" src="images/cd.png" />
         <div id="disk-image"></div>
+        <img id="disc-cover" />
       </div>
     </div>
     <br />
+    <div id="displaySong"></div>
+    <br />
 
-    <!--
     <div id="buttons">
       <button style="border-right: 0.5px solid" id="previous-button">
         <img style="width: 15px" src="images/previous-track.png" />
@@ -179,7 +165,5 @@ header {
         <img style="width: 17px" src="images/next-track.png" />
       </button>
     </div>
-  -->
-
   </body>
 </html>
