@@ -74,7 +74,7 @@ button {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
 }
 
@@ -96,21 +96,46 @@ button {
   overflow: scroll;
   background-color: rgba(133, 133, 133, 0.5); /* Set opacity of the background color */
   border-radius: 10px;
-  padding: 3px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
+#oval {
+  background-color: #1DB954;
+  width: fit-content;
+  height: 30px;
+  padding: 5px;
+  padding-left: 25px;
+  margin: 2px;
+  margin-top: 10px;
+  border-radius: 50px;
+  text-align: center;
+  
+}
+
+#header {
+  background-color: black;
+  width: 1000px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
 
     </style>
   </head>
+  
   <body>
-    <div id="welcome">
-    <h1>Welcome <span id="displayName"></span></h1>
-    <img id="imgUrl"></img>
-    </div>
+    <header>
+      <div id="oval"><div id="displayName"></div></div>
+      <div id="welcome">
+        <h1>Aidan's Jukebox</h1>
+        <img id="imgUrl"></img>
+      </div>
+    </header>
+    
 
     <input type="text" id="search-input" placeholder="Search for a song">
     <button id="search-button">Search</button>
@@ -132,7 +157,7 @@ button {
       </button>
       <button
         style="border-right: 0.5px solid; border-left: 0.5px solid"
-        id="play-button"
+        id="togglePlay"
       >
         <img
           style="padding-left: 5px; padding-right: 5px; width: 20px"
@@ -143,5 +168,6 @@ button {
         <img style="width: 17px" src="images/next-track.png" />
       </button>
     </div>
+
   </body>
 </html>

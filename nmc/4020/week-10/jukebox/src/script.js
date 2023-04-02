@@ -2,6 +2,7 @@ const clientId = "4cca50a69c3b431ba89cf09aba1e2422";
 const params = new URLSearchParams(window.location.search);
 const code = params.get("code");
 let accessToken;
+let audio = null;
 let currentSong = {};
 const searchInput = document.getElementById("search-input");
 const searchButton = document.getElementById("search-button");
@@ -91,16 +92,17 @@ async function fetchProfile(token) {
 }
 
 function populateUI(profile) {
+  document.getElementById("displayName").style.margin = "7px 5px 5px 15px";
   document.getElementById("displayName").innerText = profile.display_name;
   if (profile.images[0]) {
     const profileImage = new Image(200, 200);
     profileImage.src = profile.images[0].url;
-    profileImage.width = 60; // set the width of the image to 100px
-    profileImage.height = 60; // set the height of the image to 100px
-    profileImage.style.borderRadius = "25%"; // set the border radius to make it round
+    profileImage.width = 30; // set the width of the image to 100px
+    profileImage.height = 30; // set the height of the image to 100px
+    profileImage.style.borderRadius = "50%"; // set the border radius to make it round
     profileImage.style.position = "absolute";
-    profileImage.style.top = "5px";
-    profileImage.style.left = "5px";
+    profileImage.style.top = "15px";
+    profileImage.style.left = "15px";
     document.getElementById("avatar").appendChild(profileImage);
     document.getElementById("imgUrl").innerText = profile.images[0].url;
   }
@@ -121,19 +123,30 @@ async function search(accessToken) {
   data.tracks.items.forEach((item) => {
     const name = item.name;
     const artist = item.artists[0].name;
+    const trackId = item.id;
     const previewUrl = item.preview_url;
     updateCurrentSong(name, artist, item.album.images[0].url);
     const result = document.createElement("div");
     result.innerHTML = `
       <div>${name} - ${artist}</div>
-      <button class="play-button" data-preview-url="${previewUrl}">Play</button>
+      <button class="play-button" data-track-id="${trackId}">Play</button>
     `;
     searchResults.appendChild(result);
   });
   const playButtons = document.getElementsByClassName("play-button");
   Array.from(playButtons).forEach((button) => {
-    button.addEventListener("click", () => {
-      const previewUrl = button.getAttribute("data-preview-url");
+    button.addEventListener("click", async () => {
+      const trackId = button.getAttribute("data-track-id");
+      const trackResponse = await fetch(
+        `https://api.spotify.com/v1/tracks/${trackId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        }
+      );
+      const trackData = await trackResponse.json();
+      const previewUrl = trackData.preview_url;
       if (previewUrl) {
         playSong(previewUrl);
       }
@@ -150,6 +163,9 @@ function updateCurrentSong(name, artist, coverArtUrl) {
 }
 
 function playSong(previewUrl) {
-  const audio = new Audio(previewUrl);
+  if (audio) {
+    audio.pause();
+  }
+  audio = new Audio(previewUrl);
   audio.play();
 }
