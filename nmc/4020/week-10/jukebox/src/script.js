@@ -3,7 +3,6 @@ const params = new URLSearchParams(window.location.search);
 const code = params.get("code");
 let accessToken;
 let audio = null;
-let currentSong = {};
 const searchInput = document.getElementById("search-input");
 const searchButton = document.getElementById("search-button");
 const searchResults = document.getElementById("search-results");
@@ -101,8 +100,8 @@ function populateUI(profile) {
     profileImage.height = 30; // set the height of the image to 100px
     profileImage.style.borderRadius = "50%"; // set the border radius to make it round
     profileImage.style.position = "absolute";
-    profileImage.style.top = "15px";
-    profileImage.style.left = "15px";
+    profileImage.style.top = "20px";
+    profileImage.style.left = "12.5px";
     document.getElementById("avatar").appendChild(profileImage);
     document.getElementById("imgUrl").innerText = profile.images[0].url;
   }
@@ -124,11 +123,9 @@ async function search(accessToken) {
     const name = item.name;
     const artist = item.artists[0].name;
     const trackId = item.id;
-    const previewUrl = item.preview_url;
-    updateCurrentSong(name, artist, item.album.images[0].url);
     const result = document.createElement("div");
     result.innerHTML = `
-      <div>${name} - ${artist}</div>
+      <div style="margin: 10px;">${name} - ${artist}</div>
       <button class="play-button" data-track-id="${trackId}">Play</button>
     `;
     searchResults.appendChild(result);
@@ -152,14 +149,6 @@ async function search(accessToken) {
       }
     });
   });
-}
-
-function updateCurrentSong(name, artist, coverArtUrl) {
-  currentSong = {
-    name: name,
-    artist: artist,
-    coverArtUrl: coverArtUrl,
-  };
 }
 
 function playSong(previewUrl) {

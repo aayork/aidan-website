@@ -11,6 +11,10 @@
   font-family: "perfect_dos_vga_437", "Perfect DOS VGA 437 Win.ttf", serif;
 }
 
+body {
+  margin: 0;
+}
+
 @font-face {
   font-family: "perfect_dos_vga_437";
   src: url("perfect_dos_vga_437/Perfect DOS VGA 437 Win.ttf");
@@ -20,6 +24,7 @@ h1 {
   text-align: center;
   font-size: 30px;
   font-family: "perfect_dos_vga_437", "Perfect DOS VGA 437 Win.ttf", serif;
+  color: white;
 }
 
 #buttons {
@@ -115,14 +120,18 @@ button {
   
 }
 
-#header {
-  background-color: black;
-  width: 1000px;
-  height: 50px;
+header {
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: black;
+  padding: 5px;
 }
 
+.play-button {
+  border: 1px solid black;
+  border-radius: 5px;
+}
 
     </style>
   </head>
@@ -135,10 +144,10 @@ button {
         <img id="imgUrl"></img>
       </div>
     </header>
-    
 
     <input type="text" id="search-input" placeholder="Search for a song">
-    <button id="search-button">Search</button>
+    <button style="border: 1px solid black;
+    border-radius: 17px;" id="search-button">Search</button>
 
       <span id="avatar"></span>
 
@@ -151,6 +160,8 @@ button {
       </div>
     </div>
     <br />
+
+    <!--
     <div id="buttons">
       <button style="border-right: 0.5px solid" id="previous-button">
         <img style="width: 15px" src="images/previous-track.png" />
@@ -168,6 +179,7 @@ button {
         <img style="width: 17px" src="images/next-track.png" />
       </button>
     </div>
+  -->
 
   </body>
 </html>
