@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Aidan's Jukebox</title>
+    <script src="src/script.js" type="module"></script>
+    <style>
+      html {
+  background-image: url("noise.png");
+  background-color: rgb(246, 246, 233);
+  font-family: "perfect_dos_vga_437", "Perfect DOS VGA 437 Win.ttf", serif;
+}
+
+body {
+  margin: 0;
+}
+
+@font-face {
+  font-family: "perfect_dos_vga_437";
+  src: url("perfect_dos_vga_437/Perfect DOS VGA 437 Win.ttf");
+}
+
+h1 {
+  text-align: center;
+  font-size: 30px;
+  font-family: "perfect_dos_vga_437", "Perfect DOS VGA 437 Win.ttf", serif;
+  color: white;
+}
+
+#buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 50px;
+  width: 150px;
+  margin: auto;
+}
+
+button {
+  margin: 0px;
+  padding: 10px;
+  background: none;
+  border: none;
+}
+
+.rotate {
+  animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+#cd {
+  width: fit-content;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+}
+
+#disc-cover {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 92%;
+  border-radius: 100%;
+  z-index: 2;
+}
+
+#welcome {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: right;
+  align-items: center;
+}
+
+#search-input {
+  display: block;
+  margin: auto;
+}
+
+#search-button {
+  display: block;
+  margin: 10px auto;
+}
+
+#search-results {
+  text-align: center;
+  height: 300px;
+  width: 700px;
+  margin: auto;
+  overflow: scroll;
+  background-color: rgba(133, 133, 133, 0.5); /* Set opacity of the background color */
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#oval {
+  background-color: #1DB954;
+  width: fit-content;
+  height: 30px;
+  padding: 5px;
+  padding-left: 25px;
+  margin: 2px;
+  margin-top: 10px;
+  border-radius: 50px;
+  text-align: center;
+  
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: black;
+  padding: 5px;
+}
+
+.play-button {
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+    </style>
+  </head>
+  
+  <body>
+    <header>
+      <div id="oval"><div id="displayName"></div></div>
+      <div id="welcome">
+        <h1>Aidan's Jukebox</h1>
+        <img id="imgUrl"></img>
+      </div>
+    </header>
+
+    <input type="text" id="search-input" placeholder="Search for a song">
+    <button style="border: 1px solid black;
+    border-radius: 17px;" id="search-button">Search</button>
+
+      <span id="avatar"></span>
+
+
+    <div id="player">
+      <div id="search-results"></div>
+      <div id="cd" class="rotate">
+        <img src="images/cd.png" />
+        <div id="disk-image"></div>
+      </div>
+    </div>
+    <br />
+
+    <!--
+    <div id="buttons">
+      <button style="border-right: 0.5px solid" id="previous-button">
+        <img style="width: 15px" src="images/previous-track.png" />
+      </button>
+      <button
+        style="border-right: 0.5px solid; border-left: 0.5px solid"
+        id="togglePlay"
+      >
+        <img
+          style="padding-left: 5px; padding-right: 5px; width: 20px"
+          src="images/play-pause.png"
+        />
+      </button>
+      <button style="border-left: 0.5px solid" id="next-button">
+        <img style="width: 17px" src="images/next-track.png" />
+      </button>
+    </div>
+  -->
+
+  </body>
+</html>
