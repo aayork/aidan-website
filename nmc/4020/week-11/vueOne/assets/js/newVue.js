@@ -1,4 +1,4 @@
-var header = new VTTCue({
+var header = new Vue({
   el: "#header",
   data: {
     yourName: "Aidan",
@@ -8,5 +8,6 @@ var header = new VTTCue({
     link3: "About Me, OK??",
     link4: "Contact",
     link5: "my list",
+    avatar: "images/avatar.jpg",
   },
 });

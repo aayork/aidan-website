@@ -21,9 +21,7 @@
       <div class="top">
         <!-- Logo -->
         <div id="logo">
-          <span class="image avatar48"
-            ><img src="images/avatar.jpg" alt=""
-          /></span>
+          <span class="image avatar48"><img :src="avatar" alt="" /></span>
           <h1 id="title">{{yourName}}</h1>
           <p>{{description}}</p>
         </div>
@@ -33,22 +31,22 @@
           <ul>
             <li>
               <a href="#top" id="top-link"
-                ><span class="icon solid fa-home">Intro</span></a
+                ><span class="icon solid fa-home">{{linkOne}}</span></a
               >
             </li>
             <li>
               <a href="#portfolio" id="portfolio-link"
-                ><span class="icon solid fa-th">Portfolio</span></a
+                ><span class="icon solid fa-th">{{link2}}</span></a
               >
             </li>
             <li>
               <a href="#about" id="about-link"
-                ><span class="icon solid fa-user">About Me</span></a
+                ><span class="icon solid fa-user">{{link3}}</span></a
               >
             </li>
             <li>
               <a href="#contact" id="contact-link"
-                ><span class="icon solid fa-envelope">Contact</span></a
+                ><span class="icon solid fa-envelope">{{link4}}</span></a
               >
             </li>
           </ul>
@@ -258,6 +256,6 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
-    <script src="assests/js/newVue.js"></script>
+    <script src="assets/js/newVue.js"></script>
   </body>
 </html>
