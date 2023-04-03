@@ -14,6 +14,46 @@ const songs = [
     coverArt: "images/Vance Joy - Riptide.jpg",
     audioSrc: "songs/Vance Joy - Riptide.mp3",
   },
+  {
+    name: "Semisonic - Closing Time",
+    coverArt: "",
+    audioSrc: "songs/01 Closing Time.mp3",
+  },
+  {
+    name: "Avicii - Wake Me Up",
+    coverArt: "",
+    audioSrc: "songs/01 Wake Me Up.mp3",
+  },
+  {
+    name: "Drive By",
+    coverArt: "",
+    audioSrc: "songs/02 Drive By.mp3",
+  },
+  {
+    name: "Mumford & Sons - I Will Wait",
+    coverArt: "",
+    audioSrc: "songs/03 I Will Wait.mp3",
+  },
+  {
+    name: "She Will Be Loved",
+    coverArt: "",
+    audioSrc: "songs/04 She Will Be Loved.mp3",
+  },
+  {
+    name: "Little Talks",
+    coverArt: "",
+    audioSrc: "songs/06 Little Talks.mp3",
+  },
+  {
+    name: "Little Lion Man",
+    coverArt: "",
+    audioSrc: "songs/07 Little Lion Man.mp3",
+  },
+  {
+    name: "Coldplay - Viva la Vida",
+    coverArt: "",
+    audioSrc: "songs/07. Coldplay - Viva la Vida.mp3",
+  },
 ];
 let audio = new Audio();
 let currentSongIndex = 0;
