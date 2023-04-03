@@ -34,7 +34,7 @@ export async function redirectToAuthCodeFlow(clientId) {
   params.append("response_type", "code");
   params.append(
     "redirect_uri",
-    "https://aidanayork.com/nmc/4020/week-10/old-jukebox/callback"
+    "https://aidanayork.com/nmc/4020/week-10/old-jukebox/"
   );
   params.append("scope", "user-read-private user-read-email");
   params.append("code_challenge_method", "S256");
