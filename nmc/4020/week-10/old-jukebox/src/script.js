@@ -72,7 +72,7 @@ export async function getAccessToken(clientId, code) {
   params.append("code", code);
   params.append(
     "redirect_uri",
-    "https://aidanayork.com/nmc/4020/week-10/old-jukebox/callback"
+    "https://aidanayork.com/nmc/4020/week-10/old-jukebox/"
   );
   params.append("code_verifier", verifier);
 
