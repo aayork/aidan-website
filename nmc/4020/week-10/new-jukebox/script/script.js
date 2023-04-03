@@ -31,12 +31,12 @@ const songs = [
   },
   {
     name: "Mumford & Sons - I Will Wait",
-    coverArt: "images/Mumford And Sons - I Will Wait",
+    coverArt: "images/Mumford And Sons - I Will Wait.jpg",
     audioSrc: "songs/03 I Will Wait.mp3",
   },
   {
     name: "Maroon 5 - She Will Be Loved",
-    coverArt: "Maroon 5 - She Will Be Loved.jpg",
+    coverArt: "images/Maroon 5 - She Will Be Loved.jpg",
     audioSrc: "songs/04 She Will Be Loved.mp3",
   },
   {
