@@ -69,3 +69,16 @@ var conditional = new Vue({
     teacherName: "",
   },
 });
+
+var getcolor = new Vue({
+  el: "#function",
+  data: {
+    bgColor: "",
+    colors: ["red", "green", "blue"],
+  },
+  methods: {
+    changeColor(color) {
+      this.bgColor = color;
+    },
+  },
+});

@@ -212,6 +212,16 @@
         <p v-on:click="teacherName='John'">Emuel</p>
       </section>
 
+      <!-- function -->
+      <section id="function">
+        <div class="container">
+          <div id="notSure" :style="{ backgroundColor: bgColor}"></div>
+          <p v-for="color in colors" @mouseover="changeColor(color)">
+            {{color}}
+          </p>
+        </div>
+      </section>
+
       <!-- Contact -->
       <section id="contact" class="four">
         <div class="container">
