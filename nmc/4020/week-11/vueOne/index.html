@@ -45,6 +45,14 @@
               >
             </li>
             <li>
+              <a href="#list"><span class="icon fa-list">{{link5}}</span></a>
+            </li>
+            <li>
+              <a href="#conditional"
+                ><span class="icon fa-list">{{link6}}</span></a
+              >
+            </li>
+            <li>
               <a href="#contact" id="contact-link"
                 ><span class="icon solid fa-envelope">{{link4}}</span></a
               >
@@ -113,68 +121,51 @@
       <section id="portfolio" class="two">
         <div class="container">
           <header>
-            <h2>Portfolio</h2>
+            <h2>{{portfolioTitle}}</h2>
           </header>
 
-          <p>
-            Vitae natoque dictum etiam semper magnis enim feugiat convallis
-            convallis egestas rhoncus ridiculus in quis risus amet curabitur
-            tempor orci penatibus. Tellus erat mauris ipsum fermentum etiam
-            vivamus eget. Nunc nibh morbi quis fusce hendrerit lacus ridiculus.
-          </p>
+          <p>{{portCaption}}</p>
 
           <div class="row">
             <div class="col-4 col-12-mobile">
               <article class="item">
-                <a href="#" class="image fit"
-                  ><img src="images/pic02.jpg" alt=""
-                /></a>
+                <a href="#" class="image fit"><img :src="image1" alt="" /></a>
                 <header>
-                  <h3>Ipsum Feugiat</h3>
+                  <h3>{{imgText1}}</h3>
                 </header>
               </article>
               <article class="item">
-                <a href="#" class="image fit"
-                  ><img src="images/pic03.jpg" alt=""
-                /></a>
+                <a href="#" class="image fit"><img :src="image2" alt="" /></a>
                 <header>
-                  <h3>Rhoncus Semper</h3>
+                  <h3>{{imgText2}}</h3>
                 </header>
               </article>
             </div>
             <div class="col-4 col-12-mobile">
               <article class="item">
-                <a href="#" class="image fit"
-                  ><img src="images/pic04.jpg" alt=""
-                /></a>
+                <a href="#" class="image fit"><img :src="image3" alt="" /></a>
                 <header>
-                  <h3>Magna Nullam</h3>
+                  <h3>{{imgText3}}</h3>
                 </header>
               </article>
               <article class="item">
-                <a href="#" class="image fit"
-                  ><img src="images/pic05.jpg" alt=""
-                /></a>
+                <a href="#" class="image fit"><img :src="image5" alt="" /></a>
                 <header>
-                  <h3>Natoque Vitae</h3>
+                  <h3>{{imgText5}}</h3>
                 </header>
               </article>
             </div>
             <div class="col-4 col-12-mobile">
               <article class="item">
-                <a href="#" class="image fit"
-                  ><img src="images/pic06.jpg" alt=""
-                /></a>
+                <a href="#" class="image fit"><img :src="image6" alt="" /></a>
                 <header>
-                  <h3>Dolor Penatibus</h3>
+                  <h3>{{imgText6}}</h3>
                 </header>
               </article>
               <article class="item">
-                <a href="#" class="image fit"
-                  ><img src="images/pic07.jpg" alt=""
-                /></a>
+                <a href="#" class="image fit"><img :src="image7" alt="" /></a>
                 <header>
-                  <h3>Orci Convallis</h3>
+                  <h3>{{imgText7}}</h3>
                 </header>
               </article>
             </div>
@@ -186,38 +177,49 @@
       <section id="about" class="three">
         <div class="container">
           <header>
-            <h2>About Me</h2>
+            <h2>{{aboutMeTitle}}</h2>
           </header>
 
-          <a href="#" class="image featured"
-            ><img src="images/pic08.jpg" alt=""
-          /></a>
+          <a href="#" class="image featured"><img :src="banner" alt="" /></a>
 
-          <p>
-            Tincidunt eu elit diam magnis pretium accumsan etiam id urna.
-            Ridiculus ultricies curae quis et rhoncus velit. Lobortis elementum
-            aliquet nec vitae laoreet eget cubilia quam non etiam odio tincidunt
-            montes. Elementum sem parturient nulla quam placerat viverra mauris
-            non cum elit tempus ullamcorper dolor. Libero rutrum ut lacinia
-            donec curae mus vel quisque sociis nec ornare iaculis.
-          </p>
+          <p>{{randomParagraph}}</p>
         </div>
+      </section>
+
+      <!-- List -->
+      <section id="list">
+        <div class="container">
+          <ul>
+            <li v-for="favorite in favorites">{{favorite}}</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Conditonal -->
+      <section id="conditional">
+        <div class="container"></div>
+        <p v-if="teacherName == 'Emuel' ">
+          Correct. The teacher's name is {{teacherName}}
+        </p>
+        <p v-if="teacherName != 'Emuel' && teacherName != ''">
+          Not Yet. Keep Trying.
+        </p>
+        What is the name of your teacher?
+        <!--<input v-model="teacherName" />-->
+        <p v-on:click="teacherName='John'">John</p>
+        <p v-on:click="teacherName='John'">Tom</p>
+        <p v-on:click="teacherName='John'">Jerry</p>
+        <p v-on:click="teacherName='John'">Emuel</p>
       </section>
 
       <!-- Contact -->
       <section id="contact" class="four">
         <div class="container">
           <header>
-            <h2>Contact</h2>
+            <h2>{{title}}</h2>
           </header>
 
-          <p>
-            Elementum sem parturient nulla quam placerat viverra mauris non cum
-            elit tempus ullamcorper dolor. Libero rutrum ut lacinia donec curae
-            mus. Eleifend id porttitor ac ultricies lobortis sem nunc orci
-            ridiculus faucibus a consectetur. Porttitor curae mauris urna mi
-            dolor.
-          </p>
+          <p>{{paragraph}}</p>
 
           <form method="post" action="#">
             <div class="row">
