@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="us">
+      <div v-for="eachStudent in yall">
+        <h2>{{eachStudent.stu_name}} {{eachStudent.last_name}}</h2>
+        <img style="width: 400px" :src="dompart1+eachStudent.domain+dompart2" />
+        <p>{{eachStudent.fact}}</p>
+      </div>
+    </div>
+  </body>
+</html>
+<script src="youguys.js"></script>
