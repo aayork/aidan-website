@@ -1,12 +1,21 @@
 var studentdata = new Vue({
   el: "#us",
   data: {
-    dompart1: "https://",
-    dompart2: "/images/me.jpg",
     image: "https://bit.ly/2U2OCs0",
     stuname: "",
     counter: 0,
     oswald: "nothing yet",
+    dompart1: "http://",
+    dompart2: "/images/me.jpg",
+    bgColor: "d9d6d6",
+    divWidth: "400px",
+    myDiv: {
+      backgroundColor: "d9d6d6",
+      width: "400px",
+      fontFamily: "Arial",
+      fontStyle: "bold",
+      color: "blue",
+    },
     yall: [
       {
         stu_name: "Lise",
@@ -250,22 +259,21 @@ var studentdata = new Vue({
       },
     ],
   },
+  computed: {
+    title() {
+      let whichYall = Math.floor(Math.random() * this.yall.length);
+      return (
+        this.yall[whichYall].stu_name + " " + this.yall[whichYall].last_name
+      );
+    },
+  },
   methods: {
     showpic() {
       this.stuname =
         this.yall[this.counter].stu_name +
         " " +
         this.yall[this.counter].last_name;
-      this.image =
-        this.dompart1 + this.yall[this.counter].domain + this.dompart2;
       this.counter++;
-      console.log(this.yall.length);
-      if (this.counter == this.yall.length) {
-        this.counter = 0;
-      }
-    },
-    displayImage() {
-      this.image = this.oswald;
     },
   },
 });

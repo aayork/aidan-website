@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <style>
+      @font-face {
+        font-family: BebasNeue-Regular;
+        src: url(BebasNeue-Regular.ttf);
+      }
+
+      body {
+        background-color: darkgray;
+        font-family: BebasNeue-Regular;
+      }
+
+      button {
+        width: 80px;
+        color: black;
+        background-color: transparent;
+        padding: 4px;
+        border-radius: 15px;
+        border: solid black 1px;
+      }
+
+      button:hover {
+        width: 80px;
+        color: red;
+        background-color: transparent;
+        padding: 4px;
+        border-radius: 15px;
+        border: solid red 1px;
+      }
+      #cat {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-evenly;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 style="text-align: center">~ CATS ~</h1>
+    <div id="cat">
+      <cats whichcat="manx"></cats>
+      <cats whichcat="mcoo"></cats>
+      <cats whichcat="hima"></cats>
+      <cats whichcat="drex"></cats>
+      <cats whichcat="crex"></cats>
+    </div>
+  </body>
+  <script src="catshow.js"></script>
+</html>
