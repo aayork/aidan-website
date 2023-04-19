@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      img {
+        width: 400px;
+      }
+    </style>
+    <title></title>
+  </head>
+
+  <body>
+    <div id="app">
+        <button v-on:click="showme('cocker')">Cocker</button>
+        <button v-on:click="showme('brittany')">Brittany</button> 
+        <button v-on:click="showme('japanese')">japanese</button>
+        <button v-on:click="showme('sussex')">sussex</button> 
+        <button v-on:click="showme('blenheim')">blenheim</button>
+        <button v-on:click="showme('irish')">irish</button> 
+        <button v-on:click="showme('welsh')">welsh</button>
+        
+        <p><button v-on:click="slider(1)">increase</button></p>
+        <p><button v-on:click="slider(0)">decrease</button></p>
+        
+        <img :src="whichDawg"></a>
+        
+</div>
+</body>
+</html>
+<script src="dogApi.js"></script>
