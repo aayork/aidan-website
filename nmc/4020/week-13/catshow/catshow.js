@@ -1,20 +1,23 @@
 Vue.component("cats", {
-  template: `<div style="text-align: center; padding: 10px; border-radius: 10px; background-color: lightgray;  margin: 10px;"><h2>{{thename}}</h2>
+  template: `<div style="text-align: center; padding: 10px; border-radius: 10px; background-color: darkgray;  margin: 10px;"><h2>{{thename}}</h2>
   <p>Origin: {{origin}}</p>
   <p style="margin-left: 40px; text-align:center; width:500px">Description: {{description}}</p>
   <p>Temperament: {{temperament}}</p>
   <h3>Adaptability Score: {{adapt}}</h3>
-  <h3>Child Friendly Score: {{child_friendly}}</h3>
-  <h3>Dog Friendly Score: {{dog_friendly}}</h3>
-  <h3>Energy Level Score: {{energy_level}}</h3>
-  <h3>Grooming Score: {{grooming}}</h3>
-  <h3>Health Issues Score: {{health_issues}}</h3>
+  
+  <div :style="{borderRadius:'5px', margin: '3px', width:child_friendly * 100 +'px', backgroundColor:'red'}">Child Friendly</div>
+  <div :style="{borderRadius:'5px', margin: '3px', width:dog_friendly * 100 +'px', backgroundColor:'orange'}">Dog Friendly</div>
+  <div :style="{borderRadius:'5px', margin: '3px', width:energy_level * 100 +'px', backgroundColor:'yellow'}">Energy Level</div>
+  <div :style="{borderRadius:'5px', margin: '3px', width:grooming * 100 +'px', backgroundColor:'green'}">Grooming</div>
+  <div :style="{borderRadius:'5px', margin: '3px', width:health_issues * 100 +'px', backgroundColor:'blue'}">Health Issues</div><br>
+
   <button v-on:click="slideshow()">slideshow</button><br /><br /><img style="width: 600px; border-radius: 10px" :src="image.url" /><br /></div>`,
   props: {
     whichcat: String,
   },
   data() {
     return {
+      cf: 500,
       image: "",
       thename: "",
       allofit: [],

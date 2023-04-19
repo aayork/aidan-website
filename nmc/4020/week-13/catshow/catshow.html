@@ -10,7 +10,7 @@
       }
 
       body {
-        background-color: darkgray;
+        background-color: #2a4653;
         font-family: BebasNeue-Regular;
       }
 
@@ -37,11 +37,28 @@
         flex-direction: row;
         justify-content: space-evenly;
       }
+
+      #button {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      a {
+        color: black;
+      }
+      a:hover {
+        color: red;
+      }
     </style>
   </head>
 
   <body>
     <h1 style="text-align: center">~ CATS ~</h1>
+    <div id="button">
+      <a style="text-decoration: none" href="explination.pdf"> How It Works </a>
+    </div>
     <div id="cat">
       <cats whichcat="manx"></cats>
       <cats whichcat="mcoo"></cats>
