@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      img {
+        width: 400px;
+      }
+      h2 {
+        color: rgb(8, 0, 255);
+      }
+      .buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+      @font-face {
+        font-family: Shrikhand;
+        src: url(Shrikhand-Regular.ttf);
+      }
+      html {
+        background-color: black;
+        color: rgb(203, 107, 43);
+        text-align: center;
+        font-family: Shrikhand;
+      }
+
+      #header {
+        display: flex;
+        flex-direction: row;
+        margin-left: 50px;
+        margin-bottom: -50px;
+        justify-content: center;
+      }
+    </style>
+    <title>What does the Mars rover Curiosity see?</title>
+  </head>
+  <body>
+    <h1>What Does the Mars Rover Curiosity See?</h1>
+    <div class="buttons">
+      <div class="plusbuttons">
+        <button id="slideshowPlus">Slideshow +</button>
+      </div>
+      <div class="minusbuttons">
+        <button id="slideshowMinus">Slideshow -</button>
+      </div>
+    </div>
+    <div id="curiosity-photos"></div>
+    <script src="mars.js"></script>
+  </body>
+</html>
