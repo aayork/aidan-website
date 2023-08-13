@@ -169,7 +169,7 @@ img {
   color: #fff;
   width: 24px;
   height: 24px;
-  background-color: #5fb4c7;
+  background-color: red;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -260,7 +260,7 @@ img {
   line-height: 13px;
   font-weight: 600;
   letter-spacing: 3px;
-  color: #5fb4c7;
+  color: red;
   padding: 17px 30px;
   border: 2px solid red;
   border-radius: 60px;
