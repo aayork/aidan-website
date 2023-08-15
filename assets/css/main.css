@@ -76,6 +76,7 @@ ul {
 }
 @font-face {
   font-family: "Inter", sans-serif;
+  src: "";
 }
 input:-webkit-autofill,
 textarea:-webkit-autofill,
