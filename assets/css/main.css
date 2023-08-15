@@ -370,11 +370,12 @@ span.ds-department {
   padding-bottom: 80px;
 }
 .ds-blog-list {
-  padding-left: 70px;
-  padding-top: 40px;
-  padding-right: 70px;
+  padding-left: 35px;
+  padding-top: 15px;
+  padding-right: 35px;
   background-color: #f6f8fa;
-  margin-bottom: 40px;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
 }
 .ds-blog-list section {
   padding-top: 20px;
