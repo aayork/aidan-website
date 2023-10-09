@@ -170,7 +170,7 @@ img {
   color: #fff;
   width: 24px;
   height: 24px;
-  background-color: rgb(255, 88, 88);
+  background-color: #ba0c2f;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -220,7 +220,7 @@ img {
 }
 .ds-numbervalulist strong {
   display: block;
-  color: rgb(255, 88, 88);
+  color: #ba0c2f;
   font-size: 36px;
   font-weight: 800;
 }
@@ -242,7 +242,7 @@ img {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 16px;
-  border-bottom: 3px solid rgb(255, 88, 88);
+  border-bottom: 3px solid #ba0c2f;
   padding-bottom: 7px;
   margin-bottom: 23px;
 }
@@ -261,13 +261,13 @@ img {
   line-height: 13px;
   font-weight: 600;
   letter-spacing: 3px;
-  color: rgb(255, 88, 88);
+  color: #ba0c2f;
   padding: 17px 30px;
-  border: 2px solid rgb(255, 88, 88);
+  border: 2px solid #ba0c2f;
   border-radius: 60px;
 }
 .ds-button:hover {
-  background-color: rgb(255, 88, 88);
+  background-color: #ba0c2f;
   color: #fff;
 }
 .ds-arrow-button i {
@@ -488,7 +488,7 @@ span.ds-department {
   color: rgba(255, 255, 255, 0.5);
 }
 .ds-copyright a:hover {
-  color: rgb(255, 88, 88);
+  color: #ba0c2f;
 }
 
 /*-------------------------------------------------------------------------------
