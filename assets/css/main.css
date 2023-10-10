@@ -13,12 +13,16 @@ Theme Name: Aidan York's Theme
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------*/
+@font-face {
+  font-family: Playfair Display;
+  src: url(../fonts/Playfair\ Display/static/PlayfairDisplay-Medium.ttf);
+}
 html {
-  font-family: "Inter", sans-serif;
+  font-family: "Playfair Display", sans-serif;
   background-color: #fff;
 }
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Playfair Display", sans-serif;
   overflow-x: hidden;
   background-color: #fff;
   font-weight: 400;
@@ -75,7 +79,7 @@ ul {
   margin: 0;
 }
 @font-face {
-  font-family: "Inter", sans-serif;
+  font-family: "Playfair Display", sans-serif;
   src: "";
 }
 input:-webkit-autofill,
@@ -92,7 +96,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Inter", sans-serif;
+  font-family: "Playfair Display", sans-serif;
 }
 figure {
   margin: 0;
