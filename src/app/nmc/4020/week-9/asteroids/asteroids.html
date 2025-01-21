@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>asteroids</title>
+    <style>
+      div {
+        background-color: black;
+        border-radius: 50%;
+        float: left;
+        margin: 10px;
+      }
+
+      .is_dangerous_max {
+        background-color: red;
+        border-radius: 50%;
+        float: left;
+        margin: 10px;
+      }
+
+      .min_width {
+        background-color: #8c8c8c;
+        border-radius: 50%;
+        float: left;
+        margin: 25%;
+      }
+
+      .is_dangerous_min {
+        background-color: #eda1a1;
+        border-radius: 50%;
+        float: left;
+        margin: 25%;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="count"></div>
+    <div id="astlist"></div>
+    <p id="count"></p>
+    <div id="showData"></div>
+  </body>
+</html>
+<script>
+  let asteroidDisplay = document.querySelector("body");
+  $(document).ready(function () {
+    $.getJSON(
+      "https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=tfRewRRsbzurcKHn2VYZUwra8TwNIlJwCW8Y9Xbt",
+      function (data) {
+        var howMany = data.near_earth_objects.length;
+        // $("#count").html(howMany);
+        let dataSource = data.near_earth_objects;
+        for (var i = 0; i < dataSource.length; i++) {
+          if (dataSource[i].is_potentially_hazardous_asteroid == true) {
+            let maxWidth =
+              dataSource[i].estimated_diameter.kilometers
+                .estimated_diameter_max * 10;
+            let minWidth =
+              dataSource[i].estimated_diameter.kilometers
+                .estimated_diameter_min * 10;
+            asteroidDisplay.innerHTML +=
+              "<div class='is_dangerous_max' style='width: " +
+              maxWidth +
+              "px;height:" +
+              maxWidth +
+              "px'><div class='is_dangerous_min' style='width:" +
+              minWidth +
+              "px;height:" +
+              minWidth +
+              "px'></div></div>";
+          }
+          let maxWidth =
+            dataSource[i].estimated_diameter.kilometers.estimated_diameter_max *
+            10;
+          let minWidth =
+            dataSource[i].estimated_diameter.kilometers.estimated_diameter_min *
+            10;
+          asteroidDisplay.innerHTML +=
+            "<div style='width:" +
+            maxWidth +
+            "px;height:" +
+            maxWidth +
+            "px'><div class='min_width' style='width:" +
+            minWidth +
+            "px;height:" +
+            minWidth +
+            "px'></div></div>";
+        }
+      }
+    );
+  });
+</script>

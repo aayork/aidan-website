@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="us">
+      <!--
+      <div v-for="eachStudent in yall">
+        <h2>{{eachStudent.stu_name}} {{eachStudent.last_name}}</h2>
+        <img style="width: 400px" :src="dompart1+eachStudent.domain+dompart2" />
+        <p>{{eachStudent.fact}}</p>
+      </div>
+    -->
+      <!--
+      <button v-on:click="showpic">Classmates</button>
+      <h2>{{stuname}}</h2>
+    -->
+      <img style="width: 400px" :src="image" /> <br />
+      <select v-model="oswald" v-on:change="displayImage()">
+        <option
+          v-for="eachStudent in yall"
+          :value="dompart1 + eachStudent.domain+dompart2"
+        >
+          {{eachStudent.stu_name}}
+        </option>
+      </select>
+      <p>{{oswald}}</p>
+    </div>
+  </body>
+</html>
+<script src="youguys.js"></script>

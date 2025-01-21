@@ -1,0 +1,50 @@
+.link-1 { 
+    color: rgb(255, 187, 0);
+    
+    border: 3px groove black;
+    
+    border-radius: 100px 200px;
+  }
+
+  .link-2:visited { 
+    color: rgb(142, 167, 255);
+  }
+
+  .link-3:hover{
+    color: olivedrab;
+  }
+
+  .link-4:focus {
+    color: black;
+    background-color: greenyellow;
+    outline-color: aqua;
+  }
+
+  .link-5:active {
+    color: goldenrod;
+
+  }
+
+  .link-6 {
+    text-decoration-line: overline underline line-through;
+
+  }
+
+  ul li {
+    padding-left: 3ex;
+    background-image: url(red-star-1.png);
+    background-position: 0 0;
+    background-size: 1rem 1rem;
+    background-repeat: no-repeat;
+  }
+
+  @font-face {
+    font-family: "Aboreto";
+    src: url("Aboreto/Aboreto-Regular.ttf");
+  }
+
+  p {
+    font-family: "Aboreto", "Aboreto", serif;
+  }
+
+

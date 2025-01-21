@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<meta lang="eng-us">
+<head>
+</head>
+
+<header>
+    It was the best of times, <br> it was the worst of times.
+</header>
+
+<style>
+    body {
+        background: radial-gradient(red,blue);
+    }
+    h1 {
+        size: 50px;
+    }
+     
+    header::first-line {
+        color: rgb(255, 0, 0);
+    }
+    
+    header::first-letter {
+        size: 44px;  
+    }
+
+    h2 {
+        transform: rotate(10deg);
+    }
+
+    @font-face {
+    font-family: "Chela_One";
+    src: url("Chela_One/ChelaOne-Regular.ttf");
+  }
+
+    .box-1 {
+    background: rgb(93, 167, 93);
+
+    background-clip: padding-box;
+    
+    border: 10px ;
+    
+    border-radius: 40px;
+
+    padding-top: 40px;
+
+    padding-right: 10px;
+
+    padding-left: 40px;
+
+    padding-bottom: 40px;
+
+    width: 450px;
+
+    border: 20px groove rgb(0, 0, 203);
+
+    font-size: 30px;
+
+    font-family: "Chela_One", "ChelaOne", serif;
+
+    }
+
+    .box-2 {
+    background: linear-gradient(rgb(50, 50, 50),red);
+
+    background-clip: padding-box;
+    
+    border: 25px dashed rgb(0, 0, 200);
+    
+    border-radius: 35px;
+
+    padding-top: 40px;
+
+    padding-right: 10px;
+
+    padding-left: 40px;
+
+    padding-bottom: 40px;
+
+    width: 450px;
+
+    font-size: 30px;
+
+    font-family: "Chela_One", "ChelaOne", serif;
+
+    color: white;
+
+    text-shadow: 5px 5px gray;
+
+    margin-left: 50px;
+    }
+</style>
+
+<body>
+    <h1>Pseudo Elements</h1>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2>Rotation example</h2>
+</body>
+
+<p class="box-1">Example one of border, padding, etc.</p>
+<p class="box-2">Example two of border, padding, etc</p>
+
+</html>

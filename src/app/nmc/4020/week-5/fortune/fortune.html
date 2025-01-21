@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <input type="text" id="namehere" placeholder="Your name here" /><br />
+    <div id="result"></div>
+    <button onclick="fortune()">your fortune</button>
+  </body>
+</html>
+<script>
+  let outcomes = [
+    "go to Austrailia over winter break",
+    "go skiing next month",
+    "finally get a girlfriend this year",
+    "make a new friend tommorow",
+    "it'll rain next month",
+  ];
+  function fortune() {
+    let name = document.querySelector("#namehere").value;
+    let item = Math.floor(Math.random() * outcomes.length);
+    let result = document.querySelector("#result");
+    result.innerHTML =
+      name + " your fortune is that you will " + outcomes[item];
+  }
+</script>

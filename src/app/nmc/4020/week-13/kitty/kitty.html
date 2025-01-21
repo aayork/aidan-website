@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Cat Stuff</title>
+  </head>
+  <style>
+    #app {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      text-align: center;
+    }
+  </style>
+
+  <body style="background-color: rgb(103, 103, 184)">
+    <div id="app">
+      <div id="cats">
+        <div v-for="eachCat in catArray">
+          <p>
+            {{eachCat.name}}: {{eachCat.description}} They originate from
+            {{eachCat.origin}}. ({{eachCat.wikipedia_url}})
+          </p>
+          <img
+            style="width: 400px; border-radius: 20px; margin: 10px"
+            :src="dpart1+eachCat.reference_image_id+dpart2"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script src="kitty.js"></script>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    .cand {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+    .pic {
+      margin: 4%;
+    }
+
+    .plusbuttons {
+      display: flex;
+      flex-wrap: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 1%;
+    }
+    .minusbuttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin: 1%;
+    }
+    .names {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .words {
+      margin: 7%;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+  </style>
+  <body>
+    <div class="buttons">
+      <div class="plusbuttons">
+        <button id="slideshowOnePlus">Slideshow One +</button>
+        <button id="slideshowTwoPlus">Slideshow Two +</button>
+        <button id="slideshowThreePlus">Slideshow Three +</button>
+      </div>
+      <div class="minusbuttons">
+        <button id="slideshowOneMinus">Slideshow One -</button>
+        <button id="slideshowTwoMinus">Slideshow Two -</button>
+        <button id="slideshowThreeMinus">Slideshow Three -</button>
+      </div>
+    </div>
+    <div id="alsoRan"></div>
+  </body>
+</html>
+<script src="js/project.js"></script>
