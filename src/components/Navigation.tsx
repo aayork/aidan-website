@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Github, Linkedin } from "lucide-react";
 
 export const Navigation = () => (
-  <header className="ds-header" id="site-header">
+  <header className="ds-header shadow-md" id="site-header">
     <div className="container">
       <div className="ds-header-inner">
         <Link href="/">

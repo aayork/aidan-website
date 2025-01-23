@@ -6,8 +6,8 @@ export const About = () => (
       <section>
         <h2 className="ds-heading">About Me</h2>
         <p>
-          I’m passionate about computing and programming, seeking to absorb as
-          much knowledge as I can. Check out my resume!
+          I love making cool things with emerging technologies and expressing
+          myself creatively through code! Check out my resume to learn more.
         </p>
         <div className="ds-button-sec text-center">
           <Link href="/Aidan York's Resume.pdf" className="ds-button" download>
