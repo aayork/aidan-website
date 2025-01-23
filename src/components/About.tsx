@@ -11,7 +11,7 @@ export const About = () => (
         </p>
         <div className="ds-button-sec text-center">
           <Link href="/Aidan York's Resume.pdf" className="ds-button" download>
-            Download Resume
+            My Resume
           </Link>
         </div>
       </section>
