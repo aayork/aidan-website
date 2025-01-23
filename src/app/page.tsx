@@ -9,22 +9,15 @@ import { Footer } from "@/components/Footer";
 
 const Home = () => {
   return (
-    <>
-      <Head>
-        <title>My Website</title>
-        <meta name="description" content="Welcome to my portfolio website!" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <div>
-        <Navigation />
-        <Banner />
-        <About />
-        <Experience />
-        <Skills />
-        <Blog />
-        <Footer />
-      </div>
-    </>
+    <div>
+      <Navigation />
+      <Banner />
+      <About />
+      <Experience />
+      <Skills />
+      <Blog />
+      <Footer />
+    </div>
   );
 };
 
