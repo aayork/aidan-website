@@ -19,6 +19,7 @@ export const Banner = () => (
         width={600}
         height={600}
       />
+
       <section>
         <h1>
           I’m Aidan York, <br />a fourth-year computer science student at UGA.
