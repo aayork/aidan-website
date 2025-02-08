@@ -9,7 +9,7 @@ export const Projects = () => {
         <Card className="rounded-lg">
           <CardHeader className="p-0">
             <Image
-              src="/ritmo.png"
+              src="/ritmo.gif"
               alt="Project"
               width="400"
               height="225"
@@ -29,7 +29,7 @@ export const Projects = () => {
         <Card>
           <CardHeader className="p-0">
             <Image
-              src="/placeholder.svg"
+              src="/recipe-box.png"
               alt="Project"
               width="400"
               height="225"
