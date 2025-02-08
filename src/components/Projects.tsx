@@ -9,7 +9,7 @@ export const Projects = () => {
         <Card className="rounded-lg">
           <CardHeader className="p-0">
             <Image
-              src="/ritmo.gif"
+              src="/images/ritmo.gif"
               alt="Project"
               width="400"
               height="225"
@@ -29,7 +29,7 @@ export const Projects = () => {
         <Card>
           <CardHeader className="p-0">
             <Image
-              src="/recipe-box.png"
+              src="/images/recipe-box.png"
               alt="Project"
               width="400"
               height="225"
@@ -49,7 +49,7 @@ export const Projects = () => {
         <Card>
           <CardHeader className="p-0">
             <Image
-              src="/placeholder.svg"
+              src="/images/movie.png"
               alt="Project"
               width="400"
               height="225"
@@ -69,7 +69,7 @@ export const Projects = () => {
         <Card>
           <CardHeader className="p-0">
             <Image
-              src="/placeholder.svg"
+              src="/images/placeholder.svg"
               alt="Project"
               width="400"
               height="225"

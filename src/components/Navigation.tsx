@@ -19,7 +19,7 @@ export const Navigation = () => (
           <div className="w-8 h-8 bg-[#ba0c2f] hover:bg-black rounded-full flex items-center justify-center">
             <Image
               priority
-              src="medium.svg"
+              src="/images/medium.svg"
               width={16}
               height={16}
               alt="Follow me on Medium"
