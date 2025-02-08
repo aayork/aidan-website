@@ -1,4 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
+import { JSX } from "react";
 import React, {
   useEffect,
   useRef,
@@ -98,14 +100,14 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
         >
           <div
             className={cn(
-              "absolute right-0  z-[1000] h-auto  w-[5%] overflow-hidden bg-gradient-to-l"
+              "absolute right-0  z-[1000] h-auto  w-[5%] overflow-hidden bg-gradient-to-l",
             )}
           ></div>
 
           <div
             className={cn(
               "flex flex-row justify-start gap-4 pl-4",
-              "max-w-7xl mx-auto" // remove max-w-4xl if you want the carousel to span the full width of its container
+              "max-w-7xl mx-auto", // remove max-w-4xl if you want the carousel to span the full width of its container
             )}
           >
             {items.map((item, index) => (
@@ -281,7 +283,7 @@ export const BlurImage = ({
       className={cn(
         "transition duration-300",
         isLoading ? "blur-sm" : "blur-0",
-        className
+        className,
       )}
       onLoad={() => setLoading(false)}
       src={src}
