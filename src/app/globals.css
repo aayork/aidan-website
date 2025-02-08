@@ -31,8 +31,8 @@ Theme Name: Aidan York's Theme
 }
 
 @font-face {
-    font-family: Playfair Display;
-    src: url(/fonts/Playfair\ Display/static/PlayfairDisplay-Medium.ttf);
+    font-family: Zed Mono;
+    src: url(/fonts/Zed\ Mono/zed-mono-extended.ttf);
 }
 
 .container,
@@ -41,12 +41,12 @@ Theme Name: Aidan York's Theme
 }
 
 html {
-    font-family: "Playfair Display", sans-serif;
+    font-family: "Zed Mono", sans-serif;
     background-color: #fff;
 }
 
 body {
-    font-family: "Playfair Display", sans-serif;
+    font-family: "Zed Mono", sans-serif;
     margin: 0 auto; /* Center the body content */
     padding: 0 auto; /* Add padding for consistent spacing */
     width: 100%;
@@ -106,7 +106,6 @@ img {
 
 input,
 textarea {
-    border-radius: 0;
     resize: none;
 }
 
@@ -117,7 +116,7 @@ ul {
 }
 
 @font-face {
-    font-family: "Playfair Display", sans-serif;
+    font-family: "Zed Mono", sans-serif;
     src: "";
 }
 
@@ -136,7 +135,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Playfair Display", sans-serif;
+    font-family: "Zed Mono", sans-serif;
 }
 
 figure {
@@ -147,148 +146,6 @@ svg,
 img {
     max-width: 100%;
     height: auto;
-}
-
-/*-----------------------------------------------------------------
-  1. >>> Header Style
-----------------------------------------------------------------*/
-.ds-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 50;
-    background-color: #fff;
-    padding: 30px 40px;
-    transition-delay: 0s;
-    transition-duration: 0.4s;
-    transition-property: all;
-    transition-timing-function: ease;
-}
-
-.ds-header.ds-fixed-header {
-    padding: 20px 0;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
-}
-
-.ds-header-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.ds-logo {
-    text-transform: uppercase;
-    font-size: 18px;
-    letter-spacing: 3px;
-    color: #000;
-    display: flex;
-    align-items: center;
-}
-
-.ds-logo span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background-color: #000;
-    border-radius: 4px;
-    color: #fff;
-    font-size: 22px;
-    font-weight: 600;
-    text-align: center;
-}
-
-.ds-logo:hover {
-    color: #000;
-}
-
-.ds-social {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.ds-social li {
-    margin-left: 12px;
-}
-
-.ds-social li:first-child {
-    margin-left: 0;
-}
-
-.ds-social li a {
-    border-radius: 100%;
-    color: #fff;
-    width: 24px;
-    height: 24px;
-    background-color: #ba0c2f;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 16px;
-}
-
-.ds-social li a:hover {
-    background-color: #000;
-    color: #fff;
-}
-
-/*-----------------------------------------------------------------
-  2. >>> Banner Style
-----------------------------------------------------------------*/
-.ds-banner section {
-    padding-top: 10px;
-    padding-left: 70px;
-    padding-right: 100px;
-}
-
-.ds-banner section h1 span {
-    display: block;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 500;
-    font-size: 16px;
-    padding-bottom: 30px;
-}
-
-.ds-banner section h1 {
-    font-weight: 600;
-    font-size: 48px;
-    line-height: 60px;
-    color: #000;
-}
-
-.ds-numbervalulist {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 0;
-    padding: 0;
-    margin-top: 60px;
-}
-
-.ds-numbervalulist li {
-    margin-right: 60px;
-}
-
-.ds-numbervalulist li:last-child {
-    margin-right: 0;
-}
-
-.ds-numbervalulist strong {
-    display: block;
-    color: #ba0c2f;
-    font-size: 36px;
-    font-weight: 800;
-}
-
-.ds-numbervalulist span {
-    font-size: 16px;
-    letter-spacing: 1px;
 }
 
 /*-----------------------------------------------------------------
@@ -556,7 +413,6 @@ span.ds-department {
 .ds-project-card {
     background-color: #fff;
     border: 1px solid #d7d7d7;
-    border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition:
