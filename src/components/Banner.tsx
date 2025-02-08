@@ -33,12 +33,6 @@ export const Banner = () => (
                 </strong>
                 <span className="text-sm tracking-wide">Internships</span>
               </li>
-              <li>
-                <strong className="block text-[#ba0c2f] text-3xl font-extrabold">
-                  3.58
-                </strong>
-                <span className="text-sm tracking-wide">GPA</span>
-              </li>
             </ul>
           </div>
         </section>
