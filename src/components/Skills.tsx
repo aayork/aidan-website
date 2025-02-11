@@ -2,7 +2,7 @@ export const Skills = () => (
   <div className="bg-[#f0f5ff]">
     <div className="ds-skills-section mx-10 py-10">
       <div className="container">
-        <div className="flex flex-row">
+        <div className="flex flex-col sm:flex-col md:flex-row lg:flex-row">
           <div className="col-md-6">
             <h2 className="ds-heading">Core Skills</h2>
             <ul className="ds-skills-list">

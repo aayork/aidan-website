@@ -18,20 +18,22 @@ export const Banner = () => (
             Hi! I’m Aidan, <br />a fourth-year computer science student at UGA.
           </h1>
           <div className="mt-10 sm:mt-16">
-            <ul className="flex flex-col sm:flex-row items-center sm:space-x-16 space-y-4 sm:space-y-0 list-none">
+            <ul className="flex flex-row items-center sm:space-x-18 space-y-4 sm:space-y-0 list-none">
               <li>
-                <strong className="block text-[#ba0c2f] text-2xl sm:text-3xl font-extrabold">
-                  Lots of
+                <strong className="block text-[#ba0c2f] text-2xl m-2 font-extrabold">
+                  {/*insert number of thing here */}
                 </strong>
-                <span className="text-sm tracking-wide">
-                  Projects Completed
+                <span className="text-sm tracking-wide m-2">
+                  {/*insert thing here */}
                 </span>
               </li>
               <li>
-                <strong className="block text-[#ba0c2f] text-2xl sm:text-3xl font-extrabold">
-                  2
+                <strong className="block text-[#ba0c2f] text-2xl font-extrabold m-2">
+                  {/*insert number of thing here */}
                 </strong>
-                <span className="text-sm tracking-wide">Internships</span>
+                <span className="text-sm tracking-wide m-2">
+                  {/*insert thing here */}
+                </span>
               </li>
             </ul>
           </div>
