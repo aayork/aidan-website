@@ -9,9 +9,11 @@
 :root {
     --background: #ffffff;
     --foreground: #171717;
+
+    --radius: 0.5rem;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
     :root {
         --background: #ffffff;
         --foreground: #171717;
@@ -304,56 +306,4 @@ span.ds-department {
 
 .float-animation-5 {
     animation: float-3-5 5s ease-in-out infinite;
-}
-
-/*-----------------------------------------------------------------
-  >>> Footer Style
-----------------------------------------------------------------*/
-.ds-footer {
-    background-color: #000;
-    padding: 120px 120px;
-}
-
-.ds-footer section {
-}
-
-.ds-footer section span {
-    color: rgba(255, 255, 255, 0.5);
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 16px;
-    letter-spacing: 1px;
-    display: block;
-    padding-bottom: 20px;
-}
-
-.ds-footer section h4 {
-    color: #fff;
-    font-size: 48px;
-    font-weight: 700;
-}
-
-.ds-footer section p {
-    letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.5);
-    line-height: 30px;
-}
-
-.ds-footer .ds-social {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.ds-footer .ds-social li {
-    margin-left: 15px;
-}
-
-.ds-footer .ds-social li a {
-    color: #fff;
-    font-size: 18px;
-}
-
-.ds-footer .ds-social li a:hover {
-    color: #ba0c2f;
 }

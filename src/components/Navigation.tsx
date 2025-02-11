@@ -16,7 +16,7 @@ export const Navigation = () => (
           target="_blank"
           rel="noopener noreferrer"
         >
-          <div className="w-8 h-8 bg-[#ba0c2f] hover:bg-black rounded-full flex items-center justify-center">
+          <div className="w-8 h-8 bg-[#ba0c2f] hover:bg-black transition rounded-full flex items-center justify-center">
             <Image
               priority
               src="/images/medium.svg"
@@ -33,7 +33,7 @@ export const Navigation = () => (
           target="_blank"
           rel="noopener noreferrer"
         >
-          <div className="w-8 h-8 bg-[#ba0c2f] hover:bg-black rounded-full flex items-center justify-center">
+          <div className="w-8 h-8 bg-[#ba0c2f] hover:bg-black transition rounded-full flex items-center justify-center">
             <Github className="w-5 h-5 text-white" />
           </div>
         </Link>
@@ -44,7 +44,7 @@ export const Navigation = () => (
           target="_blank"
           rel="noopener noreferrer"
         >
-          <div className="w-8 h-8 bg-[#ba0c2f] hover:bg-black rounded-full flex items-center justify-center">
+          <div className="w-8 h-8 bg-[#ba0c2f] hover:bg-black transition rounded-full flex items-center justify-center">
             <Linkedin className="w-5 h-5 text-white" />
           </div>
         </Link>
