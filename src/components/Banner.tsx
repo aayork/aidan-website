@@ -6,7 +6,7 @@ export const Banner = () => (
     <div className="ds-banner pt-20 pb-16 m-10 flex flex-col md:flex-row items-center text-center md:text-left">
       <div className="container flex flex-col md:flex-row items-center">
         <Image
-          className="rounded-2xl w-[250px] h-[250px] sm:w-[400px] sm:h-[400px] md:w-[600px] md:h-[600px]"
+          className="rounded-2xl w-[250px] h-[250px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px]"
           src="/images/profile-image.jpg"
           alt="Profile Image"
           width={600}
