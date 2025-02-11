@@ -8,7 +8,7 @@ export const Projects = () => {
       <h2 className="ds-heading m-10">Projects</h2>
       <div className="grid m-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 max-w-[75rem] w-full mx-auto">
         <Link href="https://apps.apple.com/us/app/ritmo/id6480073527">
-          <Card>
+          <Card className="m-1">
             <CardHeader className="p-0">
               <Image
                 src="/images/ritmo.gif"
@@ -27,7 +27,7 @@ export const Projects = () => {
           </Card>
         </Link>
         <Link href="https://github.com/aayork/recipe-box">
-          <Card>
+          <Card className="m-1">
             <CardHeader className="p-0">
               <Image
                 src="/images/recipe-box.png"
@@ -46,7 +46,7 @@ export const Projects = () => {
           </Card>
         </Link>
         <Link href="https://github.com/aayork/4050-TermProject">
-          <Card>
+          <Card className="m-1">
             <CardHeader className="p-0">
               <Image
                 src="/images/movie.png"
