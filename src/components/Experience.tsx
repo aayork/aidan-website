@@ -3,7 +3,7 @@ export const Experience = () => (
     <div className="ds-experience-section mx-10 pt-10">
       <div className="container">
         <h2 className="ds-heading">Work Experience</h2>
-        <div className="grid grid-cols-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <section>
             <span className="ds-year">May 2024 - July 2024</span>
             <h3 className="ds-officename">Horizon Cloud</h3>
