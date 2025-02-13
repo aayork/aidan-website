@@ -49,15 +49,6 @@ body {
     --radius: 0rem;
 }
 
-@layer base {
-    * {
-        @apply border-border;
-    }
-    body {
-        @apply bg-background text-foreground;
-    }
-}
-
 @font-face {
     font-family: "Zed Mono";
     src: url("/fonts/Zed%20Mono/zed-mono-extended.ttf");
