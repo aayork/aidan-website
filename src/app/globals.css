@@ -64,27 +64,6 @@ button:focus,
     box-shadow: none;
 }
 
-a {
-    color: #000;
-}
-
-iframe {
-    border: 0;
-    outline: none;
-}
-
-::-moz-selection {
-    background: #000;
-    text-shadow: none;
-    color: #fff;
-}
-
-::selection {
-    background: #000;
-    text-shadow: none;
-    color: #fff;
-}
-
 img {
     max-width: 100%;
     border: none;
@@ -100,14 +79,6 @@ textarea {
 @font-face {
     font-family: "Zed Mono", sans-serif;
     src: "";
-}
-
-input:-webkit-autofill,
-textarea:-webkit-autofill,
-select:-webkit-autofill {
-    background-color: transparent;
-    background-image: none;
-    color: #000;
 }
 
 /* 1.2 Typography */
