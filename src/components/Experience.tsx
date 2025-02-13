@@ -10,7 +10,7 @@ export const Experience = () => (
           <p className="mt-2">
             I interned at Horizon Cloud as a Developer Intern.
           </p>
-          <ul className="max-w-[90%]">
+          <ul className="max-w-[90%] list-disc pl-8">
             <li>
               Discovered new methods of 3D scanning utilizing computer vision
               for use in Placez event planning software.
@@ -25,10 +25,19 @@ export const Experience = () => (
           <p className="mt-2">
             I interned at Apex Service Partners in the summer of 2023.
           </p>
-          <ul className="max-w-[90%]">
-            <li>Corporate work experience.</li>
-            <li>Migration of domains to a new Azure tenant.</li>
-            <li>Scripting on PCs for automation.</li>
+          <ul className="max-w-[90%] list-disc pl-8">
+            <li>
+              {" "}
+              Migrated web domains to a new tenant for 5+ MEP companies,
+              ensuring minimal downtime.
+            </li>
+            <li>
+              Automated key migration tasks using PowerShell and batch scripts.
+            </li>
+            <li>
+              Implemented changes on-site at multiple U.S. locations, gaining
+              hands-on experience under skilled IT professionals.
+            </li>
           </ul>
         </section>
       </div>

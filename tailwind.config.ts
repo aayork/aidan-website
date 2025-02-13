@@ -4,12 +4,12 @@ import tailwindcssAnimate from "tailwindcss-animate";
 import flattenColorPalette from "tailwindcss/lib/util/flattenColorPalette";
 
 export default {
-  darkMode: ["class"],
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       animation: {
@@ -75,7 +75,6 @@ export default {
     },
   },
   plugins: [tailwindcssAnimate, addVariablesForColors],
-  addVariablesForColors,
 } satisfies Config;
 
 function addVariablesForColors({ addBase, theme }: any) {
