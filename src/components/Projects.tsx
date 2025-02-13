@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export const Projects = () => {
   return (
-    <div className="container mt-10 p-15">
+    <div className="container mt-10">
       <h2 className="ds-heading m-10">Projects</h2>
       <div className="grid m-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 max-w-[75rem] w-full mx-auto">
         <Link href="https://apps.apple.com/us/app/ritmo/id6480073527">

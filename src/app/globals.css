@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 /*--------------------------------------------------------------
 >>> FONT AND BACKGROUND COLORS:
@@ -97,12 +95,6 @@ img {
 input,
 textarea {
     resize: none;
-}
-
-ul {
-    list-style-type: disc;
-    padding-left: 20px;
-    margin: 0;
 }
 
 @font-face {
