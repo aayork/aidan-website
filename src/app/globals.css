@@ -2,308 +2,87 @@
 @tailwind components;
 @tailwind utilities;
 
-/*--------------------------------------------------------------
->>> FONT AND BACKGROUND COLORS:
-----------------------------------------------------------------*/
-
-:root {
-    --background: #ffffff;
-    --foreground: #171717;
-
-    --radius: 0.5rem;
-}
-
-@media (prefers-color-scheme: light) {
-    :root {
-        --background: #ffffff;
-        --foreground: #171717;
-    }
-}
-
-@font-face {
-    font-family: Zed Mono;
-    src: url(/fonts/Zed\ Mono/zed-mono-extended.ttf);
-}
-
-.container,
-.wrapper {
-    max-width: 100%;
-}
-
-html {
-    font-family: "Zed Mono", sans-serif;
-    background-color: #fff;
-}
-
 body {
-    font-family: "Zed Mono", sans-serif;
-    margin: 0 auto; /* Center the body content */
-    padding: 0 auto; /* Add padding for consistent spacing */
-    width: 100%;
-    overflow-x: hidden;
-    background-color: #fff;
-    font-weight: 400;
-    font-style: normal;
-    color: #373737;
-    font-size: 14px;
+    font-family: var(--font-wittgenstein-vf, Arial, Helvetica, sans-serif);
 }
 
-a,
-a:hover,
-a:focus,
-i,
-input,
-button,
-input:focus,
-button:focus,
-.transition {
-    text-decoration: none;
-    outline: none;
-    transition-delay: 0s;
-    transition-duration: 0.4s;
-    transition-property: all;
-    transition-timing-function: ease;
-    box-shadow: none;
-}
-
-a {
-    color: #000;
-}
-
-iframe {
-    border: 0;
-    outline: none;
-}
-
-::-moz-selection {
-    background: #000;
-    text-shadow: none;
-    color: #fff;
-}
-
-::selection {
-    background: #000;
-    text-shadow: none;
-    color: #fff;
-}
-
-img {
-    max-width: 100%;
-    border: none;
-    outline: none;
-    height: auto;
-}
-
-input,
-textarea {
-    resize: none;
-}
-
-ul {
-    list-style-type: disc;
-    padding-left: 20px;
-    margin: 0;
-}
-
-@font-face {
-    font-family: "Zed Mono", sans-serif;
-    src: "";
-}
-
-input:-webkit-autofill,
-textarea:-webkit-autofill,
-select:-webkit-autofill {
-    background-color: transparent;
-    background-image: none;
-    color: #000;
-}
-
-/* 1.2 Typography */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: "Zed Mono", sans-serif;
-}
-
-figure {
-    margin: 0;
-}
-
-svg,
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/*-----------------------------------------------------------------
-  >>> About Style
-----------------------------------------------------------------*/
-.ds-about-section {
-    padding-top: 60px;
-    padding-bottom: 120px;
-}
-
-.ds-heading {
-    display: inline-block;
-    font-weight: 700;
-    color: #000;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 16px;
-    border-bottom: 3px solid #ba0c2f;
-    padding-bottom: 7px;
-    margin-bottom: 23px;
-}
-
-.ds-about-section p {
-    color: #373737;
-    font-size: 24px;
-    line-height: 40px;
-    font-weight: 300;
-    margin-bottom: 60px;
-}
-
-.ds-button {
-    display: inline-block;
-    text-transform: uppercase;
-    font-size: 12px;
-    line-height: 13px;
-    font-weight: 600;
-    letter-spacing: 3px;
-    color: #ba0c2f;
-    padding: 17px 30px;
-    border: 2px solid #ba0c2f;
-    border-radius: 60px;
-}
-
-.ds-button:hover {
-    background-color: #ba0c2f;
-    color: #fff;
-}
-
-.ds-arrow-button i {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-/*-----------------------------------------------------------------
-  >>> Skills Style
-----------------------------------------------------------------*/
-.ds-skills-section {
-    padding-bottom: 105px;
-}
-
-.ds-skills-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    margin-top: 11px;
-}
-
-.ds-skills-list li {
-    display: inline-block;
-    color: #373737;
-    font-size: 16px;
-    padding: 10px 20px;
-    background-color: #fff;
-    border: 1px solid #d7d7d7;
-    border-radius: 27px;
-    margin-right: 15px;
-    margin-bottom: 15px;
-    font-weight: 500;
-}
-
-/*-----------------------------------------------------------------
-  >>> Experience Style
-----------------------------------------------------------------*/
-.ds-experience-section {
-    padding-bottom: 120px;
-}
-
-.ds-experience-list section {
-    padding-right: 70px;
-    padding-left: 70px;
-}
-
-.ds-experience-list {
-}
-
-.ds-officename {
-    font-size: 24px;
-    font-weight: 300;
-}
-
-.ds-experience-list span {
-    display: block;
-}
-
-span.ds-year {
-    color: #373737;
-    font-size: 12px;
-    font-weight: 400;
-}
-
-span.ds-department {
-    color: #373737;
-    font-weight: 300;
-    font-size: 14px;
-}
-
-.ds-experience-list p {
-    font-size: 18px;
-    line-height: 24px;
-    font-weight: 300;
-}
-
-.ds-experience-list ul {
-    padding: 0;
-    margin: 0;
-}
-
-.ds-experience-list ul li {
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 300;
-    padding-left: 28px;
-    position: relative;
-    margin-bottom: 20px;
-}
-
-.ds-experience-list ul li:before {
-    content: "";
-    background-color: #373737;
-}
-
-/*-----------------------------------------------------------------
-  >>> Floaty McFLOATFACE
-----------------------------------------------------------------*/
-
-@keyframes float-3-5 {
-    0% {
-        transform: translateY(0px);
+@layer base {
+    :root {
+        --background: 0 0% 100%;
+        --foreground: 222.2 84% 4.9%;
+        --card: 0 0% 100%;
+        --card-foreground: 222.2 84% 4.9%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 222.2 84% 4.9%;
+        --primary: 222.2 47.4% 11.2%;
+        --primary-foreground: 210 40% 98%;
+        --secondary: 210 40% 96.1%;
+        --secondary-foreground: 222.2 47.4% 11.2%;
+        --muted: 210 40% 96.1%;
+        --muted-foreground: 215.4 16.3% 46.9%;
+        --accent: 210 40% 96.1%;
+        --accent-foreground: 222.2 47.4% 11.2%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 210 40% 98%;
+        --border: 214.3 31.8% 91.4%;
+        --input: 214.3 31.8% 91.4%;
+        --ring: 222.2 84% 4.9%;
+        --chart-1: 12 76% 61%;
+        --chart-2: 173 58% 39%;
+        --chart-3: 197 37% 24%;
+        --chart-4: 43 74% 66%;
+        --chart-5: 27 87% 67%;
+        --radius: 0.5rem;
+        --sidebar-background: 0 0% 98%;
+        --sidebar-foreground: 240 5.3% 26.1%;
+        --sidebar-primary: 240 5.9% 10%;
+        --sidebar-primary-foreground: 0 0% 98%;
+        --sidebar-accent: 240 4.8% 95.9%;
+        --sidebar-accent-foreground: 240 5.9% 10%;
+        --sidebar-border: 220 13% 91%;
+        --sidebar-ring: 217.2 91.2% 59.8%;
     }
-    50% {
-        transform: translateY(-10px);
-    }
-    100% {
-        transform: translateY(0px);
+    .dark {
+        --background: 220 10% 12%;
+        --foreground: 220 15% 95%;
+        --card: 220 8% 15%;
+        --card-foreground: 220 15% 95%;
+        --popover: 220 10% 16%;
+        --popover-foreground: 220 15% 95%;
+        --primary: 220 20% 95%;
+        --primary-foreground: 220 50% 12%;
+        --secondary: 220 15% 20%;
+        --secondary-foreground: 220 25% 92%;
+        --muted: 220 10% 18%;
+        --muted-foreground: 220 20% 75%;
+        --accent: 220 15% 22%;
+        --accent-foreground: 220 20% 92%;
+        --destructive: 0 65% 40%;
+        --destructive-foreground: 220 20% 98%;
+        --border: 220 10% 25%;
+        --input: 220 12% 22%;
+        --ring: 220 30% 60%;
+        --chart-1: 220 70% 50%;
+        --chart-2: 200 60% 45%;
+        --chart-3: 30 80% 55%;
+        --chart-4: 280 65% 55%;
+        --chart-5: 340 75% 55%;
+        --sidebar-background: 220 9% 13%;
+        --sidebar-foreground: 220 20% 92%;
+        --sidebar-primary: 220 80% 50%;
+        --sidebar-primary-foreground: 0 0% 100%;
+        --sidebar-accent: 220 8% 18%;
+        --sidebar-accent-foreground: 220 15% 92%;
+        --sidebar-border: 220 8% 20%;
+        --sidebar-ring: 220 70% 60%;
     }
 }
 
-.float-animation-3 {
-    animation: float-3-5 3s ease-in-out infinite;
-}
-
-.float-animation-4 {
-    animation: float-3-5 4s ease-in-out infinite;
-}
-
-.float-animation-5 {
-    animation: float-3-5 5s ease-in-out infinite;
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
 }
