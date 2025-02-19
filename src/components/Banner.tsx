@@ -5,15 +5,15 @@ export const Banner = () => {
     <div className="relative w-full h-80 mb-64">
       <div className="absolute top-0 left-0 rounded-lg mx-10 z-10">
         <Image
-          src="/images/placeholder.svg?height=300&width=300"
+          src="/images/apple_campus.jpg?height=300&width=300"
           alt="Image 1"
           width={300}
           height={300}
         />
       </div>
-      <div className="absolute top-48 left-16 rounded-lg mx-10 z-30">
+      <div className="absolute top-56 left-16 rounded-lg mx-10 z-30">
         <Image
-          src="/images/placeholder.svg?height=300&width=300"
+          src="/images/yosemite_tree.jpg?height=300&width=300"
           alt="Image 2"
           width={300}
           height={300}
