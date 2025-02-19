@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export const Banner = () => {
   return (
-    <div className="relative w-full m-10 md:w-1/2 h-80">
+    <div className="relative w-full m-10 h-80">
       <div className="absolute top-0 left-0 rounded-lg shadow-md z-10">
         <Image
           src="/images/placeholder.svg?height=300&width=300"
@@ -19,6 +19,10 @@ export const Banner = () => {
           height={300}
         />
       </div>
+      <p className="absolute mx-[12rem] top-0 left-64 z-10">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod
+        velit euismod, euismod velit euismod, euismod velit euismod.
+      </p>
     </div>
   );
 };

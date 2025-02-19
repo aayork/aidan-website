@@ -1,5 +1,3 @@
-import Link from "next/link";
-import Image from "next/image";
 import { Lamp, User, Settings } from "lucide-react";
 
 export const Navigation = () => {
