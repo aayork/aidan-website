@@ -1,7 +1,39 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Github, Linkedin } from "lucide-react";
+import { Lamp, User, Settings } from "lucide-react";
 
-export const Navigation = () => (
-  <header className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center bg-white px-10 py-8 transition-all duration-400 ease-in-out shadow-md rounded-xl m-2 max-w-[100rem]"></header>
-);
+export const Navigation = () => {
+  return (
+    <nav className="sticky top-0 bg-white bg-opacity-60 rounded-full shadow-lg p-6 my-10 mx-auto max-w-sm">
+      <ul className="flex justify-between space-x-8">
+        <li>
+          <a
+            href="#"
+            className="text-gray-600 hover:text-gray-900 flex items-center"
+          >
+            <Lamp className="h-3 w-3 mr-1" />
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            href="#"
+            className="text-gray-600 hover:text-gray-900 flex items-center"
+          >
+            <User className="h-3 w-3 mr-1" />
+            Profile
+          </a>
+        </li>
+        <li>
+          <a
+            href="#"
+            className="text-gray-600 hover:text-gray-900 flex items-center"
+          >
+            <Settings className="h-3 w-3 mr-1" />
+            Settings
+          </a>
+        </li>
+      </ul>
+    </nav>
+  );
+};

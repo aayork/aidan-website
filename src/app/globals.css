@@ -2,6 +2,8 @@
 
 body {
     font-family: "zed-mono", monospace;
+    background-color: "#F5F2EA";
+    color: var(--foreground);
 }
 
 :root {

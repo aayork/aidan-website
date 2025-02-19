@@ -9,8 +9,7 @@ import { Footer } from "@/components/Footer";
 
 const Home = () => {
   return (
-    <div className="border-[15px] border-green-950">
-      {/* big custom border */}
+    <div>
       <Navigation />
       <Banner />
       <About />
