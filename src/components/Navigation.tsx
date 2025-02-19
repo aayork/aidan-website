@@ -2,7 +2,7 @@ import { Lamp, User, Settings } from "lucide-react";
 
 export const Navigation = () => {
   return (
-    <nav className="sticky top-5 z-50 bg-gray-50 rounded-full shadow-lg p-6 my-10 mx-auto max-w-sm">
+    <nav className="sticky top-5 z-50 bg-white/50 backdrop-blur-md rounded-full shadow-lg p-6 my-10 mx-auto max-w-sm">
       <ul className="flex justify-between space-x-8">
         <li>
           <a

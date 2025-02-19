@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export const Banner = () => {
   return (
-    <div className="relative w-full m-10 h-80 mb-64">
-      <div className="absolute top-0 left-0 rounded-lg z-10">
+    <div className="relative w-full h-80 mb-64">
+      <div className="absolute top-0 left-0 rounded-lg mx-10 z-10">
         <Image
           src="/images/placeholder.svg?height=300&width=300"
           alt="Image 1"
@@ -11,7 +11,7 @@ export const Banner = () => {
           height={300}
         />
       </div>
-      <div className="absolute top-48 left-16 rounded-lg z-30">
+      <div className="absolute top-48 left-16 rounded-lg mx-10 z-30">
         <Image
           src="/images/placeholder.svg?height=300&width=300"
           alt="Image 2"
