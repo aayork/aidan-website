@@ -13,6 +13,7 @@ const Home = () => {
       <Navigation />
       <Banner />
       <Projects />
+      <Experience />
       <Books />
       <Footer />
     </div>
