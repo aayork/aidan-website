@@ -1,12 +1,13 @@
 import * as React from "react";
 import Image from "next/image";
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import Link from "next/link";
 
 export interface Project {
   title: string;
   image: string;
   description: string;
   technologies: string;
+  path: string;
 }
 
 export const projects: Project[] = [
@@ -15,32 +16,35 @@ export const projects: Project[] = [
     image: "/images/groupphoto_RITMO-2.jpg",
     description: "Rhythm game for Apple Vision",
     technologies: "Swift, SwiftUI, RealityKit",
+    path: "/projects/ritmo",
   },
   {
     title: "The Recipe Box",
-    image: "/images/recipe-box.png",
+    image:
+      "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg",
     description: "Share your favorite recipes!",
     technologies: "Next.js, React, TypeScript",
+    path: "https://github.com/aayork/recipe-box",
   },
 ];
 
 export const Projects = () => {
   return (
-    <div className="m-10">
-      <h1 className="m-4 font-bold text-xl underline decoration-[#C2DBA2]">
+    <div className="m-14">
+      <h1 className="mb-4 font-bold text-xl underline decoration-[#C2DBA2]">
         My Projects
       </h1>
-      <ScrollArea className="w-11/12 whitespace-nowrap">
-        <div className="flex w-max space-x-4 px-4 pb-4">
-          {projects.map((project) => (
-            <figure key={project.title} className="shrink-0">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {projects.map((project) => (
+          <Link key={project.path} href={project.path}>
+            <figure key={project.title} className="flex flex-col">
               <div className="overflow-hidden">
                 <Image
                   src={project.image}
                   alt={project.title}
-                  className="aspect-[3/4] object-cover"
-                  width={300}
-                  height={400}
+                  className="aspect-[5/6] object-cover w-full"
+                  width={500}
+                  height={600}
                 />
               </div>
               <figcaption className="pt-2 text-xs text-muted-foreground">
@@ -71,10 +75,9 @@ export const Projects = () => {
                 </span>
               </figcaption>
             </figure>
-          ))}
-        </div>
-        <ScrollBar orientation="horizontal" />
-      </ScrollArea>
+          </Link>
+        ))}
+      </div>
     </div>
   );
 };

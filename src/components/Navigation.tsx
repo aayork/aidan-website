@@ -5,7 +5,6 @@ import {
   Menu,
   FileUser,
   MessageCircleMore,
-  TentTree,
   Rss,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -110,7 +109,7 @@ export const Navigation = () => {
                       className="opacity-60"
                       aria-hidden="true"
                     />
-                    Résumé Download
+                    Résumé
                   </a>
                 </DropdownMenuItem>
                 <DropdownMenuItem
@@ -124,21 +123,7 @@ export const Navigation = () => {
                       className="opacity-60"
                       aria-hidden="true"
                     />
-                    Contact me
-                  </a>
-                </DropdownMenuItem>
-                <DropdownMenuItem
-                  className="cursor-pointer py-1 focus:bg-transparent focus:underline"
-                  asChild
-                >
-                  <a href="#">
-                    <TentTree
-                      size={16}
-                      strokeWidth={2}
-                      className="opacity-60"
-                      aria-hidden="true"
-                    />
-                    <s>Travel Gallery</s>
+                    Contact
                   </a>
                 </DropdownMenuItem>
               </DropdownMenuContent>

@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function NewMediaPortfolio() {
   return (
     <div
-      className="min-h-screen bg-cover bg-fixed text-white"
+      className="min-h-screen p-10 bg-cover bg-fixed text-white"
       style={{
         backgroundImage: "url('/images/matrix.gif')",
         fontFamily: "'Nanum Gothic Coding', monospace",
@@ -11,12 +11,12 @@ export default function NewMediaPortfolio() {
       }}
     >
       <h1 className="text-center text-4xl font-bold my-8">
-        Aidan York&apos;s Portfolio
+        Aidan York&apos;s NMC Portfolio
       </h1>
 
       <div className="flex justify-center mb-8">
-        <Link href="/index.html" className="text-green-400 hover:underline">
-          nmc portfolio
+        <Link href="/#" className="text-green-400 hover:underline">
+          main portfolio
         </Link>
       </div>
 
