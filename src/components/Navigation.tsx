@@ -1,10 +1,10 @@
 import {
   Lamp,
-  User,
+  Github,
   Menu,
-  Book,
-  LifeBuoy,
+  FileUser,
   MessageCircleMore,
+  TentTree,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -30,14 +30,14 @@ export const Navigation = () => {
               className="shadow-none"
               aria-label="Open edit menu"
             >
-              <Lamp className="h-3 w-3 mr-1" />
+              <Lamp className="h-4 w-4 mr-1" />
               Home
             </Button>
           </a>
         </li>
         <li>
           <a
-            href="#"
+            href="https://github.com/aayork"
             className="text-gray-600 hover:text-gray-900 flex items-center"
           >
             <Button
@@ -46,8 +46,8 @@ export const Navigation = () => {
               className="shadow-none"
               aria-label="Open edit menu"
             >
-              <User className="h-3 w-3 mr-1" />
-              Profile
+              <Github className="h-4 w-4 mr-1" />
+              Github
             </Button>
           </a>
         </li>
@@ -64,23 +64,23 @@ export const Navigation = () => {
                   className="rounded-full shadow-none"
                   aria-label="Open edit menu"
                 >
-                  <Menu size={16} strokeWidth={2} aria-hidden="true" />
+                  <Menu className="w-4 h-4" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="pb-2">
-                <DropdownMenuLabel>Navigation</DropdownMenuLabel>
+                <DropdownMenuLabel>More Stuff</DropdownMenuLabel>
                 <DropdownMenuItem
                   className="cursor-pointer py-1 focus:bg-transparent focus:underline"
                   asChild
                 >
                   <a href="#">
-                    <Book
+                    <FileUser
                       size={16}
                       strokeWidth={2}
                       className="opacity-60"
                       aria-hidden="true"
                     />
-                    Documentation
+                    Résumé
                   </a>
                 </DropdownMenuItem>
                 <DropdownMenuItem
@@ -88,13 +88,13 @@ export const Navigation = () => {
                   asChild
                 >
                   <a href="#">
-                    <LifeBuoy
+                    <TentTree
                       size={16}
                       strokeWidth={2}
                       className="opacity-60"
                       aria-hidden="true"
                     />
-                    Support
+                    Travel Gallery
                   </a>
                 </DropdownMenuItem>
                 <DropdownMenuItem
@@ -108,7 +108,7 @@ export const Navigation = () => {
                       className="opacity-60"
                       aria-hidden="true"
                     />
-                    Contact us
+                    Contact me
                   </a>
                 </DropdownMenuItem>
               </DropdownMenuContent>

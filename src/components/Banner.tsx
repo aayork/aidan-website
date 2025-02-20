@@ -19,10 +19,19 @@ export const Banner = () => {
           height={300}
         />
       </div>
-      <p className="absolute mx-[12rem] top-0 left-64 z-10">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod
-        velit euismod, euismod velit euismod, euismod velit euismod.
-      </p>
+      <div className="absolute mx-[12rem] top-0 left-64 z-10">
+        <p className="mb-5">
+          Hi! I’m Aidan, a fourth-year computer science student at UGA.
+        </p>
+        <p className="mb-5">
+          I like making cool things with emerging technologies and expressing
+          myself creatively through code!
+        </p>
+        <p>
+          In my free time, I enjoy reading fiction, fishing, exploring the
+          outdoors, and spending time with friends and family.
+        </p>
+      </div>
     </div>
   );
 };

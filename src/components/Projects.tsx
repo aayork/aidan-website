@@ -11,24 +11,25 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: "Ritmo!",
+    title: "/images/RITMO_BLACK_LOGO.png",
     image: "/images/groupphoto_RITMO-2.jpg",
     description: "Rhythm game for Apple Vision",
     technologies: "Swift, SwiftUI, RealityKit",
   },
   {
-    title: "Project Two",
-    image: "https://your-project-image-url.com/2",
-    description: "Mobile app that...",
-    technologies: "React Native, Firebase",
+    title: "The Recipe Box",
+    image: "/images/recipe-box.png",
+    description: "Share your favorite recipes!",
+    technologies: "Next.js, React, TypeScript",
   },
 ];
 
 export const Projects = () => {
   return (
-    <div>
-      <ScrollArea className="m-10 w-11/12 whitespace-nowrap">
-        <div className="flex w-max space-x-4 p-4">
+    <div className="m-10">
+      <h1 className="m-4 font-bold text-xl underline">My Projects</h1>
+      <ScrollArea className="w-11/12 whitespace-nowrap">
+        <div className="flex w-max space-x-4 px-4 pb-4">
           {projects.map((project) => (
             <figure key={project.title} className="shrink-0">
               <div className="overflow-hidden">
@@ -41,9 +42,19 @@ export const Projects = () => {
                 />
               </div>
               <figcaption className="pt-2 text-xs text-muted-foreground">
-                <span className="font-semibold text-foreground">
-                  {project.title}
-                </span>
+                {project.title.startsWith("/") ? (
+                  <Image
+                    src={project.title}
+                    alt="Project Title"
+                    width={67.5}
+                    height={37.5}
+                    className="object-contain"
+                  />
+                ) : (
+                  <span className="font-semibold text-foreground">
+                    {project.title}
+                  </span>
+                )}
               </figcaption>
               <figcaption className="pt-2 text-xs text-muted-foreground">
                 Description:{" "}
