@@ -20,14 +20,14 @@ export const Banner = () => {
         />
       </div>
       <div className="absolute mx-[12rem] top-0 left-64 z-10">
-        <p className="mb-5">
+        <p className="text-lg mb-5">
           Hi! I’m Aidan, a fourth-year computer science student at UGA.
         </p>
-        <p className="mb-5">
+        <p className="text-lg mb-5">
           I like making cool things with emerging technologies and expressing
           myself creatively through code!
         </p>
-        <p>
+        <p className="text-lg mb-5">
           In my free time, I enjoy reading fiction, fishing, exploring the
           outdoors, and spending time with friends and family.
         </p>

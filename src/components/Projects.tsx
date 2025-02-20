@@ -27,7 +27,9 @@ export const projects: Project[] = [
 export const Projects = () => {
   return (
     <div className="m-10">
-      <h1 className="m-4 font-bold text-xl underline">My Projects</h1>
+      <h1 className="m-4 font-bold text-xl underline decoration-[#C2DBA2]">
+        My Projects
+      </h1>
       <ScrollArea className="w-11/12 whitespace-nowrap">
         <div className="flex w-max space-x-4 px-4 pb-4">
           {projects.map((project) => (

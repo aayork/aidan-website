@@ -46,7 +46,9 @@ export const works: Books[] = [
 export const Books = () => {
   return (
     <div className="m-10">
-      <h1 className="m-4 font-bold text-xl underline">What I&apos;m Reading</h1>
+      <h1 className="m-4 font-bold text-xl underline decoration-[#C2DBA2]">
+        What I&apos;m Reading
+      </h1>
       <ScrollArea className="max-w-[80rem] whitespace-nowrap">
         <div className="flex w-max space-x-4 px-4 pb-4">
           {works.map((books) => (

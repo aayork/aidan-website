@@ -1,10 +1,12 @@
 import {
   Lamp,
   Github,
+  Linkedin,
   Menu,
   FileUser,
   MessageCircleMore,
   TentTree,
+  Rss,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -73,14 +75,56 @@ export const Navigation = () => {
                   className="cursor-pointer py-1 focus:bg-transparent focus:underline"
                   asChild
                 >
-                  <a href="#">
+                  <a href="https://www.linkedin.com/in/aidan-york/">
+                    <Linkedin
+                      size={16}
+                      strokeWidth={2}
+                      className="opacity-60"
+                      aria-hidden="true"
+                    />
+                    LinkedIn
+                  </a>
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  className="cursor-pointer py-1 focus:bg-transparent focus:underline"
+                  asChild
+                >
+                  <a href="https://medium.com/@York_aa19">
+                    <Rss
+                      size={16}
+                      strokeWidth={2}
+                      className="opacity-60"
+                      aria-hidden="true"
+                    />
+                    Medium
+                  </a>
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  className="cursor-pointer py-1 focus:bg-transparent focus:underline"
+                  asChild
+                >
+                  <a href="/Aidan York's Resume.pdf" download>
                     <FileUser
                       size={16}
                       strokeWidth={2}
                       className="opacity-60"
                       aria-hidden="true"
                     />
-                    Résumé
+                    Résumé Download
+                  </a>
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  className="cursor-pointer py-1 focus:bg-transparent focus:underline"
+                  asChild
+                >
+                  <a href="mailto:york_aa19@outlook.com">
+                    <MessageCircleMore
+                      size={16}
+                      strokeWidth={2}
+                      className="opacity-60"
+                      aria-hidden="true"
+                    />
+                    Contact me
                   </a>
                 </DropdownMenuItem>
                 <DropdownMenuItem
@@ -94,21 +138,7 @@ export const Navigation = () => {
                       className="opacity-60"
                       aria-hidden="true"
                     />
-                    Travel Gallery
-                  </a>
-                </DropdownMenuItem>
-                <DropdownMenuItem
-                  className="cursor-pointer py-1 focus:bg-transparent focus:underline"
-                  asChild
-                >
-                  <a href="#">
-                    <MessageCircleMore
-                      size={16}
-                      strokeWidth={2}
-                      className="opacity-60"
-                      aria-hidden="true"
-                    />
-                    Contact me
+                    <s>Travel Gallery</s>
                   </a>
                 </DropdownMenuItem>
               </DropdownMenuContent>

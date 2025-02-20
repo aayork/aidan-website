@@ -1,6 +1,8 @@
 export const Experience = () => (
   <div className="m-14 pt-10">
-    <h1 className="mb-2 font-bold text-xl underline">Experience</h1>
+    <h1 className="mb-2 font-bold text-xl underline decoration-[#C2DBA2]">
+      Experience
+    </h1>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       <section>
         <span className="text-xs text-gray-500">May 2024 - July 2024</span>
@@ -14,11 +16,12 @@ export const Experience = () => (
             Discovered new methods of 3D scanning utilizing computer vision for
             use in Placez event planning software.
           </li>
-          <li>Using Ubuntu VM to train machine learning models.</li>
+          <li>Leveraged THREE.js to render 3D scans in the browser.</li>
+          <li>Used an Ubuntu VM to train machine learning models.</li>
         </ul>
       </section>
       <section>
-        <span className="text-xs text-gray-500">May 2023 - July 2023</span>
+        <span className="text-xs text-gray-500">May 2023 - August 2023</span>
         <h3 className="font-bold">Apex Service Partners</h3>
         <span className="text-[#004d05] italic">IT Intern</span>
         <p className="mt-2">

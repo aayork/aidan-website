@@ -1,8 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { Banner } from "@/components/Banner";
-import { About } from "@/components/About";
 import { Experience } from "@/components/Experience";
-import { Skills } from "@/components/Skills";
 import { Projects } from "@/components/Projects";
 import { Books } from "@/components/Books";
 import { Footer } from "@/components/Footer";
@@ -10,6 +8,7 @@ import { Footer } from "@/components/Footer";
 const Home = () => {
   return (
     <div>
+      <div className="w-full h-1 bg-[#C2DBA2]" />
       <Navigation />
       <Banner />
       <Projects />
