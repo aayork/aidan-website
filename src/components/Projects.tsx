@@ -21,10 +21,18 @@ export const projects: Project[] = [
   {
     title: "The Recipe Box",
     image:
-      "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg",
-    description: "Share your favorite recipes!",
+      "https://preview.redd.it/2lktu03mau441.jpg?width=1080&crop=smart&auto=webp&s=0157ca8037f650f3a725ea3df4c448c22b783370",
+    description: "All of gam-gam's recipes in the palm of your hand",
     technologies: "Next.js, React, TypeScript",
     path: "https://github.com/aayork/recipe-box",
+  },
+  {
+    title: "Movie Monkey",
+    image:
+      "https://i0.wp.com/www.cemeterydance.com/extras/wp-content/uploads/2024/07/monkey-movie.jpg?fit=683%2C1024&ssl=1",
+    description: "Cinema E-Booking for the 22nd century",
+    technologies: "Vite, REST APIs, React",
+    path: "https://github.com/aayork/4050-termproject",
   },
 ];
 
