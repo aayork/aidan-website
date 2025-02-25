@@ -15,15 +15,15 @@ export const projects: Project[] = [
     title: "/images/RITMO_BLACK_LOGO.png",
     image: "/images/groupphoto_RITMO-2.jpg",
     description: "Rhythm game for Apple Vision",
-    technologies: "Swift, SwiftUI, RealityKit",
-    path: "/projects/ritmo",
+    technologies: "Swift, SwiftUI, RealityKit, MusicKit",
+    path: "https://apps.apple.com/us/app/ritmo/id6480073527",
   },
   {
     title: "The Recipe Box",
     image:
       "https://preview.redd.it/2lktu03mau441.jpg?width=1080&crop=smart&auto=webp&s=0157ca8037f650f3a725ea3df4c448c22b783370",
     description: "All of gam-gam's recipes in the palm of your hand",
-    technologies: "Next.js, React, TypeScript",
+    technologies: "Next.js, React, TypeScript, ShadcnUI",
     path: "https://github.com/aayork/recipe-box",
   },
   {
@@ -31,7 +31,7 @@ export const projects: Project[] = [
     image:
       "https://i0.wp.com/www.cemeterydance.com/extras/wp-content/uploads/2024/07/monkey-movie.jpg?fit=683%2C1024&ssl=1",
     description: "Cinema E-Booking for the 22nd century",
-    technologies: "Vite, REST APIs, React",
+    technologies: "Vite, Django, React, DaisyUI, RESTful APIs",
     path: "https://github.com/aayork/4050-termproject",
   },
 ];

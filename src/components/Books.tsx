@@ -16,7 +16,7 @@ export const works: Books[] = [
     image: "https://m.media-amazon.com/images/I/81zD9kaVW9L.jpg",
     title: "Project Hail Mary",
     description:
-      "[temporary description] An astronaut wakes up on a spaceship with no memory and must save humanity.",
+      "One of the best books I've read in a while. Tells the story of an astronaut who wakes up in space with no recollection of how he got there or who he is. He eventually finds out that he is solely responsible for saving humanity humanity, and makes an unlikely friend along the way. ",
   },
   {
     author: "Isaac Asimov",
