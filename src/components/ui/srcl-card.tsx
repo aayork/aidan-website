@@ -1,4 +1,4 @@
-import styles from "@/Components/ui/Card.module.scss";
+import styles from "@/components/ui/srcl-card.module.scss";
 
 import * as React from "react";
 // import * as Utilities from "@/lib/srcl-utilities";
