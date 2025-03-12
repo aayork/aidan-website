@@ -1,4 +1,4 @@
-import "srcl.scss";
+import "./srcl.scss";
 
 import Button from "@/components/ui/srcl-button";
 import Card from "@/components/ui/srcl-card";
