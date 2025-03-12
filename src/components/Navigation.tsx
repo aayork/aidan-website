@@ -4,6 +4,8 @@ import {
   FileUser,
   MessageCircleMore,
   Linkedin,
+  GitPullRequest,
+  House,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -20,22 +22,6 @@ export const Navigation = () => {
       <ul className="flex justify-between space-x-8">
         <li>
           <a
-            href="https://github.com/aayork"
-            className="text-gray-600 hover:text-gray-900 flex items-center"
-          >
-            <Button
-              size="default"
-              variant="ghost"
-              className="shadow-none"
-              aria-label="Open edit menu"
-            >
-              <Github className="h-4 w-4 mr-1" />
-              Github
-            </Button>
-          </a>
-        </li>
-        <li>
-          <a
             href="#"
             className="text-gray-600 hover:text-gray-900 flex items-center"
           >
@@ -45,8 +31,24 @@ export const Navigation = () => {
               className="shadow-none"
               aria-label="Open edit menu"
             >
-              <Linkedin className="h-4 w-4 mr-1" />
-              LinkedIn
+              <House className="h-4 w-4 mr-1" />
+              Home
+            </Button>
+          </a>
+        </li>
+        <li>
+          <a
+            href="/projects"
+            className="text-gray-600 hover:text-gray-900 flex items-center"
+          >
+            <Button
+              size="default"
+              variant="ghost"
+              className="shadow-none"
+              aria-label="Open edit menu"
+            >
+              <GitPullRequest className="h-4 w-4 mr-1" />
+              Projects
             </Button>
           </a>
         </li>
@@ -68,6 +70,24 @@ export const Navigation = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="pb-2">
                 <DropdownMenuLabel>More Stuff</DropdownMenuLabel>
+                <DropdownMenuItem
+                  className="cursor-pointer py-1 focus:bg-transparent focus:underline"
+                  asChild
+                >
+                  <a href="https://www.linkedin.com/in/aidan-york/">
+                    <Linkedin className="h-4 w-4 mr-1" />
+                    LinkedIn
+                  </a>
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  className="cursor-pointer py-1 focus:bg-transparent focus:underline"
+                  asChild
+                >
+                  <a href="https://github.com/aayork">
+                    <Github className="h-4 w-4 mr-1" />
+                    Github
+                  </a>
+                </DropdownMenuItem>
                 <DropdownMenuItem
                   className="cursor-pointer py-1 focus:bg-transparent focus:underline"
                   asChild

@@ -23,7 +23,7 @@ export const projects: Project[] = [
     image:
       "https://preview.redd.it/2lktu03mau441.jpg?width=1080&crop=smart&auto=webp&s=0157ca8037f650f3a725ea3df4c448c22b783370",
     description: "All of gam-gam's recipes in the palm of your hand",
-    technologies: "Next.js, React, TypeScript, ShadcnUI",
+    technologies: "Next.js, React, TypeScript, MongoDB, ShadcnUI",
     path: "https://github.com/aayork/recipe-box",
   },
   {
