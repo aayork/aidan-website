@@ -1,9 +1,9 @@
-import styles from '@components/ActionBar.module.scss';
+import styles from "@components/ActionBar.module.scss";
 
-import * as React from 'react';
-import * as Utilities from '@common/utilities';
+import * as React from "react";
+import * as Utilities from "@/lib/srcl-utilities";
 
-import ButtonGroup from '@components/ButtonGroup';
+import ButtonGroup from "@components/ButtonGroup";
 
 interface ActionBarItem {
   hotkey?: string;
