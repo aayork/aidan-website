@@ -1,12 +1,12 @@
-import styles from '@components/DropdownMenu.module.scss';
+import styles from "@/components/srcl/srcl-dropdownmenu.module.scss";
 
-import * as React from 'react';
+import * as React from "react";
 
-import ActionButton from '@components/ActionButton';
-import ActionListItem from '@components/ActionListItem';
-import ModalTrigger from '@components/ModalTrigger';
+import ActionButton from "@/components/srcl/srcl-actionbutton";
+import ActionListItem from "@/components/srcl/srcl-actionlistitem";
+import ModalTrigger from "@/components/srcl/srcl-modaltrigger";
 
-import { useHotkeys } from '@modules/hotkeys';
+import { useHotkeys } from "@/lib/modules/hotkeys";
 
 interface DropdownMenuItemProps {
   children: React.ReactNode;
@@ -23,62 +23,68 @@ interface DropdownMenuProps extends React.HTMLAttributes<HTMLDivElement> {
   items?: DropdownMenuItemProps[];
 }
 
-const DropdownMenu = React.forwardRef<HTMLDivElement, DropdownMenuProps>((props, ref) => {
-  const { onClose, items, style, ...rest } = props;
+const DropdownMenu = React.forwardRef<HTMLDivElement, DropdownMenuProps>(
+  (props, ref) => {
+    const { onClose, items, style, ...rest } = props;
 
-  const handleHotkey = () => {
-    if (onClose) onClose();
-  };
+    const handleHotkey = () => {
+      if (onClose) onClose();
+    };
 
-  useHotkeys('space', handleHotkey);
+    useHotkeys("space", handleHotkey);
 
-  return (
-    <div ref={ref} className={styles.root} style={style} {...rest}>
-      {items &&
-        items.map((each, index) => {
-          if (each.modal) {
+    return (
+      <div ref={ref} className={styles.root} style={style} {...rest}>
+        {items &&
+          items.map((each, index) => {
+            if (each.modal) {
+              return (
+                <ModalTrigger
+                  key={`action-items-${index}`}
+                  modal={each.modal}
+                  modalProps={each.modalProps}
+                >
+                  <ActionListItem children={each.children} icon={each.icon} />
+                </ModalTrigger>
+              );
+            }
+
             return (
-              <ModalTrigger key={`action-items-${index}`} modal={each.modal} modalProps={each.modalProps}>
-                <ActionListItem children={each.children} icon={each.icon} />
-              </ModalTrigger>
+              <ActionListItem
+                key={`action-items-${index}`}
+                children={each.children}
+                icon={each.icon}
+                href={each.href}
+                target={each.target}
+                onClick={() => {
+                  if (each.onClick) {
+                    each.onClick();
+                  }
+
+                  if (onClose) {
+                    onClose();
+                  }
+                }}
+              />
             );
-          }
+          })}
 
-          return (
-            <ActionListItem
-              key={`action-items-${index}`}
-              children={each.children}
-              icon={each.icon}
-              href={each.href}
-              target={each.target}
-              onClick={() => {
-                if (each.onClick) {
-                  each.onClick();
-                }
+        <footer className={styles.footer}>
+          Press space to{" "}
+          <ActionButton
+            hotkey="␣"
+            onClick={() => {
+              if (onClose) onClose();
+            }}
+          >
+            Close
+          </ActionButton>
+        </footer>
+      </div>
+    );
+  },
+);
 
-                if (onClose) {
-                  onClose();
-                }
-              }}
-            />
-          );
-        })}
-
-      <footer className={styles.footer}>
-        Press space to{' '}
-        <ActionButton
-          hotkey="␣"
-          onClick={() => {
-            if (onClose) onClose();
-          }}
-        >
-          Close
-        </ActionButton>
-      </footer>
-    </div>
-  );
-});
-
-DropdownMenu.displayName = 'DropdownMenu';
+DropdownMenu.displayName = "DropdownMenu";
 
 export default DropdownMenu;

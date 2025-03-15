@@ -1,4 +1,4 @@
-import styles from '@components/MessageViewer.module.scss';
+import styles from "@/components/srcl/srcl-messageviewer.module.scss";
 
 export default function MessageViewer(props) {
   return (

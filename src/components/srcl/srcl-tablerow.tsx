@@ -1,12 +1,8 @@
-'use client';
+"use client";
 
-import styles from '@components/TableRow.module.scss';
+import styles from "@/components/srcl/srcl-tablerow.module.scss";
 
-import * as React from 'react';
-
-type TableRowProps = React.HTMLAttributes<HTMLElement> & {
-  children?: React.ReactNode;
-};
+import * as React from "react";
 
 const TableRow = ({ children, ...rest }) => {
   return (
@@ -16,6 +12,6 @@ const TableRow = ({ children, ...rest }) => {
   );
 };
 
-TableRow.displayName = 'TableRow';
+TableRow.displayName = "TableRow";
 
 export default TableRow;

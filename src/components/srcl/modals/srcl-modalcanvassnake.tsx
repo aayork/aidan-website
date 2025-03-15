@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import styles from '@components/modals/ModalCanvasSnake.module.scss';
+import styles from "@/components/srcl/modals/srcl-modalcanvassnake.module.scss";
 
-import * as React from 'react';
-import * as Utilities from '@common/utilities';
+import * as React from "react";
+import * as Utilities from "@/lib/srcl-utilities";
 
-import { useModals } from '@components/page/ModalContext';
+import { useModals } from "@/components/srcl/page/srcl-modalcontext";
 
-import Button from '@components/Button';
-import CanvasSnake from '@components/CanvasSnake';
-import Card from '@components/Card';
+import Button from "@/components/srcl/srcl-button";
+import CanvasSnake from "@/components/srcl/srcl-canvassnake";
+import Card from "@/components/srcl/srcl-card";
 
 interface ModalCanvasSnakeProps {
   buttonText?: string | any;
@@ -24,7 +24,9 @@ function ModalCanvasSnake({ buttonText }: ModalCanvasSnakeProps) {
         <CanvasSnake rows={12} />
         <br />
         <br />
-        <Button onClick={() => close()}>{Utilities.isEmpty(buttonText) ? 'Close' : buttonText}</Button>
+        <Button onClick={() => close()}>
+          {Utilities.isEmpty(buttonText) ? "Close" : buttonText}
+        </Button>
       </Card>
     </div>
   );

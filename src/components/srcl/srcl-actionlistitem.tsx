@@ -1,6 +1,6 @@
-import styles from '@components/ActionListItem.module.scss';
+import styles from "@/components/srcl/srcl-actionlistitem.module.scss";
 
-import * as React from 'react';
+import * as React from "react";
 
 interface ActionListItemProps {
   style?: React.CSSProperties;
@@ -16,7 +16,14 @@ const ActionListItem: React.FC<ActionListItemProps> = (props) => {
 
   if (href) {
     return (
-      <a className={styles.item} href={href} target={target} style={style} tabIndex={0} role="link">
+      <a
+        className={styles.item}
+        href={href}
+        target={target}
+        style={style}
+        tabIndex={0}
+        role="link"
+      >
         <figure className={styles.icon}>{icon}</figure>
         <span className={styles.text}>{children}</span>
       </a>
@@ -24,7 +31,13 @@ const ActionListItem: React.FC<ActionListItemProps> = (props) => {
   }
 
   return (
-    <div className={styles.item} onClick={onClick} style={style} tabIndex={0} role="button">
+    <div
+      className={styles.item}
+      onClick={onClick}
+      style={style}
+      tabIndex={0}
+      role="button"
+    >
       <figure className={styles.icon}>{icon}</figure>
       <span className={styles.text}>{children}</span>
     </div>

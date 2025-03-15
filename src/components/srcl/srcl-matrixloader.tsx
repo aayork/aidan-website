@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import styles from '@components/MatrixLoader.module.scss';
+import styles from "@/components/srcl/srcl-matrixloader.module.scss";
 
-import * as React from 'react';
+import * as React from "react";
 
 interface MatrixLoaderProps {
   rows?: number;
-  direction?: undefined | 'top-to-bottom' | 'left-to-right';
-  mode?: undefined | 'greek' | 'katakana';
+  direction?: undefined | "top-to-bottom" | "left-to-right";
+  mode?: undefined | "greek" | "katakana";
 }
 
 // TODO(jimmylee)
@@ -17,26 +17,42 @@ interface MatrixLoaderProps {
 const LINE_HEIGHT = 20;
 const CHARACTER_WIDTH = 9.6;
 
-function onTextGeneration({ mode = 'greek' }) {
-  if (mode === 'greek') {
+function onTextGeneration({ mode = "greek" }) {
+  if (mode === "greek") {
     const isUppercase = Math.random() < 0.5;
 
-    return String.fromCharCode(isUppercase ? 0x0391 + Math.floor(Math.random() * (0x03a9 - 0x0391 + 1)) : 0x03b1 + Math.floor(Math.random() * (0x03c9 - 0x03b1 + 1)));
+    return String.fromCharCode(
+      isUppercase
+        ? 0x0391 + Math.floor(Math.random() * (0x03a9 - 0x0391 + 1))
+        : 0x03b1 + Math.floor(Math.random() * (0x03c9 - 0x03b1 + 1)),
+    );
   }
 
-  if (mode === 'katakana') {
+  if (mode === "katakana") {
     const japaneseRanges = [{ start: 0x30a0, end: 0x30ff }];
 
-    const allJapaneseCharacters = japaneseRanges.flatMap((range) => Array.from({ length: range.end - range.start + 1 }, (_, i) => range.start + i));
+    const allJapaneseCharacters = japaneseRanges.flatMap((range) =>
+      Array.from(
+        { length: range.end - range.start + 1 },
+        (_, i) => range.start + i,
+      ),
+    );
 
-    const randomJapaneseCharacter = allJapaneseCharacters[Math.floor(Math.random() * allJapaneseCharacters.length)];
+    const randomJapaneseCharacter =
+      allJapaneseCharacters[
+        Math.floor(Math.random() * allJapaneseCharacters.length)
+      ];
     return String.fromCharCode(randomJapaneseCharacter);
   }
 
-  return '0';
+  return "0";
 }
 
-const MatrixLoader: React.FC<MatrixLoaderProps> = ({ rows = 25, direction = 'top-to-bottom', mode = 'greek' }) => {
+const MatrixLoader: React.FC<MatrixLoaderProps> = ({
+  rows = 25,
+  direction = "top-to-bottom",
+  mode = "greek",
+}) => {
   const canvasRef = React.useRef<HTMLCanvasElement>(null);
 
   React.useEffect(() => {
@@ -52,12 +68,12 @@ const MatrixLoader: React.FC<MatrixLoaderProps> = ({ rows = 25, direction = 'top
 
       const dpr = window.devicePixelRatio || 1;
 
-      canvas.style.width = parentWidth + 'px';
-      canvas.style.height = parentHeight + 'px';
+      canvas.style.width = parentWidth + "px";
+      canvas.style.height = parentHeight + "px";
       canvas.width = Math.floor(parentWidth * dpr);
       canvas.height = Math.floor(parentHeight * dpr);
 
-      const ctx = canvas.getContext('2d');
+      const ctx = canvas.getContext("2d");
       if (ctx) {
         ctx.scale(dpr, dpr);
       }
@@ -65,17 +81,17 @@ const MatrixLoader: React.FC<MatrixLoaderProps> = ({ rows = 25, direction = 'top
 
     resizeCanvas();
 
-    window.addEventListener('resize', resizeCanvas);
+    window.addEventListener("resize", resizeCanvas);
 
     return () => {
-      window.removeEventListener('resize', resizeCanvas);
+      window.removeEventListener("resize", resizeCanvas);
     };
   }, [rows]);
 
   React.useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
     let interval: number;
@@ -84,21 +100,25 @@ const MatrixLoader: React.FC<MatrixLoaderProps> = ({ rows = 25, direction = 'top
       const w = canvas.width;
       const h = canvas.height;
 
-      if (direction === 'top-to-bottom') {
+      if (direction === "top-to-bottom") {
         const cols = Math.floor(w / CHARACTER_WIDTH);
         const ypos: number[] = Array(cols).fill(0);
 
         const matrix = () => {
-          const themeTextColor = getComputedStyle(document.body).getPropertyValue('--theme-text').trim();
-          const fontFamily = getComputedStyle(document.body).getPropertyValue('--font-family-mono').trim();
+          const themeTextColor = getComputedStyle(document.body)
+            .getPropertyValue("--theme-text")
+            .trim();
+          const fontFamily = getComputedStyle(document.body)
+            .getPropertyValue("--font-family-mono")
+            .trim();
 
-          ctx.globalCompositeOperation = 'destination-out';
-          ctx.fillStyle = 'rgba(255, 255, 255, 0.05)';
+          ctx.globalCompositeOperation = "destination-out";
+          ctx.fillStyle = "rgba(255, 255, 255, 0.05)";
           ctx.fillRect(0, 0, w, h);
-          ctx.textBaseline = 'top';
+          ctx.textBaseline = "top";
           ctx.font = `16px ${fontFamily}`;
 
-          ctx.globalCompositeOperation = 'source-over';
+          ctx.globalCompositeOperation = "source-over";
 
           ypos.forEach((y, ind) => {
             const text = onTextGeneration({ mode });
@@ -116,21 +136,25 @@ const MatrixLoader: React.FC<MatrixLoaderProps> = ({ rows = 25, direction = 'top
         };
 
         interval = window.setInterval(matrix, 50);
-      } else if (direction === 'left-to-right') {
+      } else if (direction === "left-to-right") {
         const totalRows = rows; // Use rows directly for total rows
         const xpos: number[] = Array(totalRows).fill(0);
 
         const matrix = () => {
-          const themeTextColor = getComputedStyle(document.body).getPropertyValue('--theme-text').trim();
-          const fontFamily = getComputedStyle(document.body).getPropertyValue('--font-family-mono').trim();
+          const themeTextColor = getComputedStyle(document.body)
+            .getPropertyValue("--theme-text")
+            .trim();
+          const fontFamily = getComputedStyle(document.body)
+            .getPropertyValue("--font-family-mono")
+            .trim();
 
-          ctx.globalCompositeOperation = 'destination-out';
-          ctx.fillStyle = 'rgba(255, 255, 255, 0.05)';
+          ctx.globalCompositeOperation = "destination-out";
+          ctx.fillStyle = "rgba(255, 255, 255, 0.05)";
           ctx.fillRect(0, 0, w, h);
-          ctx.textBaseline = 'top';
+          ctx.textBaseline = "top";
           ctx.font = `16px ${fontFamily}`;
 
-          ctx.globalCompositeOperation = 'source-over';
+          ctx.globalCompositeOperation = "source-over";
 
           xpos.forEach((x, ind) => {
             const text = onTextGeneration({ mode });

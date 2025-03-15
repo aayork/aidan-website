@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import styles from '@components/Badge.module.scss';
+import styles from "@/components/srcl/srcl-badge.module.scss";
 
-import * as React from 'react';
+import * as React from "react";
 
 interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
   children?: React.ReactNode;

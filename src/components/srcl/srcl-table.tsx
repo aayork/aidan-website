@@ -1,12 +1,8 @@
-'use client';
+"use client";
 
-import styles from '@components/Table.module.scss';
+import styles from "@/components/srcl/srcl-table.module.scss";
 
-import * as React from 'react';
-
-type TableProps = React.HTMLAttributes<HTMLElement> & {
-  children?: React.ReactNode;
-};
+import * as React from "react";
 
 const Table = ({ children, ...rest }) => {
   return (
@@ -16,6 +12,6 @@ const Table = ({ children, ...rest }) => {
   );
 };
 
-Table.displayName = 'Table';
+Table.displayName = "Table";
 
 export default Table;

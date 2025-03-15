@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "@/components/ui/srcl-accordion.module.scss";
+import styles from "@/components/srcl/srcl-accordion.module.scss";
 
 import * as React from "react";
 import * as Utilities from "@/lib/srcl-utilities";

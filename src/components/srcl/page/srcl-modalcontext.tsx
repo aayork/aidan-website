@@ -1,6 +1,8 @@
-import * as React from 'react';
+import * as React from "react";
 
-export type ModalComponent<P = {}> = React.ComponentType<React.PropsWithoutRef<P>>;
+export type ModalComponent<P = {}> = React.ComponentType<
+  React.PropsWithoutRef<P>
+>;
 
 export interface ModalState<P = any> {
   key: string;
@@ -16,7 +18,9 @@ interface ModalContextType {
 
 const ModalContext = React.createContext<ModalContextType | null>(null);
 
-export const ModalProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const ModalProvider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   const [modalStack, setModalStack] = React.useState<ModalState<any>[]>([]);
 
   const open = <P,>(component: ModalComponent<P>, props: P): string => {
@@ -31,7 +35,7 @@ export const ModalProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
   const close = (key?: string): void => {
     setModalStack((prev) =>
-      key ? prev.filter((modal) => modal.key !== key) : prev.slice(0, -1)
+      key ? prev.filter((modal) => modal.key !== key) : prev.slice(0, -1),
     );
   };
 
@@ -45,7 +49,9 @@ export const ModalProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 export const useModals = (): ModalContextType => {
   const context = React.useContext(ModalContext);
   if (!context) {
-    throw new Error('useModals must be used within a ModalProvider and use client');
+    throw new Error(
+      "useModals must be used within a ModalProvider and use client",
+    );
   }
   return context;
 };

@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import * as React from 'react';
+import * as React from "react";
 
-import { useModals } from '@components/page/ModalContext';
+import { useModals } from "@/components/srcl/page/srcl-modalcontext";
 
 interface ModalTriggerProps {
   children: React.ReactElement<{ onClick?: React.MouseEventHandler }>;

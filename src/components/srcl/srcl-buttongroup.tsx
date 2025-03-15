@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import styles from '@components/ButtonGroup.module.scss';
+import styles from "@/components/srcl/srcl-buttongroup.module.scss";
 
-import * as React from 'react';
-import * as Utilities from '@common/utilities';
+import * as React from "react";
+import * as Utilities from "@/lib/srcl-utilities";
 
-import ActionButton from '@components/ActionButton';
-import DropdownMenuTrigger from '@components/DropdownMenuTrigger';
+import ActionButton from "@/components/srcl/srcl-actionbutton";
+import DropdownMenuTrigger from "@/components/srcl/srcl-dropdownmenutrigger";
 
 const ButtonGroup = (props) => {
   if (!props.items) {
@@ -14,11 +14,20 @@ const ButtonGroup = (props) => {
   }
 
   return (
-    <div className={Utilities.classNames(styles.root, props.isFull ? styles.full : null)}>
+    <div
+      className={Utilities.classNames(
+        styles.root,
+        props.isFull ? styles.full : null,
+      )}
+    >
       {props.items.map((each) => {
         if (each.items) {
           return (
-            <DropdownMenuTrigger key={each.body} items={each.items} hotkey={each.openHotkey}>
+            <DropdownMenuTrigger
+              key={each.body}
+              items={each.items}
+              hotkey={each.openHotkey}
+            >
               <ActionButton hotkey={each.hotkey} isSelected={each.selected}>
                 {each.body}
               </ActionButton>
@@ -27,7 +36,12 @@ const ButtonGroup = (props) => {
         }
 
         return (
-          <ActionButton key={each.body} onClick={each.onClick} hotkey={each.hotkey} isSelected={each.selected}>
+          <ActionButton
+            key={each.body}
+            onClick={each.onClick}
+            hotkey={each.hotkey}
+            isSelected={each.selected}
+          >
             {each.body}
           </ActionButton>
         );

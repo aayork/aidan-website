@@ -1,24 +1,25 @@
-'use client';
+"use client";
 
-import styles from '@components/BlockLoader.module.scss';
+import styles from "@/components/srcl/srcl-blockloader.module.scss";
 
-import * as React from 'react';
+import * as React from "react";
 
 const SEQUENCES = [
-  ['⠁', '⠂', '⠄', '⡀', '⢀', '⠠', '⠐', '⠈'],
-  ['⣾', '⣽', '⣻', '⢿', '⡿', '⣟', '⣯', '⣷'],
-  ['▖', '▘', '▝', '▗'],
-  ['▁', '▂', '▃', '▄', '▅', '▆', '▇', '█', '▇', '▆', '▅', '▄', '▃', '▁'],
-  ['▉', '▊', '▋', '▌', '▍', '▎', '▏', '▎', '▍', '▌', '▋', '▊', '▉'],
-  ['←', '↖', '↑', '↗', '→', '↘', '↓', '↙'],
-  ['┤', '┘', '┴', '└', '├', '┌', '┬', '┐'],
-  ['◢', '◣', '◤', '◥'],
-  ['◰', '◳', '◲', '◱'],
-  ['◴', '◷', '◶', '◵'],
-  ['◐', '◓', '◑', '◒'],
+  ["⠁", "⠂", "⠄", "⡀", "⢀", "⠠", "⠐", "⠈"],
+  ["⣾", "⣽", "⣻", "⢿", "⡿", "⣟", "⣯", "⣷"],
+  ["▖", "▘", "▝", "▗"],
+  ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█", "▇", "▆", "▅", "▄", "▃", "▁"],
+  ["▉", "▊", "▋", "▌", "▍", "▎", "▏", "▎", "▍", "▌", "▋", "▊", "▉"],
+  ["←", "↖", "↑", "↗", "→", "↘", "↓", "↙"],
+  ["┤", "┘", "┴", "└", "├", "┌", "┬", "┐"],
+  ["◢", "◣", "◤", "◥"],
+  ["◰", "◳", "◲", "◱"],
+  ["◴", "◷", "◶", "◵"],
+  ["◐", "◓", "◑", "◒"],
 ];
 
-interface BlockLoaderProps extends Omit<React.HTMLAttributes<HTMLSpanElement>, 'children'> {
+interface BlockLoaderProps
+  extends Omit<React.HTMLAttributes<HTMLSpanElement>, "children"> {
   mode?: number;
 }
 

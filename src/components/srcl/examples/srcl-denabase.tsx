@@ -1,20 +1,20 @@
-'use client';
+"use client";
 
-import styles from '@components/examples/Denabase.module.scss';
+import styles from "@/components/srcl/examples/srcl-denabase.module.scss";
 
-import * as React from 'react';
+import * as React from "react";
 
-import ActionButton from '@components/ActionButton';
-import Card from '@components/Card';
-import Divider from '@components/Divider';
-import Row from '@components/Row';
-import RowSpaceBetween from '@components/RowSpaceBetween';
-import SidebarLayout from '@components/SidebarLayout';
+import ActionButton from "@/components/srcl/srcl-actionbutton";
+import Card from "@/components/srcl/srcl-card";
+import Divider from "@/components/srcl/srcl-divider";
+import Row from "@/components/srcl/srcl-row";
+import RowSpaceBetween from "@/components/srcl/srcl-rowspacebetween";
+import SidebarLayout from "@/components/srcl/srcl-sidebarlayout";
 
-const Denabase = (props) => {
+const Denabase = () => {
   return (
     <>
-      <Card style={{ overflowWrap: 'break-word' }}>
+      <Card style={{ overflowWrap: "break-word" }}>
         <Row>
           <RowSpaceBetween>
             <ActionButton>TR5342120027455925897981</ActionButton>
@@ -73,7 +73,7 @@ const Denabase = (props) => {
             <Card style={{ padding: `0 0 0 0` }}>
               <br />
               <br />
-              <Row style={{ textAlign: 'center' }}>╳</Row>
+              <Row style={{ textAlign: "center" }}>╳</Row>
               <br />
               <br />
             </Card>
@@ -85,7 +85,7 @@ const Denabase = (props) => {
             <br />
             <br />
             <br />
-            <Row style={{ textAlign: 'right' }}>NO DATA</Row>
+            <Row style={{ textAlign: "right" }}>NO DATA</Row>
           </Card>
         </SidebarLayout>
         <div className={styles.root}>
@@ -139,7 +139,7 @@ const Denabase = (props) => {
               <br />
             </div>
           </RowSpaceBetween>
-          <RowSpaceBetween style={{ position: 'relative' }}>
+          <RowSpaceBetween style={{ position: "relative" }}>
             <div className={styles.box}>╳</div>
             <div className={styles.box}>╳</div>
             <div className={styles.box}>╳</div>

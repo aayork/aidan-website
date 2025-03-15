@@ -28,7 +28,7 @@ export const Navigation = () => {
             <Button
               size="default"
               variant="ghost"
-              className="shadow-none"
+              className="shadow-none rounded-full hover:bg-white/50"
               aria-label="Open edit menu"
             >
               <House className="h-4 w-4 mr-1" />
@@ -44,7 +44,7 @@ export const Navigation = () => {
             <Button
               size="default"
               variant="ghost"
-              className="shadow-none"
+              className="shadow-none rounded-full hover:bg-white/50"
               aria-label="Open edit menu"
             >
               <GitPullRequest className="h-4 w-4 mr-1" />
@@ -62,7 +62,7 @@ export const Navigation = () => {
                 <Button
                   size="icon"
                   variant="ghost"
-                  className="rounded-full shadow-none"
+                  className="shadow-none rounded-full hover:bg-white/50"
                   aria-label="Open edit menu"
                 >
                   <Menu className="w-4 h-4" />

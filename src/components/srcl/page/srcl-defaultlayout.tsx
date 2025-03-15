@@ -1,13 +1,16 @@
-import styles from '@components/page/DefaultLayout.module.scss';
+import styles from "@/components/srcl/page/srcl-defaultlayout.module.scss";
 
-import * as React from 'react';
+import * as React from "react";
 
 interface DefaultLayoutProps {
   previewPixelSRC: string;
   children?: React.ReactNode;
 }
 
-const DefaultLayout: React.FC<DefaultLayoutProps> = ({ previewPixelSRC, children }) => {
+const DefaultLayout: React.FC<DefaultLayoutProps> = ({
+  previewPixelSRC,
+  children,
+}) => {
   return (
     <div className={styles.body}>
       <img className={styles.pixel} src={previewPixelSRC} alt="" />

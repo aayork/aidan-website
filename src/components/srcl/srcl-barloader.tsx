@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import * as React from 'react';
+import * as React from "react";
 
-import styles from '@components/BarLoader.module.scss';
+import styles from "@/components/srcl/srcl-barloader.module.scss";
 
 interface BarLoaderProps {
   intervalRate?: number;
@@ -10,7 +10,9 @@ interface BarLoaderProps {
 }
 
 const BarLoader: React.FC<BarLoaderProps> = ({ intervalRate, progress }) => {
-  const [currentProgress, setCurrentProgress] = React.useState<number>(progress || 0);
+  const [currentProgress, setCurrentProgress] = React.useState<number>(
+    progress || 0,
+  );
 
   React.useEffect(() => {
     if (progress !== undefined) {

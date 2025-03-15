@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import * as React from 'react';
+import * as React from "react";
 
-import { ModalProvider } from '@components/page/ModalContext';
+import { ModalProvider } from "@/components/srcl/page/srcl-modalcontext";
 
 interface ProvidersProps {
   children: React.ReactNode;

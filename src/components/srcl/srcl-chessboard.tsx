@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "@components/Chessboard.module.scss";
+import styles from "@/components/srcl/srcl-chessboard.module.scss";
 
 import * as React from "react";
 import * as Utilities from "@/lib/srcl-utilities";

@@ -1,6 +1,6 @@
-import styles from '@components/Block.module.scss';
+import styles from "@/components/srcl/srcl-block.module.scss";
 
-import * as React from 'react';
+import * as React from "react";
 
 interface BlockProps extends React.HTMLAttributes<HTMLSpanElement> {
   children?: React.ReactNode;

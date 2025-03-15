@@ -1,4 +1,4 @@
-import styles from '@components/Message.module.scss';
+import styles from "@/components/srcl/srcl-message.module.scss";
 
 export default function Message(props) {
   return (
