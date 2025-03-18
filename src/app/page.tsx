@@ -23,13 +23,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div
-      className="min-h-screen relative"
-      style={{
-        backgroundImage: 'url("/images/nnnoise.svg")',
-        backgroundRepeat: "repeat",
-      }}
-    >
+    <div className="min-h-screen relative">
       <div
         className="pointer-events-none fixed z-50 h-[50px] w-[50px] rounded-full bg-black/10 blur-xl transition-transform duration-100"
         style={{
