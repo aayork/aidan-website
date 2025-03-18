@@ -11,7 +11,7 @@ const AlertBanner: React.FC<AlertBannerProps> = ({
   style: propStyle,
   ...rest
 }) => {
-  let style: React.CSSProperties = { ...propStyle };
+  const style: React.CSSProperties = { ...propStyle };
 
   return <div className={styles.root} {...rest} style={style} />;
 };

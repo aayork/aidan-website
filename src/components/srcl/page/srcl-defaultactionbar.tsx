@@ -10,73 +10,6 @@ import { useHotkeys } from "@/lib/modules/hotkeys";
 
 import ActionBar from "@/components/srcl/srcl-actionbar";
 
-function isElement(target: EventTarget | null): target is Element {
-  return target instanceof Element;
-}
-
-function isHTMLElement(target: EventTarget | null): target is HTMLElement {
-  return target instanceof HTMLElement;
-}
-
-const findFocusableParent = (element: Element | null): Element | null => {
-  while (element) {
-    element = element.parentElement;
-    if (element && Utilities.isFocusableElement(element)) {
-      return element;
-    }
-  }
-  return null;
-};
-
-const findNextFocusableSibling = (
-  element: Element,
-  direction: "next" | "previous",
-): HTMLElement | null => {
-  let sibling =
-    direction === "next"
-      ? element.nextElementSibling
-      : element.previousElementSibling;
-
-  while (sibling) {
-    if (Utilities.isFocusableElement(sibling)) {
-      return sibling as HTMLElement;
-    }
-
-    const focusableDescendant = Utilities.findFocusableDescendant(
-      sibling,
-      null,
-      direction,
-    );
-    if (focusableDescendant) {
-      return focusableDescendant;
-    }
-
-    sibling =
-      direction === "next"
-        ? sibling.nextElementSibling
-        : sibling.previousElementSibling;
-  }
-
-  return null;
-};
-
-const findNextFocusableAncestor = (
-  element: Element,
-  direction: "next" | "previous",
-): HTMLElement | null => {
-  let ancestor = element.parentElement;
-
-  while (ancestor) {
-    const nextFocusable = findNextFocusableSibling(ancestor, direction);
-    if (nextFocusable) {
-      return nextFocusable;
-    }
-    ancestor = ancestor.parentElement;
-  }
-
-  return null;
-};
-
 const useGlobalNavigationHotkeys = () => {
   const onHandleSubmit = (event: KeyboardEvent) => {
     const target = event.target;
@@ -136,7 +69,6 @@ interface DefaultActionBarProps {
 }
 
 const DefaultActionBar: React.FC<DefaultActionBarProps> = ({ items = [] }) => {
-  const [isGrid, setGrid] = React.useState(false);
   useHotkeys("ctrl+g", () => toggleDebugGrid());
 
   useGlobalNavigationHotkeys();

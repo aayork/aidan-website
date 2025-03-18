@@ -691,10 +691,10 @@ const MessagesInterface: React.FC<MessagesInterfaceProps> = () => {
         </MessageViewer>
         <Message>Converge?</Message>
         <MessageViewer>
-          It's the foreign nature of the dreamer. They attack like white blood
-          cells fighting an infection.
+          It&apos;s the foreign nature of the dreamer. They attack like white
+          blood cells fighting an infection.
         </MessageViewer>
-        <Message>They're going to attack us?</Message>
+        <Message>They&apos;re going to attack us?</Message>
         <MessageViewer>No. Just you.</MessageViewer>
         <br />
         <br />

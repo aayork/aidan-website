@@ -28,7 +28,12 @@ const BlockLoader: React.FC<BlockLoaderProps> = ({ mode = 0 }) => {
     return <span className={styles.block}>�</span>;
   }
 
-  const [index, setIndex] = React.useState(0);
+  React.useEffect(() => {
+    if (!SEQUENCES[mode]) {
+      return;
+    }
+  }, [mode]);
+
   const intervalRef = React.useRef<number | null>(null);
   const indexLength = SEQUENCES[mode].length;
 

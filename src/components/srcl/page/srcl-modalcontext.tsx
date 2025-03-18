@@ -1,6 +1,6 @@
 import * as React from "react";
 
-export type ModalComponent<P = {}> = React.ComponentType<
+export type ModalComponent<P = object> = React.ComponentType<
   React.PropsWithoutRef<P>
 >;
 
