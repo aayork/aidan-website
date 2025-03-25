@@ -11,7 +11,7 @@ export function pluralize(text: string, count: number) {
   return count > 1 || count === 0 ? `${text}s` : text;
 }
 
-export function getOrdinalNumber(n) {
+export function getOrdinalNumber(n: number): string {
   return (
     n +
     (n > 0
@@ -194,6 +194,17 @@ export const findFocusableDescendant = (
 
   return null;
 };
+
+export function leftPad(input: string, length: number): string {
+  const zerosNeeded = length - input.length;
+  if (zerosNeeded <= 0) {
+    return input;
+  }
+
+  const zeros = "0".repeat(zerosNeeded);
+
+  return zeros + input;
+}
 
 export function classNames(...args: any[]): string {
   const classes: string[] = [];

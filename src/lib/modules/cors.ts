@@ -1,20 +1,52 @@
-"use strict";
+import assign from "@/lib/modules/object-assign";
+import vary from "@/lib/modules/vary";
+import { NextFunction, Request, Response } from "express";
 
-import assign from "@modules/object-assign";
-import vary from "@modules/vary";
+interface CorsOptions {
+  origin?:
+    | string
+    | string[]
+    | RegExp
+    | ((
+        origin: string,
+        callback: (err: Error | null, allow?: boolean) => void,
+      ) => void)
+    | boolean;
+  methods?: string | string[];
+  allowedHeaders?: string | string[];
+  exposedHeaders?: string | string[];
+  credentials?: boolean;
+  maxAge?: number;
+  preflightContinue?: boolean;
+  optionsSuccessStatus?: number;
+  headers?: string | string[];
+}
 
-const defaults = {
+interface ResponseLike {
+  getHeader(name: string): string | string[] | undefined;
+  setHeader(name: string, value: string | string[]): void;
+}
+
+interface CorsHeader {
+  key: string;
+  value: string | boolean;
+}
+
+const defaults: CorsOptions = {
   origin: "*",
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   preflightContinue: false,
   optionsSuccessStatus: 204,
 };
 
-function isString(s) {
+function isString(s: unknown): s is string {
   return typeof s === "string" || s instanceof String;
 }
 
-function isOriginAllowed(origin, allowedOrigin) {
+function isOriginAllowed(
+  origin: string,
+  allowedOrigin: CorsOptions["origin"],
+): boolean {
   if (Array.isArray(allowedOrigin)) {
     for (let i = 0; i < allowedOrigin.length; ++i) {
       if (isOriginAllowed(origin, allowedOrigin[i])) {
@@ -31,10 +63,10 @@ function isOriginAllowed(origin, allowedOrigin) {
   }
 }
 
-function configureOrigin(options, req) {
+function configureOrigin(options: CorsOptions, req: Request): CorsHeader[] {
   const requestOrigin = req.headers.origin;
-  const headers = [];
-  let isAllowed;
+  const headers: CorsHeader[] = [];
+  let isAllowed: boolean;
 
   if (!options.origin || options.origin === "*") {
     headers.push({ key: "Access-Control-Allow-Origin", value: "*" });
@@ -42,10 +74,12 @@ function configureOrigin(options, req) {
     headers.push({ key: "Access-Control-Allow-Origin", value: options.origin });
     headers.push({ key: "Vary", value: "Origin" });
   } else {
-    isAllowed = isOriginAllowed(requestOrigin, options.origin);
+    isAllowed = requestOrigin
+      ? isOriginAllowed(requestOrigin, options.origin)
+      : false;
     headers.push({
       key: "Access-Control-Allow-Origin",
-      value: isAllowed ? requestOrigin : false,
+      value: isAllowed && requestOrigin ? requestOrigin : false,
     });
     headers.push({ key: "Vary", value: "Origin" });
   }
@@ -53,29 +87,32 @@ function configureOrigin(options, req) {
   return headers;
 }
 
-function configureMethods(options) {
+function configureMethods(options: CorsOptions): CorsHeader {
   let methods = options.methods;
-  if (methods.join) {
-    methods = options.methods.join(",");
+  if (Array.isArray(methods)) {
+    methods = methods.join(",");
   }
-  return { key: "Access-Control-Allow-Methods", value: methods };
+  return { key: "Access-Control-Allow-Methods", value: methods || "" };
 }
 
-function configureCredentials(options) {
+function configureCredentials(options: CorsOptions): CorsHeader | null {
   if (options.credentials === true) {
     return { key: "Access-Control-Allow-Credentials", value: "true" };
   }
   return null;
 }
 
-function configureAllowedHeaders(options, req) {
+function configureAllowedHeaders(
+  options: CorsOptions,
+  req: Request,
+): CorsHeader[] {
   let allowedHeaders = options.allowedHeaders || options.headers;
-  const headers = [];
+  const headers: CorsHeader[] = [];
 
   if (!allowedHeaders) {
     allowedHeaders = req.headers["access-control-request-headers"];
     headers.push({ key: "Vary", value: "Access-Control-Request-Headers" });
-  } else if (allowedHeaders.join) {
+  } else if (Array.isArray(allowedHeaders)) {
     allowedHeaders = allowedHeaders.join(",");
   }
 
@@ -89,38 +126,50 @@ function configureAllowedHeaders(options, req) {
   return headers;
 }
 
-function configureExposedHeaders(options) {
+function configureExposedHeaders(options: CorsOptions): CorsHeader | null {
   let headers = options.exposedHeaders;
   if (!headers) return null;
-  if (headers.join) headers = headers.join(",");
-  return headers.length
-    ? { key: "Access-Control-Expose-Headers", value: headers }
-    : null;
+  if (Array.isArray(headers)) headers = headers.join(",");
+  if (typeof headers === "string") {
+    return headers.length
+      ? { key: "Access-Control-Expose-Headers", value: headers }
+      : null;
+  }
+  return null;
 }
 
-function configureMaxAge(options) {
-  const maxAge = options.maxAge && options.maxAge.toString();
+function configureMaxAge(options: CorsOptions): CorsHeader | null {
+  const maxAge = options.maxAge?.toString();
   return maxAge && maxAge.length
     ? { key: "Access-Control-Max-Age", value: maxAge }
     : null;
 }
 
-function applyHeaders(headers, res) {
+function applyHeaders(
+  headers: (CorsHeader | CorsHeader[] | null)[],
+  res: Response,
+): void {
   headers.forEach((header) => {
     if (header) {
       if (Array.isArray(header)) {
         applyHeaders(header, res);
       } else if (header.key === "Vary" && header.value) {
-        vary(res, header.value);
+        // Add type assertion here
+        vary(res as unknown as ResponseLike, header.value.toString());
       } else if (header.value) {
-        res.setHeader(header.key, header.value);
+        res.setHeader(header.key, header.value.toString());
       }
     }
   });
 }
 
-function cors(options, req, res, next) {
-  const headers = [];
+function cors(
+  options: CorsOptions,
+  req: Request,
+  res: Response,
+  next: NextFunction,
+): void {
+  const headers: (CorsHeader | CorsHeader[] | null)[] = [];
   const method = req.method?.toUpperCase();
 
   if (method === "OPTIONS") {
@@ -137,7 +186,7 @@ function cors(options, req, res, next) {
     if (options.preflightContinue) {
       next();
     } else {
-      res.statusCode = options.optionsSuccessStatus;
+      res.statusCode = options.optionsSuccessStatus || 204;
       res.setHeader("Content-Length", "0");
       res.end();
     }
@@ -152,31 +201,40 @@ function cors(options, req, res, next) {
   }
 }
 
-function middlewareWrapper(o) {
-  const optionsCallback =
+type OptionsCallback = (
+  req: Request,
+  callback: (err: Error | null, options?: CorsOptions) => void,
+) => void;
+
+function middlewareWrapper(o: CorsOptions | OptionsCallback) {
+  const optionsCallback: OptionsCallback =
     typeof o === "function" ? o : (req, cb) => cb(null, o);
-  return function corsMiddleware(req, res, next) {
+
+  return function corsMiddleware(
+    req: Request,
+    res: Response,
+    next: NextFunction,
+  ): void {
     optionsCallback(req, (err, options) => {
       if (err) {
         next(err);
       } else {
-        const corsOptions = assign({}, defaults, options);
-        const originCallback =
-          typeof corsOptions.origin === "function"
-            ? corsOptions.origin
-            : (origin, cb) => cb(null, corsOptions.origin);
+        // Create corsOptions with proper type annotation
+        const corsOptions: CorsOptions = assign({}, defaults, options || {});
 
-        if (originCallback) {
-          originCallback(req.headers.origin, (err2, origin) => {
+        // Check if origin is a function
+        if (typeof corsOptions.origin === "function") {
+          const originCallback = corsOptions.origin;
+          originCallback(req.headers.origin ?? "", (err2, origin) => {
             if (err2 || !origin) {
-              next(err2);
+              next(err2 || new Error("Origin not allowed"));
             } else {
               corsOptions.origin = origin;
               cors(corsOptions, req, res, next);
             }
           });
         } else {
-          next();
+          cors(corsOptions, req, res, next);
         }
       }
     });

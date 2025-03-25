@@ -1,14 +1,26 @@
-"use client";
-
 import styles from "@/components/srcl/srcl-buttongroup.module.scss";
-
 import * as React from "react";
 import * as Utilities from "@/lib/srcl-utilities";
 
 import ActionButton from "@/components/srcl/srcl-actionbutton";
 import DropdownMenuTrigger from "@/components/srcl/srcl-dropdownmenutrigger";
 
-const ButtonGroup = (props) => {
+// Define the type for an individual item in the "items" array
+export interface ButtonGroupItem {
+  body: React.ReactNode; // Can accept any valid React content
+  hotkey?: string;
+  selected?: boolean;
+  onClick?: () => void;
+  items?: ButtonGroupItem[];
+}
+
+// Define the type for props
+interface ButtonGroupProps {
+  items: ButtonGroupItem[];
+  isFull?: boolean;
+}
+
+const ButtonGroup: React.FC<ButtonGroupProps> = (props) => {
   if (!props.items) {
     return null;
   }
@@ -20,13 +32,15 @@ const ButtonGroup = (props) => {
         props.isFull ? styles.full : null,
       )}
     >
-      {props.items.map((each) => {
+      {props.items.map((each, index) => {
+        const key = each.body ? `${each.body}-${index}` : index.toString();
+
         if (each.items) {
           return (
             <DropdownMenuTrigger
-              key={each.body}
+              key={key}
               items={each.items}
-              hotkey={each.openHotkey}
+              hotkey={each.hotkey}
             >
               <ActionButton hotkey={each.hotkey} isSelected={each.selected}>
                 {each.body}
@@ -37,7 +51,7 @@ const ButtonGroup = (props) => {
 
         return (
           <ActionButton
-            key={each.body}
+            key={key}
             onClick={each.onClick}
             hotkey={each.hotkey}
             isSelected={each.selected}

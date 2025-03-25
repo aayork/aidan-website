@@ -13,16 +13,22 @@
 
 const FIELD_NAME_REGEXP = /^[!#$%&'*+\-.^_`|~0-9A-Za-z]+$/;
 
+// Define interface for response-like objects
+interface ResponseLike {
+  getHeader(name: string): string | string[] | undefined;
+  setHeader(name: string, value: string): void;
+}
+
 /**
  * Append a field to a vary header.
  *
  * @param {String} header
- * @param {String|Array} field
+ * @param {String|Array<string>} field
  * @return {String}
  * @public
  */
 
-function append(header, field) {
+function append(header: string, field: string | string[]): string {
   if (typeof header !== "string") {
     throw new TypeError("header argument is required");
   }
@@ -32,7 +38,7 @@ function append(header, field) {
   }
 
   // get fields array
-  const fields = !Array.isArray(field) ? parse(String(field)) : field;
+  const fields: string[] = !Array.isArray(field) ? parse(String(field)) : field;
 
   // assert on invalid field names
   for (let j = 0; j < fields.length; j++) {
@@ -47,8 +53,8 @@ function append(header, field) {
   }
 
   // enumerate current values
-  let val = header;
-  const vals = parse(header.toLowerCase());
+  let val: string = header;
+  const vals: string[] = parse(header.toLowerCase());
 
   // unspecified vary
   if (fields.includes("*") || vals.includes("*")) {
@@ -56,7 +62,7 @@ function append(header, field) {
   }
 
   for (let i = 0; i < fields.length; i++) {
-    const fld = fields[i].toLowerCase();
+    const fld: string = fields[i].toLowerCase();
 
     // append value (case-preserving)
     if (!vals.includes(fld)) {
@@ -72,14 +78,14 @@ function append(header, field) {
  * Parse a vary header into an array.
  *
  * @param {String} header
- * @return {Array}
+ * @return {Array<string>}
  * @private
  */
 
-function parse(header) {
-  let end = 0;
-  const list = [];
-  let start = 0;
+function parse(header: string): string[] {
+  let end: number = 0;
+  const list: string[] = [];
+  let start: number = 0;
 
   // gather tokens
   for (let i = 0, len = header.length; i < len; i++) {
@@ -108,23 +114,25 @@ function parse(header) {
 /**
  * Mark that a request is varied on a header field.
  *
- * @param {Object} res
- * @param {String|Array} field
+ * @param {ResponseLike} res
+ * @param {String|Array<string>} field
  * @public
  */
 
-function vary(res, field) {
+function vary(res: ResponseLike, field: string | string[]): void {
   if (!res || !res.getHeader || !res.setHeader) {
     // quack quack
     throw new TypeError("res argument is required");
   }
 
   // get existing header
-  const val = res.getHeader("Vary") || "";
-  const header = Array.isArray(val) ? val.join(", ") : String(val);
+  const val: string | string[] | undefined = res.getHeader("Vary");
+  const header: string = Array.isArray(val)
+    ? val.join(", ")
+    : String(val || "");
 
   // set new header
-  const newVal = append(header, field);
+  const newVal: string = append(header, field);
   if (newVal) {
     res.setHeader("Vary", newVal);
   }

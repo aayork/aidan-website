@@ -18,6 +18,7 @@ const eslintConfig = [
       "@typescript-eslint/no-empty-interface": "off", // Allow empty interfaces
       "@typescript-eslint/no-empty-function": "off", // Allow empty functions
       "@typescript-eslint/no-empty-object-type": "off",
+      "@typescript-eslint/explicit-module-boundary-types": "off",
       "react/no-unescaped-entities": "off", // Allow unescaped quotes in JSX
     },
   },

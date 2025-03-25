@@ -16,7 +16,7 @@ import * as React from "react";
 interface MessagesInterfaceProps
   extends React.HTMLAttributes<HTMLSpanElement> {}
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-typesconst ChatPreviewInline = (props) => {
+const ChatPreviewInline: React.FC<MessagesInterfaceProps> = (props) => {
   return (
     <RowEllipsis style={{ opacity: 0.5, marginBottom: `10px` }}>
       {props.children}
@@ -691,10 +691,10 @@ const MessagesInterface: React.FC<MessagesInterfaceProps> = () => {
         </MessageViewer>
         <Message>Converge?</Message>
         <MessageViewer>
-          It&apos;s the foreign nature of the dreamer. They attack like white
-          blood cells fighting an infection.
+          It's the foreign nature of the dreamer. They attack like white blood
+          cells fighting an infection.
         </MessageViewer>
-        <Message>They&apos;re going to attack us?</Message>
+        <Message>They're going to attack us?</Message>
         <MessageViewer>No. Just you.</MessageViewer>
         <br />
         <br />

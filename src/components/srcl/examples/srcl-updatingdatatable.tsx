@@ -1,11 +1,13 @@
-"use client";
-
 import * as React from "react";
-
 import DataTable from "@/components/srcl/srcl-datatable";
 
-const UpdatingDataTable = (props) => {
-  const [tableData, setTableData] = React.useState(props.data);
+// Define the type for props
+interface UpdatingDataTableProps {
+  data: string[][];
+}
+
+const UpdatingDataTable: React.FC<UpdatingDataTableProps> = ({ data }) => {
+  const [tableData, setTableData] = React.useState<string[][]>(data);
 
   React.useEffect(() => {
     const interval = setInterval(() => {

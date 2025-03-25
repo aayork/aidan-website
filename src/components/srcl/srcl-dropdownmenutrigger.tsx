@@ -131,7 +131,6 @@ function DropdownMenuTrigger({
       {React.cloneElement(children, {
         tabIndex: 0,
         onClick,
-        ref: triggerRef,
       })}
       {element}
     </div>

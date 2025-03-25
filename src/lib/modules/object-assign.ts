@@ -6,7 +6,6 @@ object-assign
 
 "use strict";
 
-// Remove unused eslint-disable comments
 const getOwnPropertySymbols = Object.getOwnPropertySymbols;
 const hasOwnProperty = Object.prototype.hasOwnProperty;
 const propIsEnumerable = Object.prototype.propertyIsEnumerable;
@@ -38,7 +37,7 @@ function shouldUseNative(): boolean {
     }
 
     // https://bugs.chromium.org/p/v8/issues/detail?id=3056
-    const test2 = {};
+    const test2: Record<string, number> = {};
     for (let i = 0; i < 10; i++) {
       test2["_" + String.fromCharCode(i)] = i;
     }
@@ -48,7 +47,7 @@ function shouldUseNative(): boolean {
     }
 
     // https://bugs.chromium.org/p/v8/issues/detail?id=3056
-    const test3 = {};
+    const test3: Record<string, string> = {};
     "abcdefghijklmnopqrst".split("").forEach((letter) => {
       test3[letter] = letter;
     });
@@ -65,22 +64,27 @@ function shouldUseNative(): boolean {
   }
 }
 
-const assign: any = shouldUseNative()
+interface AssignFunction {
+  <T extends object>(target: T, ...sources: Array<Partial<T>>): T;
+  (target: object, ...sources: Array<any>): object;
+}
+
+const assign: AssignFunction = shouldUseNative()
   ? Object.assign
-  : function (target: any, ...sources: any[]): object {
+  : function (target: object, ...sources: Array<any>): object {
       const to = toObject(target);
-      sources.forEach((from) => {
+      sources.forEach((from: object) => {
         const symbols = getOwnPropertySymbols
           ? getOwnPropertySymbols(from)
           : [];
         for (const key in from) {
           if (hasOwnProperty.call(from, key)) {
-            to[key] = from[key];
+            (to as any)[key] = (from as any)[key];
           }
         }
-        symbols.forEach((symbol) => {
+        symbols.forEach((symbol: symbol) => {
           if (propIsEnumerable.call(from, symbol)) {
-            to[symbol] = from[symbol];
+            (to as any)[symbol] = (from as any)[symbol];
           }
         });
       });

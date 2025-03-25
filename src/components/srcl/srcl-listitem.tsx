@@ -1,11 +1,12 @@
 "use client";
 
+import { PropsWithChildren } from "react";
 import styles from "@/components/srcl/srcl-listitem.module.scss";
 
 import * as React from "react";
 import * as Utilities from "@/lib/srcl-utilities";
 
-const ListItem = ({ children }) => {
+const ListItem = ({ children }: PropsWithChildren) => {
   const itemRef = React.useRef<HTMLLIElement>(null);
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLLIElement>) => {
