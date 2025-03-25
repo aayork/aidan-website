@@ -8,13 +8,17 @@ import * as Utilities from "@/lib/srcl-utilities";
 import Accordion from "@/components/srcl/srcl-accordion";
 import ActionListItem from "@/components/srcl/srcl-actionlistitem";
 import Card from "@/components/srcl/srcl-card";
-import DefaultActionBar from "@/components/srcl/page/srcl-defaultactionbar";
 import DefaultLayout from "@/components/srcl/page/srcl-defaultlayout";
 import Grid from "@/components/srcl/srcl-grid";
 import ModalStack from "@/components/srcl/srcl-modalstack";
 import Package from "../../../package.json";
 import Badge from "@/components/srcl/srcl-badge";
 import Row from "@/components/srcl/srcl-row";
+import Navigation from "@/components/srcl/srcl-navigation";
+import ActionButton from "@/components/srcl/srcl-actionbutton";
+import ModalTrigger from "@/components/srcl/srcl-modaltrigger";
+import ModalError from "@/components/srcl/modals/srcl-modalerror";
+import ModalCreateAccount from "@/components/srcl/modals/srcl-modalcreateaccount";
 
 export const dynamic = "force-static";
 
@@ -33,6 +37,59 @@ export default function Page() {
 
   return (
     <ModalProvider>
+      <Navigation
+        logo="✶"
+        left={
+          <ModalTrigger
+            modal={ModalError}
+            modalProps={{
+              message: (
+                <>
+                  Non-fatal error detected: error FOOLISH (Please contact Sacred
+                  Computer support.)
+                </>
+              ),
+              title: `SETUP`,
+            }}
+          >
+            <ActionButton>NAVIGATION ITEM A</ActionButton>
+          </ModalTrigger>
+        }
+        right={
+          <>
+            <ModalTrigger modal={ModalCreateAccount}>
+              <ActionButton>SIGN IN</ActionButton>
+            </ModalTrigger>
+          </>
+        }
+      >
+        <ModalTrigger
+          modal={ModalError}
+          modalProps={{
+            message: (
+              <>
+                Boot Manager has experienced a problem.
+                <br />
+                <br />
+                Status: 0xc000000f
+                <br />
+                <br />
+                Info: An error occured transferring excecution.
+                <br />
+                <br />
+                You can try to recover the system with the Recovery Tools.
+                <br />
+                <br />
+                If the problem continues, please contact your system
+                administrator or computer manufacturer.
+              </>
+            ),
+            title: `BOOT DRIVER`,
+          }}
+        >
+          <ActionButton>NAVIGATION ITEM B</ActionButton>
+        </ModalTrigger>
+      </Navigation>
       <DefaultLayout previewPixelSRC="https://intdev-global.s3.us-west-2.amazonaws.com/template-app-icon.png">
         <Grid>
           <Row>
@@ -40,8 +97,6 @@ export default function Page() {
           </Row>
           <Row>Projects and Experience</Row>
         </Grid>
-
-        <DefaultActionBar />
 
         <Grid>
           {/* Featured Project */}
