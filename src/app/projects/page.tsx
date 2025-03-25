@@ -18,15 +18,17 @@ import Row from "@/components/srcl/srcl-row";
 
 export const dynamic = "force-static";
 
-document.addEventListener("DOMContentLoaded", () => {
-  if (!document.body.classList.contains("theme-dark")) {
-    document.body.classList.add("theme-dark");
-  }
-});
-
 export default function Page() {
   useEffect(() => {
-    Utilities.onHandleThemeChange("theme-dark");
+    if (typeof document !== "undefined") {
+      document.addEventListener("DOMContentLoaded", () => {
+        if (!document.body.classList.contains("theme-dark")) {
+          document.body.classList.add("theme-dark");
+        }
+      });
+
+      Utilities.onHandleThemeChange("theme-dark");
+    }
   }, []);
 
   return (

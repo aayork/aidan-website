@@ -16,6 +16,8 @@ const eslintConfig = [
       "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/no-unused-vars": "off", // Disable unused variable warnings
       "@typescript-eslint/no-empty-interface": "off", // Allow empty interfaces
+      "@typescript-eslint/no-empty-function": "off", // Allow empty functions
+      "@typescript-eslint/no-empty-object-type": "off",
       "react/no-unescaped-entities": "off", // Allow unescaped quotes in JSX
     },
   },
