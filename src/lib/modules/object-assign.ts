@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 /*
 object-assign
 (c) Sindre Sorhus
@@ -13,7 +11,7 @@ const getOwnPropertySymbols = Object.getOwnPropertySymbols;
 const hasOwnProperty = Object.prototype.hasOwnProperty;
 const propIsEnumerable = Object.prototype.propertyIsEnumerable;
 
-function toObject(val) {
+function toObject(val: any): object {
   if (val === null || val === undefined) {
     throw new TypeError(
       "Object.assign cannot be called with null or undefined",
@@ -23,7 +21,7 @@ function toObject(val) {
   return Object(val);
 }
 
-function shouldUseNative() {
+function shouldUseNative(): boolean {
   try {
     if (!Object.assign) {
       return false;
@@ -32,8 +30,8 @@ function shouldUseNative() {
     // Detect buggy property enumeration order in older V8 versions.
 
     // https://bugs.chromium.org/p/v8/issues/detail?id=4118
-    const test1 = new String("abc"); // eslint-disable-line no-new-wrappers
-    // @ts-expect-error
+    const test1 = new String("abc");
+    // @ts-expect-error: test1[5] should be allowed to modify its 5th index
     test1[5] = "de";
     if (Object.getOwnPropertyNames(test1)[0] === "5") {
       return false;
@@ -67,15 +65,15 @@ function shouldUseNative() {
   }
 }
 
-const assign = shouldUseNative()
+const assign: any = shouldUseNative()
   ? Object.assign
-  : function (target, ...sources) {
+  : function (target: any, ...sources: any[]): object {
       const to = toObject(target);
       sources.forEach((from) => {
         const symbols = getOwnPropertySymbols
           ? getOwnPropertySymbols(from)
           : [];
-        for (let key in from) {
+        for (const key in from) {
           if (hasOwnProperty.call(from, key)) {
             to[key] = from[key];
           }
