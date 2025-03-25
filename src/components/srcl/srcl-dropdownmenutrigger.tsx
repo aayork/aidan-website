@@ -29,7 +29,10 @@ function DropdownMenuTrigger({
   const [placement, setPlacement] =
     React.useState<Position.Placement>("bottom");
   const [position, setPosition] = React.useState<{ top: number; left: number }>(
-    { top: 0, left: 0 },
+    {
+      top: 0,
+      left: 0,
+    },
   );
 
   const triggerRef = React.useRef<HTMLElement>(null);
@@ -43,11 +46,14 @@ function DropdownMenuTrigger({
   const onOutsideEvent = React.useCallback(() => setOpen(false), []);
   const onClose = React.useCallback(() => setWillClose(true), []);
 
-  if (hotkey) {
-    useHotkeys(hotkey, () => {
-      setOpen(!open);
-    });
-  }
+  // Call the useHotkeys hook unconditionally
+  React.useEffect(() => {
+    if (hotkey) {
+      useHotkeys(hotkey, () => {
+        setOpen(!open);
+      });
+    }
+  }, [hotkey, open]); // Added `open` as a dependency here to ensure hotkey works correctly
 
   React.useEffect(() => {
     if (focusChildren) {
@@ -130,7 +136,6 @@ function DropdownMenuTrigger({
       {React.cloneElement(children, {
         tabIndex: 0,
         onClick,
-        // @ts-ignore
         ref: triggerRef,
       })}
       {element}

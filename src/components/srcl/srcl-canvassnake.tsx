@@ -168,7 +168,7 @@ const CanvasSnake = ({ rows = 25 }: SnakeProps) => {
       const snake = snakeRef.current;
       const dir = directionRef.current;
       const head = snake[snake.length - 1];
-      let newHead: Position = { x: head.x, y: head.y };
+      const newHead: Position = { x: head.x, y: head.y };
       if (dir === "LEFT") newHead.x -= 1;
       if (dir === "RIGHT") newHead.x += 1;
       if (dir === "UP") newHead.y -= 1;

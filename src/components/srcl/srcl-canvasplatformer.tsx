@@ -233,8 +233,8 @@ const CanvasPlatformer: React.FC<PlatformerProps> = ({ rows = 25 }) => {
     if (!canvas) return;
     const pos = positionRef.current;
     const vel = velocityRef.current;
-    let w = canvas.width;
-    let h = canvas.height;
+    const w = canvas.width;
+    const h = canvas.height;
     let groundY = h;
     for (const b of platformBlocksRef.current) {
       const horizontallyOverlapping =
