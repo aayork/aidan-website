@@ -87,6 +87,114 @@ export function onHandleThemeChange(className?: string) {
   }
 }
 
+export function onHandleFontChange(className?: string) {
+  const body = document.body;
+
+  if (className) {
+    body.classList.forEach((existingClass) => {
+      if (existingClass.startsWith("font-")) {
+        body.classList.remove(existingClass);
+      }
+    });
+
+    body.classList.add(className);
+    return;
+  }
+
+  body.classList.forEach((existingClass) => {
+    if (existingClass.startsWith("font-")) {
+      body.classList.remove(existingClass);
+    }
+  });
+}
+
+export const isFocusableElement = (
+  element: EventTarget | null,
+): element is HTMLElement => {
+  if (!element || !(element instanceof HTMLElement)) {
+    return false;
+  }
+
+  const focusableSelectors = [
+    "a[href]",
+    "button",
+    "input",
+    "select",
+    "textarea",
+    '[tabindex]:not([tabindex="-1"])',
+    '[contenteditable="true"]',
+  ];
+
+  return element.matches(focusableSelectors.join(", "));
+};
+
+export const findNextFocusable = (
+  element: Element | null,
+  direction: "next" | "previous" = "next",
+): HTMLElement | null => {
+  if (!element) return null;
+
+  const focusableSelectors = [
+    "a[href]",
+    "button",
+    "input",
+    "select",
+    "textarea",
+    '[tabindex]:not([tabindex="-1"])',
+    '[contenteditable="true"]',
+  ];
+
+  const focusableElements = Array.from(
+    document.querySelectorAll<HTMLElement>(focusableSelectors.join(", ")),
+  );
+
+  const currentIndex = focusableElements.indexOf(element as HTMLElement);
+
+  if (currentIndex !== -1) {
+    const nextIndex =
+      direction === "next"
+        ? (currentIndex + 1) % focusableElements.length
+        : (currentIndex - 1 + focusableElements.length) %
+          focusableElements.length;
+
+    return focusableElements[nextIndex];
+  }
+
+  return null;
+};
+
+export const findFocusableDescendant = (
+  container: Element | null,
+  currentFocused: Element | null = null,
+  direction: "next" | "previous" = "next",
+): HTMLElement | null => {
+  if (!container) return null;
+
+  const focusableElements = Array.from(
+    container.querySelectorAll<HTMLElement>(
+      'a[href], button, input, select, textarea, [tabindex]:not([tabindex="-1"]), [contenteditable="true"]',
+    ),
+  );
+
+  if (focusableElements.length === 0) return null;
+
+  let index = 0;
+  if (currentFocused) {
+    const currentIndex = focusableElements.indexOf(
+      currentFocused as HTMLElement,
+    );
+    if (currentIndex !== -1) {
+      index = direction === "next" ? currentIndex + 1 : currentIndex - 1;
+    }
+  }
+
+  if (index >= 0 && index < focusableElements.length) {
+    return focusableElements[index];
+  }
+
+  return null;
+};
+
 export function classNames(...args: any[]): string {
   const classes: string[] = [];
 
