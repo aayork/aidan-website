@@ -16,7 +16,7 @@ import * as React from "react";
 interface MessagesInterfaceProps
   extends React.HTMLAttributes<HTMLSpanElement> {}
 
-const ChatPreviewInline = (props) => {
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-typesconst ChatPreviewInline = (props) => {
   return (
     <RowEllipsis style={{ opacity: 0.5, marginBottom: `10px` }}>
       {props.children}
