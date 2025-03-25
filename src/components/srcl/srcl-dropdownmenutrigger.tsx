@@ -44,7 +44,7 @@ function DropdownMenuTrigger({
   const onClose = React.useCallback(() => setWillClose(true), []);
 
   // Call the useHotkeys hook unconditionally, but handle logic inside a callback
-  useHotkeys(hotkey || '', () => {
+  useHotkeys(hotkey || "", () => {
     if (hotkey) {
       setOpen(!open);
     }
@@ -54,4 +54,88 @@ function DropdownMenuTrigger({
     if (focusChildren) {
       const element = elementRef.current;
       if (element) {
-        const firstFocusable = Utilities
+        const firstFocusable = Utilities.findFocusableDescendant(element);
+        if (firstFocusable) {
+          firstFocusable.focus();
+        } else {
+          element.focus();
+        }
+      }
+      setFocusChildren(false);
+    }
+  }, [focusChildren]);
+
+  React.useEffect(() => {
+    if (willClose) {
+      setOpen(false);
+      setWillClose(false);
+    }
+  }, [willClose]);
+
+  React.useEffect(() => {
+    if (!open || !triggerRef.current || !elementRef.current) return;
+
+    const updatePosition = () => {
+      const { placement, position } = Position.calculate(
+        triggerRef.current!,
+        elementRef.current!,
+      );
+      setPlacement(placement);
+      setPosition(position);
+    };
+
+    updatePosition();
+    setFocusChildren(true);
+
+    const handleResizeOrScroll = () => updatePosition();
+    const observer = new MutationObserver(() => updatePosition());
+    observer.observe(document.body, {
+      attributes: true,
+      childList: true,
+      subtree: true,
+    });
+
+    window.addEventListener("resize", handleResizeOrScroll);
+    window.addEventListener("scroll", handleResizeOrScroll, true);
+
+    return () => {
+      window.removeEventListener("resize", handleResizeOrScroll);
+      window.removeEventListener("scroll", handleResizeOrScroll, true);
+      observer.disconnect();
+    };
+  }, [open]);
+
+  const element = open
+    ? createPortal(
+        <OutsideElementEvent onOutsideEvent={onOutsideEvent}>
+          <DropdownMenu
+            onClose={onClose}
+            ref={elementRef}
+            items={items}
+            style={{
+              position: "absolute",
+              top: `${position.top}px`,
+              left: `${position.left}px`,
+              zIndex: `var(--z-index-page-dropdown-menus)`,
+            }}
+            role="dialog"
+            aria-modal="true"
+          />
+        </OutsideElementEvent>,
+        document.body,
+      )
+    : null;
+
+  return (
+    <div className={styles.root}>
+      {React.cloneElement(children, {
+        tabIndex: 0,
+        onClick,
+        ref: triggerRef,
+      })}
+      {element}
+    </div>
+  );
+}
+
+export default DropdownMenuTrigger;
