@@ -52,44 +52,10 @@ export default function Page() {
               title: `SETUP`,
             }}
           >
-            <ActionButton>NAVIGATION ITEM A</ActionButton>
+            <ActionButton>HOME</ActionButton>
           </ModalTrigger>
         }
-        right={
-          <>
-            <ModalTrigger modal={ModalCreateAccount}>
-              <ActionButton>SIGN IN</ActionButton>
-            </ModalTrigger>
-          </>
-        }
-      >
-        <ModalTrigger
-          modal={ModalError}
-          modalProps={{
-            message: (
-              <>
-                Boot Manager has experienced a problem.
-                <br />
-                <br />
-                Status: 0xc000000f
-                <br />
-                <br />
-                Info: An error occured transferring excecution.
-                <br />
-                <br />
-                You can try to recover the system with the Recovery Tools.
-                <br />
-                <br />
-                If the problem continues, please contact your system
-                administrator or computer manufacturer.
-              </>
-            ),
-            title: `BOOT DRIVER`,
-          }}
-        >
-          <ActionButton>NAVIGATION ITEM B</ActionButton>
-        </ModalTrigger>
-      </Navigation>
+      ></Navigation>
       <DefaultLayout previewPixelSRC="https://intdev-global.s3.us-west-2.amazonaws.com/template-app-icon.png">
         <Grid>
           <Row>
