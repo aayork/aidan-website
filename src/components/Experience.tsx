@@ -1,7 +1,7 @@
 export const Experience = () => (
   <div className="m-14 pt-10">
     <h1 className="mb-2 font-bold text-xl underline decoration-[#C2DBA2]">
-      Experience
+      Work Experience
     </h1>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       <section>
