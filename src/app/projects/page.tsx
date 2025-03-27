@@ -18,11 +18,12 @@ import Navigation from "@/components/srcl/srcl-navigation";
 import ActionButton from "@/components/srcl/srcl-actionbutton";
 import ModalTrigger from "@/components/srcl/srcl-modaltrigger";
 import ModalError from "@/components/srcl/modals/srcl-modalerror";
-import ModalCreateAccount from "@/components/srcl/modals/srcl-modalcreateaccount";
+import { useRouter } from "next/navigation";
 
 export const dynamic = "force-static";
 
 export default function Page() {
+  const router = useRouter();
   useEffect(() => {
     if (typeof document !== "undefined") {
       document.addEventListener("DOMContentLoaded", () => {
@@ -43,16 +44,17 @@ export default function Page() {
           <ModalTrigger
             modal={ModalError}
             modalProps={{
-              message: (
-                <>
-                  Non-fatal error detected: error FOOLISH (Please contact Sacred
-                  Computer support.)
-                </>
-              ),
+              message: <>Non-fatal error detected: error FOOLISH</>,
               title: `SETUP`,
             }}
           >
-            <ActionButton>HOME</ActionButton>
+            <ActionButton
+              onClick={() => {
+                router.push("/");
+              }}
+            >
+              HOME
+            </ActionButton>
           </ModalTrigger>
         }
       ></Navigation>
@@ -61,29 +63,13 @@ export default function Page() {
           <Row>
             {Package.name.toUpperCase()} <Badge>{Package.version}</Badge>
           </Row>
+          <Row>Entering terminal mode...</Row>
           <Row>Projects and Experience</Row>
         </Grid>
 
         <Grid>
           {/* Featured Project */}
           <Accordion defaultValue={true} title="FEATURED PROJECT">
-            <Card title="PERSONAL WEBSITE">
-              A modern, responsive personal website built with Next.js and
-              TypeScript. Features a custom design system and component library.
-              <br />
-              <br />
-              <ActionListItem
-                icon={`⭢`}
-                href="https://github.com/yourusername/personal-website"
-                target="_blank"
-              >
-                View source code
-              </ActionListItem>
-            </Card>
-          </Accordion>
-
-          {/* Other Projects */}
-          <Accordion defaultValue={true} title="OTHER PROJECTS">
             <Card title="RITMO!">
               Ritmo! is your gateway to experiencing spatial gaming. Dive into a
               mesmerizing world where music meets movement; redefining
@@ -100,10 +86,27 @@ export default function Page() {
               <br />
               <ActionListItem
                 icon={`⭢`}
-                href="https://github.com/yourusername/ritmo"
+                href="https://apps.apple.com/us/app/ritmo/id6480073527"
                 target="_blank"
               >
                 View Project
+              </ActionListItem>
+            </Card>
+          </Accordion>
+
+          {/* Other Projects */}
+          <Accordion defaultValue={true} title="OTHER PROJECTS">
+            <Card title="PERSONAL WEBSITE">
+              A modern, responsive personal website built with Next.js and
+              TypeScript. Features a custom design system and component library.
+              <br />
+              <br />
+              <ActionListItem
+                icon={`⭢`}
+                href="https://github.com/aayork/aidan-website"
+                target="_blank"
+              >
+                View source code
               </ActionListItem>
             </Card>
 
@@ -115,7 +118,7 @@ export default function Page() {
               <br />
               <ActionListItem
                 icon={`⭢`}
-                href="https://github.com/yourusername/recipe-box"
+                href="https://github.com/aayork/recipe-box"
                 target="_blank"
               >
                 View Project
