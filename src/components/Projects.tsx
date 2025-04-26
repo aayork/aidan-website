@@ -27,10 +27,10 @@ export const projects: Project[] = [
     path: "https://github.com/aayork/recipe-box",
   },
   {
-    title: "Movie Monkey",
+    title: "Movie Monkey E-Booking",
     image:
       "https://i0.wp.com/www.cemeterydance.com/extras/wp-content/uploads/2024/07/monkey-movie.jpg?fit=683%2C1024&ssl=1",
-    description: "Cinema E-Booking for the 22nd century",
+    description: "Cinema E-Booking platform",
     technologies: "Vite, Django, React, DaisyUI, RESTful APIs",
     path: "https://github.com/aayork/4050-termproject",
   },

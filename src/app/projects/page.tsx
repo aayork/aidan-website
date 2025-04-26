@@ -38,26 +38,6 @@ export default function Page() {
 
   return (
     <ModalProvider>
-      <Navigation
-        logo="✶"
-        left={
-          <ModalTrigger
-            modal={ModalError}
-            modalProps={{
-              message: <>Non-fatal error detected: error FOOLISH</>,
-              title: `SETUP`,
-            }}
-          >
-            <ActionButton
-              onClick={() => {
-                router.push("/");
-              }}
-            >
-              HOME
-            </ActionButton>
-          </ModalTrigger>
-        }
-      ></Navigation>
       <DefaultLayout previewPixelSRC="https://intdev-global.s3.us-west-2.amazonaws.com/template-app-icon.png">
         <Grid>
           <Row>
