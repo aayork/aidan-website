@@ -12,6 +12,13 @@ export interface Books {
 
 export const works: Books[] = [
   {
+    author: "Cormac McCarthy",
+    image:
+      "https://m.media-amazon.com/images/I/71yHw+4wMRL._UF1000,1000_QL80_.jpg",
+    title: "Blood Meridian",
+    description: "An anti-western",
+  },
+  {
     author: "Andy Weir",
     image: "https://m.media-amazon.com/images/I/81zD9kaVW9L.jpg",
     title: "Project Hail Mary",

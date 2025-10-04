@@ -5,6 +5,19 @@ export const Experience = () => (
     </h1>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       <section>
+        <span className="text-xs text-gray-500">May 2025 - Current</span>
+        <h3 className="font-bold">Horizon Cloud</h3>
+        <span className="text-[#004d05] italic">Software Developer</span>
+        <p className="mt-2">I work at Horizon Cloud as a developer.</p>
+        <ul className="max-w-[90%] list-disc pl-8">
+          <li>
+            Using React and TypeScript to build webapps for catering,
+            hospitality, and 2D and 3D room visualization.
+          </li>
+          <li>Working on 3D assets in THREE.js</li>
+        </ul>
+      </section>
+      <section>
         <span className="text-xs text-gray-500">May 2024 - July 2024</span>
         <h3 className="font-bold">Horizon Cloud</h3>
         <span className="text-[#004d05] italic">Software Developer Intern</span>
