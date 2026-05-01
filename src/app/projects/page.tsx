@@ -50,6 +50,27 @@ export default function Page() {
         <Grid>
           {/* Featured Project */}
           <Accordion defaultValue={true} title="FEATURED PROJECT">
+            <Card title="BookBokeh">
+              BookBokeh is a platform that provides photographers with
+              embeddable widgets for scheduling.
+              <br />
+              <br />
+              Customers can see the photographers available and book a session
+              with them.
+              <br />
+              <br />
+              <ActionListItem
+                icon={`⭢`}
+                href="https://apps.apple.com/us/app/ritmo/id6480073527"
+                target="_blank"
+              >
+                View Project
+              </ActionListItem>
+            </Card>
+          </Accordion>
+
+          {/* Other Projects */}
+          <Accordion defaultValue={true} title="OTHER PROJECTS">
             <Card title="RITMO!">
               Ritmo! is your gateway to experiencing spatial gaming. Dive into a
               mesmerizing world where music meets movement; redefining
@@ -72,10 +93,6 @@ export default function Page() {
                 View Project
               </ActionListItem>
             </Card>
-          </Accordion>
-
-          {/* Other Projects */}
-          <Accordion defaultValue={true} title="OTHER PROJECTS">
             <Card title="PERSONAL WEBSITE">
               A modern, responsive personal website built with Next.js and
               TypeScript. Features a custom design system and component library.
