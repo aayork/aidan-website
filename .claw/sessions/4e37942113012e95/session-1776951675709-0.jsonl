@@ -1,0 +1,3 @@
+{"created_at_ms":1776951675708,"model":"openai/llama3","session_id":"session-1776951675709-0","type":"session_meta","updated_at_ms":1776951675708,"version":1,"workspace_root":"/Users/aidanyork/Projects/Personal/aidan-website"}
+{"text":"hi","timestamp_ms":1776951677788,"type":"prompt_history"}
+{"message":{"blocks":[{"text":"hi","type":"text"}],"role":"user"},"type":"message"}

@@ -6,7 +6,7 @@ export const Banner = () => {
       <div className="flex flex-col md:block">
         <div className="mx-14 relative md:absolute md:top-0 md:left-0 rounded-lg mb-4 md:mb-0 md:z-10">
           <Image
-            src="/images/apple_campus.jpg?height=300&width=300"
+            src="/images/arches_pic.jpg?height=300&width=300"
             alt="Image 1"
             width={300}
             height={300}
