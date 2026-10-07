@@ -39,18 +39,12 @@ export default function Page() {
   return (
     <ModalProvider>
       <DefaultLayout previewPixelSRC="https://intdev-global.s3.us-west-2.amazonaws.com/template-app-icon.png">
-        <Grid>
-          <Row>
-            {Package.name.toUpperCase()} <Badge>{Package.version}</Badge>
-          </Row>
-          <Row>Entering terminal mode...</Row>
-          <Row>Projects and Experience</Row>
-        </Grid>
+        <Row style={{ margin: "5px" }}>Projects and Experience</Row>
 
         <Grid>
           {/* Featured Project */}
           <Accordion defaultValue={true} title="FEATURED PROJECT">
-            <Card title="BookBokeh">
+            <Card title="AI Powered Clinician Followup Tool">
               BookBokeh is a platform that provides photographers with
               embeddable widgets for scheduling.
               <br />
@@ -59,12 +53,8 @@ export default function Page() {
               with them.
               <br />
               <br />
-              <ActionListItem
-                icon={`⭢`}
-                href="https://apps.apple.com/us/app/ritmo/id6480073527"
-                target="_blank"
-              >
-                View Project
+              <ActionListItem icon={`⭢`} href="" target="_blank">
+                Coming soon...
               </ActionListItem>
             </Card>
           </Accordion>

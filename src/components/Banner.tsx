@@ -26,7 +26,7 @@ export const Banner = () => {
 
         <div className="md:absolute md:mx-[12rem] md:top-0 md:left-64 md:z-10">
           <p className="text-lg mb-5">
-            Hi! I&apos;m Aidan, a software developer at Horizon Cloud and UGA
+            Hi! I&apos;m Aidan, a software developer and UGA
             alum.
           </p>
           <p className="text-lg mb-5">
