@@ -34,7 +34,7 @@ export const Banner = () => {
             myself creatively through code!
           </p>
           <p className="text-lg mb-5">
-            In my free time, I enjoy reading, fishing, exploring the outdoors,
+            In my free time, I enjoy watching college football, reading, fishing, exploring the outdoors,
             and spending time with friends and family.
           </p>
         </div>

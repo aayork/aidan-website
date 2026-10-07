@@ -102,20 +102,6 @@ export const Navigation = () => {
                     Résumé
                   </a>
                 </DropdownMenuItem>
-                <DropdownMenuItem
-                  className="cursor-pointer py-1 focus:bg-transparent focus:underline"
-                  asChild
-                >
-                  <a href="mailto:york_aa19@outlook.com">
-                    <MessageCircleMore
-                      size={16}
-                      strokeWidth={2}
-                      className="opacity-60"
-                      aria-hidden="true"
-                    />
-                    Contact
-                  </a>
-                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </a>

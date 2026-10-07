@@ -19,6 +19,7 @@ import ActionButton from "@/components/srcl/srcl-actionbutton";
 import ModalTrigger from "@/components/srcl/srcl-modaltrigger";
 import ModalError from "@/components/srcl/modals/srcl-modalerror";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export const dynamic = "force-static";
 
@@ -45,13 +46,27 @@ export default function Page() {
           {/* Featured Project */}
           <Accordion defaultValue={true} title="FEATURED PROJECT">
             <Card title="AI Powered Clinician Followup Tool">
-              BookBokeh is a platform that provides photographers with
-              embeddable widgets for scheduling.
+              Built on top of MedGemma and fine-tuned medication specific LoRA adapters, MedCheck is designed to save clinicians' time
+              and put all of there patient follow up data in one easy to access dashboard
               <br />
+              <Image
+                src="/images/medcheck-followups.png?height=300&width=600"
+                alt="Followups"
+                width={600}
+                height={300}
+                className="w-full md:w-auto max-w-[600px] h-auto m-5"
+              />
               <br />
-              Customers can see the photographers available and book a session
-              with them.
+              Patients get a friendly, secure chat window to mention any complications or questions that need to
+              be passed on to their medical professional
               <br />
+              <Image
+                src="/images/patient-facing-chat.png?height=300&width=300"
+                alt="Patient Chat"
+                width={300}
+                height={300}
+                className="w-full md:w-auto max-w-[300px] h-auto m-5"
+              />
               <br />
               <ActionListItem icon={`⭢`} href="" target="_blank">
                 Coming soon...
