@@ -19,6 +19,20 @@ export const works: Books[] = [
     description: "Hilarious story about Bill's attempt to walk the Appalachian Trail",
   },
   {
+    author: "Pierce Brown",
+    image:
+      "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fassets.bromantasy.com%2Freview%2Fred-rising-1200.webp&f=1&nofb=1&ipt=d2ed9c013e6207213493b97c68c4b3c8384a7bb073037fababb1a6c841e696cb&ipo=images",
+    title: "Red Rising",
+    description: "A future dystopian tale about a low-caste boy who works in the mines on Mars",
+  },
+  {
+    author: "Matt Dinniman",
+    image:
+      "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Funseenlibrary.com%2Fwp-content%2Fuploads%2F2025%2F07%2Fdungeon-crawler-carl-cover.jpg&f=1&nofb=1&ipt=f4061be0c8eb2e0f451db98078175b9309de9bfae17f1eaca82e348b3c4a0dbf&ipo=images",
+    title: "Dungeon Crawler Carl Series",
+    description: "After the surface of the Earth is destroyed, Carl enters a televised underground dungeon (with his cat) where he faces all sorts of deadly foes",
+  },
+  {
     author: "Andy Weir",
     image: "https://m.media-amazon.com/images/I/81zD9kaVW9L.jpg",
     title: "Project Hail Mary",
