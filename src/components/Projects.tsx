@@ -12,13 +12,6 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: "/images/RITMO_BLACK_LOGO.png",
-    image: "/images/groupphoto_RITMO-2.jpg",
-    description: "Rhythm game for Apple Vision",
-    technologies: "Swift, SwiftUI, RealityKit, MusicKit",
-    path: "https://apps.apple.com/us/app/ritmo/id6480073527",
-  },
-  {
     title: "AI Clinician Follow-Up Assistant",
     image: "/images/medcheck_preview6.png",
     description:
@@ -26,15 +19,13 @@ export const projects: Project[] = [
     technologies: "MedGemma, LoRA/QLoRA, Next.js, React, PyTorch",
     path: "",
   },
-  /*
   {
-    title: "The Recipe Box",
-    image: "https://preview.redd.it/2lktu03mau441.jpg?width=1080&crop=smart&auto=webp&s=0157ca8037f650f3a725ea3df4c448c22b783370",
-    description: "All of gam-gam's recipes in the palm of your hand",
-    technologies: "Next.js, React, TypeScript, MongoDB, ShadcnUI",
-    path: "https://github.com/aayork/recipe-box",
+    title: "/images/RITMO_BLACK_LOGO.png",
+    image: "/images/groupphoto_RITMO-2.jpg",
+    description: "Rhythm game for Apple Vision",
+    technologies: "Swift, SwiftUI, RealityKit, MusicKit",
+    path: "https://apps.apple.com/us/app/ritmo/id6480073527",
   },
-  */
   {
     title: "Movie Monkey E-Booking",
     image:
