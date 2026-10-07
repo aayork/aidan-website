@@ -21,7 +21,7 @@ export const projects: Project[] = [
   {
     title: "AI Clinician Follow-Up Assistant",
     image:
-      "",
+      "/images/medcheck_preview.png",
     description: "Using a fine-tuned MedGemma 4B parameter model (via LoRA), created a webapp that allows doctors to follow up with their patients after perscribing new medications",
     technologies: "MedGemma, LoRA/QLoRA, Next.js, React, PyTorch",
     path: ''
