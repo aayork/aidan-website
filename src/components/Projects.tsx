@@ -20,11 +20,11 @@ export const projects: Project[] = [
   },
   {
     title: "AI Clinician Follow-Up Assistant",
-    image:
-      "/images/medcheck_preview6.png",
-    description: "Using a fine-tuned MedGemma 4B parameter model (via LoRA), created a webapp that allows doctors to follow up with their patients after perscribing new medications",
+    image: "/images/medcheck_preview6.png",
+    description:
+      "Using a fine-tuned MedGemma 4B parameter model (via LoRA), created a webapp that allows doctors to follow up with their patients after perscribing new medications",
     technologies: "MedGemma, LoRA/QLoRA, Next.js, React, PyTorch",
-    path: ''
+    path: "",
   },
   {
     title: "The Recipe Box",
@@ -47,9 +47,14 @@ export const projects: Project[] = [
 export const Projects = () => {
   return (
     <div className="m-14">
-      <h1 className="mb-4 font-bold text-xl underline decoration-[#C2DBA2]">
-        My Projects
-      </h1>
+      <a
+        href="/projects"
+        className="hover:text-gray-500 flex items-center"
+      >
+        <h1 className="mb-4 font-bold text-xl underline decoration-[#C2DBA2]">
+          Featured Projects
+        </h1>
+      </a>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project) => (
           <Link key={project.path} href={project.path}>
