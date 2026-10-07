@@ -21,7 +21,7 @@ export const projects: Project[] = [
   {
     title: "AI Clinician Follow-Up Assistant",
     image:
-      "/images/medcheck_preview.png",
+      "/images/medcheck_preview6.png",
     description: "Using a fine-tuned MedGemma 4B parameter model (via LoRA), created a webapp that allows doctors to follow up with their patients after perscribing new medications",
     technologies: "MedGemma, LoRA/QLoRA, Next.js, React, PyTorch",
     path: ''
@@ -37,7 +37,7 @@ export const projects: Project[] = [
   {
     title: "Movie Monkey E-Booking",
     image:
-      "https://i0.wp.com/www.cemeterydance.com/extras/wp-content/uploads/2024/07/monkey-movie.jpg?fit=683%2C1024&ssl=1",
+      "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.kinorium.com%2Fmovie%2Fposter%2F10801967%2Fw1500_53841300.jpg&f=1&nofb=1&ipt=8e0ea270e136cff4adcfb59be816b34c1f33cede94faefa9abd00c745081e3e2&ipo=images",
     description: "Cinema E-Booking platform",
     technologies: "Vite, Django, React, DaisyUI, RESTful APIs",
     path: "https://github.com/aayork/4050-termproject",

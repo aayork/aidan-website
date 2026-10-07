@@ -14,7 +14,7 @@ export const works: Books[] = [
   {
     author: "Bill Bryson",
     image:
-      "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia1.popsugar-assets.com%2Ffiles%2Fthumbor%2FoZyOG_njNdEUVZULZVxspRrorKE%2Ffit-in%2F728xorig%2Ffilters%3Aformat_auto-!!-%3Astrip_icc-!!-%2F2013%2F06%2F05%2F029%2Fn%2F1922283%2Fa4125de7975df36b_9780767902526_custom-s6-c30%2Fi%2FWalk-Woods-Bill-Bryson.jpg&f=1&nofb=1&ipt=dd74df6c19e60d0c8ad8327eff52e91d2be4059a65696efa322cdcd3e6128383&ipo=images",
+      "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fyesterdaysmuse.cdn.bibliopolis.com%2Fpictures%2F2345873.jpg%3Fauto%3Dwebp%26v%3D1735330742&f=1&nofb=1&ipt=082314c38a678343786f43e91007660bafa2bbd49395574d39cdc9cf2ab155dd&ipo=images",
     title: "A Walk in the Woods",
     description: "Hilarious story about Bill's attempt to walk the Appalachian Trail",
   },
