@@ -19,6 +19,14 @@ export const projects: Project[] = [
     path: "https://apps.apple.com/us/app/ritmo/id6480073527",
   },
   {
+    title: "AI Clinician Follow-Up Assistant",
+    image:
+      "",
+    description: "Using a fine-tuned MedGemma 4B parameter model (via LoRA), created a webapp that allows doctors to follow up with their patients after perscribing new medications",
+    technologies: "MedGemma, LoRA/QLoRA, Next.js, React, PyTorch",
+    path: ''
+  },
+  {
     title: "The Recipe Box",
     image:
       "https://preview.redd.it/2lktu03mau441.jpg?width=1080&crop=smart&auto=webp&s=0157ca8037f650f3a725ea3df4c448c22b783370",

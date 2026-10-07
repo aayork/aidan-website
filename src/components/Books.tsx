@@ -45,7 +45,7 @@ export const works: Books[] = [
       "https://atboundarysedge.com/wp-content/uploads/2020/08/foundation.jpg",
     title: "Foundation Trilogy",
     description:
-      "[temporary description] A story about the fall and rise of a galactic empire based on predictive mathematics.",
+      "A story about the fall and rise of a galactic empire based on predictive mathematics.",
   },
   {
     author: "Kurt Vonnegut",
@@ -53,14 +53,14 @@ export const works: Books[] = [
       "https://m.media-amazon.com/images/I/817dhIc6E+L._AC_UF1000,1000_QL80_.jpg",
     title: "Slaughterhouse-Five",
     description:
-      "[temporary description] A semi-autobiographical novel about time travel and the bombing of Dresden.",
+      "A semi-autobiographical novel about time travel and the bombing of Dresden.",
   },
   {
     author: "George Orwell",
     image: "https://m.media-amazon.com/images/I/71rpa1-kyvL.jpg",
     title: "1984",
     description:
-      "[temporary description] A dystopian novel about a totalitarian regime and the surveillance state.",
+      "A dystopian novel about a totalitarian regime and the surveillance state. Gets more relevant every year with the advent of technologies like Flock cameras.",
   },
 ];
 
