@@ -1,111 +1,44 @@
-import {
-  Github,
-  Menu,
-  FileUser,
-  MessageCircleMore,
-  Linkedin,
-  GitPullRequest,
-  House,
-} from "lucide-react";
+import { Github, Linkedin, House, FileUser } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+
+type NavItem = {
+  label: string;
+  href: string;
+  icon: React.ElementType;
+  external?: boolean;
+};
+
+const navItems: NavItem[] = [
+  { label: "Home", href: "#", icon: House },
+  { label: "GitHub", href: "https://github.com/aayork", icon: Github, external: true },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/aidan-york/", icon: Linkedin, external: true },
+  // Opens the PDF in a new tab; rename the file in /public to avoid spaces/apostrophes in the URL
+  { label: "Resume", href: "/Aidan York's Resume.pdf", icon: FileUser, external: true },
+];
 
 export const Navigation = () => {
   return (
-    <nav className="sticky top-5 z-50 bg-white/50 backdrop-blur-md rounded-full shadow-lg p-6 my-10 mx-auto max-w-sm">
-      <ul className="flex justify-between space-x-8">
-        <li>
-          <a
-            href="#"
-            className="text-gray-600 hover:text-gray-900 flex items-center"
-          >
+    <nav className="sticky top-5 z-50 mx-auto my-10 w-fit max-w-lg rounded-full bg-white/50 p-2 shadow-lg backdrop-blur-md sm:p-3">
+      <ul className="flex items-center justify-between gap-1 sm:gap-4">
+        {navItems.map(({ label, href, icon: Icon, external }) => (
+          <li key={label}>
             <Button
-              size="default"
+              asChild
               variant="ghost"
-              className="shadow-none rounded-full hover:bg-white/50"
-              aria-label="Open edit menu"
+              className="rounded-full px-3 text-gray-600 shadow-none hover:bg-white/50 hover:text-gray-900"
             >
-              <House className="h-4 w-4 mr-1" />
-              Home
+              <a
+                href={href}
+                aria-label={label}
+                title={label}
+                {...(external && { target: "_blank", rel: "noopener noreferrer" })}
+              >
+                <Icon className="h-4 w-4" aria-hidden="true" />
+                <span className="hidden sm:ml-1 sm:inline">{label}</span>
+              </a>
             </Button>
-          </a>
-        </li>
-        <li>
-          <a
-            href="/projects"
-            className="text-gray-600 hover:text-gray-900 flex items-center"
-          >
-            <Button
-              size="default"
-              variant="ghost"
-              className="shadow-none rounded-full hover:bg-white/50"
-              aria-label="Open edit menu"
-            >
-              <GitPullRequest className="h-4 w-4 mr-1" />
-              Projects
-            </Button>
-          </a>
-        </li>
-        <li>
-          <a
-            href="#"
-            className="text-gray-600 hover:text-gray-900 flex items-center"
-          >
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button
-                  size="icon"
-                  variant="ghost"
-                  className="shadow-none rounded-full hover:bg-white/50"
-                  aria-label="Open edit menu"
-                >
-                  <Menu className="w-4 h-4" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="pb-2">
-                <DropdownMenuLabel>More Stuff</DropdownMenuLabel>
-                <DropdownMenuItem
-                  className="cursor-pointer py-1 focus:bg-transparent focus:underline"
-                  asChild
-                >
-                  <a href="https://www.linkedin.com/in/aidan-york/">
-                    <Linkedin className="h-4 w-4 mr-1" />
-                    LinkedIn
-                  </a>
-                </DropdownMenuItem>
-                <DropdownMenuItem
-                  className="cursor-pointer py-1 focus:bg-transparent focus:underline"
-                  asChild
-                >
-                  <a href="https://github.com/aayork">
-                    <Github className="h-4 w-4 mr-1" />
-                    Github
-                  </a>
-                </DropdownMenuItem>
-                <DropdownMenuItem
-                  className="cursor-pointer py-1 focus:bg-transparent focus:underline"
-                  asChild
-                >
-                  <a href="/Aidan York's Resume.pdf" download>
-                    <FileUser
-                      size={16}
-                      strokeWidth={2}
-                      className="opacity-60"
-                      aria-hidden="true"
-                    />
-                    Résumé
-                  </a>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </a>
-        </li>
+          </li>
+        ))}
       </ul>
     </nav>
   );
