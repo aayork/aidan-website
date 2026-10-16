@@ -39,14 +39,9 @@ export const projects: Project[] = [
 export const Projects = () => {
   return (
     <div className="m-14">
-      <a
-        href="/projects"
-        className="hover:text-gray-500 flex items-center"
-      >
-        <h1 className="mb-4 font-bold text-xl underline decoration-[#C2DBA2]">
-          Featured Projects
-        </h1>
-      </a>
+      <h1 className="mb-4 font-bold text-xl underline decoration-[#C2DBA2]">
+        Featured Projects
+      </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project) => (
           <Link key={project.path} href={project.path}>
